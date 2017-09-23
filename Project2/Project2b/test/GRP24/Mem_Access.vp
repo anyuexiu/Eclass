@@ -1,0 +1,42 @@
+`include "data_defs.vp"
+module MemAccess(	mem_state, M_Control, M_Data, M_Addr, memout, Data_addr, Data_din, Data_dout, Data_rd);
+   input 	[1:0] 	mem_state;
+   input 		M_Control;
+   input [15:0] 	M_Data;
+   input [15:0] 	M_Addr;
+   input [15:0] 	Data_dout;
+
+   output [15:0] 	Data_addr;
+   output [15:0] 	Data_din;
+   output 		Data_rd;
+   output [15:0] 	memout;
+
+   reg [15:0] 		addr;           // addresses for memory address
+   reg [15:0] 		din;            // data read from/written to memory
+   reg 			rd;                    // read/write signal
+
+   reg [15:0] 		Data_addr;
+   reg [15:0] 		Data_din;
+   reg 			Data_rd;
+
+`protected
+    MTI!#t7K>w_RDa1Y_s^1J3~D\rB+W{yy-]sUFfI!E"/x#[K7mlA>Ujxn=u7VmAH~'EC}@7?&Q5Gp
+    xYu!3X$[AVa[AnR<UX{]w[#^&{5@$aTZ>i{5]aR{_w,C*)=-zOZGe\QQ*!h!YJ2pUKl$^7~[\,u1
+    nnpE}CxjRJ7XX>G[?VD4ev'W!+~B=+<[?5VlAwrET]kp@T;{kDW;G%IH7Jfe:-sAa]}>'W-E\?1_
+    #l~'$EEZo27E?C2UC-{<~2D<JBz]@RXeeE,7#!xm\2l?#>]I!k]?B8U1X>C;~3h%TYJrC*Z^D?*Y
+    U=]9[;J-=#}Y,O+=iG3[KO_I;a1ap}H=UY+[@-1k<\nHk$Y'OWEuHX~DO}'Vr-KaHOK$j@OYBn$^
+    soi]E#Y~3XKB'^?5;r@mmQ$C:F:H_3Hy^+lYI}zvi_VJ[j>!F^@=Qll{#H]puH'H-^GJ1'>\wPLH
+    -RQ$*OErFd*j,T6,X@H^I<w=*rVRJ<+^a+sr>@s'aI<IOi1]>7uK*,Wi1Y$Q$*wyZ$52-YwB0'nY
+    ON:BUAxO#}]BIVjuo~sZNonnXGJ7J;}[eg#pk]=G_YRD2IElxuzj#wiUXk+Y=m=}J{Z$?T2T,^%2
+    ^>]b$Ej}@l^Blk-J[/9KXx}"pDa<_[3I%OV<jtYkY=a{^K7#K*-<Is_UCRL(z5[E$E}mthzx2Y_z
+    ~lo_@je~~Hld}ZD>!{QA}_Vp=KoU&>pnn?v'J>]ZpV[,]^QE1#U5e*ZX+BRmj"R^\m^_O!lo#Wee
+    KHCJ~k2}Y*'e\warA\i_^$A+Y+7Ku^Bz]X^WJ3s$3,o*Ilj;EjVVAYFQ$?Zs1]DXEQ2^Vlj6#A1-
+    D'[Zejvm+_x=T>R^@5?+VuWIew3XOVKrwG'ZQX>mzx#EC3j]Woau-xK!1o_?Q\^E8kXmX\WrIYx@
+    HlZp}-oU@WE?;I~E,rpl;\^u2hz'DY[le<e!H?CDak{Ypz"-ajIjZCY{GuXp2=s$]<[~U\-pe+Rr
+    IZaXaJ79B&Y*B\PAHT]HX,?x+@nsWR'C_El9JR?A^CC'57$@DR,]QR=+VO*YvDX_u=Y2Ia'lL5WT
+    }18e'?a'r=QrOpob&$}kn2\i$4$jikv{$-;B?!0>sQB<$'~-7^AD3E]>{ux]_3?.tu+,Oqesx[^H
+    l{|_;E[xa@zm7
+`endprotected
+
+   
+endmodule // MemAccess

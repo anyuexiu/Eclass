@@ -1,0 +1,28 @@
+`include "data_defs.v"
+module Arith_ALU ( clock, reset, enable, aluin1, aluin2, 
+                     aluoperation, aluopselect, aluout  );
+
+    parameter   reg_wd    	=   `REGISTER_WIDTH;
+
+    input                   			clock, reset, enable;
+    input     		[reg_wd -1:0]   	aluin1, aluin2;
+    input   		[2:0]           	aluoperation, aluopselect;
+    output   reg   	[reg_wd:0]   		aluout;
+`protected
+    MTI!#2oE}E!HK-O[J<UeV5Bp[+,{o3l[a=x,v|.*H}[qBQ}Y>}\\jR{pTTK^K_x'Dk+;K*\i8/CE
+    ]E]sD[$Z}ewnI[rVnr|s3xC?$Y,OH7{{{p1$]\*OB^#,7p*wAu}B|zi5Ze}]rm^!=a];~<xanTB'
+    }<s]<+s]3GnJmti$TW\<K>:Z<~-F.xVJ>21Bl>sk<Hj$Q>XSHjn[Kjl;lVR!5<CmF5N~B#vlCVs$
+    v#E>}QUh=@[e5nWB.IV13=*AJje=-=Gl^%@_[-^sk]Qe,[&Ql$oIwxjx,]_Ka<COn;;hQz\A25e=
+    CK{HTaJ5'lHDD+~\EIEaZrp-E^KB*C^eu7\By<Qk}nHV^DB5B*OmVG~<]71x,?YriY>vH,zBwCaD
+    UxQBG~Cl'7vkoaonpj*2@*V77#<1~xrEvY~1TG#w[**r_qiQ?JxU{TRYcz[-*@}VrC7O'sxVEc*V
+    "k_ZOYn{=Dw{X#YK<=~[1_sj[vj*ix-AB_%XBJ*UO~[fDEjjk'ZZm5EE13~#{lZx\m~^YOkv!O?u
+    sCT=in<rVLZ=r-#7z#?T_#V7Ae_BHpC#K@EvHuk}E\n+OJM-+>uaAlOUlQb^*>D[vTkxwJ?sm+{>
+    +l=+U-#^+T!JE+~eBnswnGwGR_Em<Hp[<IiWrA5JoZ]S;T^]/3N--V[ox!TBG!E\ZsmkDA*X5[sk
+    1rT^%)?'-@k[UJPIE{{=jx[W,xZF-{2!1C7]3GRa7ip!ee*OoG{UivBV@H=5remCS),KQ3xHO@uY
+    $2iX<3fDaBG~{^G[~J\^#-{^Hoj?G{5nz^AeQVmUVp[(~DCneBe[wBx5BusivnD7xZ+}7x5wzi;,
+    \rXeEYn~aHEvU=@Ac(KUOHZllZp{D]$$w#.oIaJIzEp6j@]EKpD~R{en5DT~]X33l*v+Z}>xsDH]
+    -75\GH-V*C<\O'pHTO{>}IXClKA*r^]~MK$lJl{AW:2}EW}upnR7oz@IVZS,HoIkGVJ@\a@j7Wz4
+    ,2^<BzAs=!,3*=BVX<trn_i9Bj'KOsK'
+`endprotected
+
+endmodule 

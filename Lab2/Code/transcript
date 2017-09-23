@@ -1,0 +1,89 @@
+# vsim -c -novopt Execute_test_top 
+# //  QuestaSim 6.3c Sep 11 2007 Linux 2.6.18-92.1.10.el5PAE
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.Execute_if_sv_unit
+# Loading work.Execute_test_top
+# Loading work.Execute_io
+# Loading work.Execute_test
+# Loading work.Top
+# Loading work.Ex_Preproc
+# Loading work.ALU
+# Loading work.Arith_ALU
+# Loading work.Shift_ALU
+#                    0ns: RESET START
+#                   45ns: RESET END
+#                   45ns: Sending Another Packet
+#                   45ns: [GENERATE] Generate Finished Creating           6 Packets  
+#                   45ns: [DRIVER] Sending Payload Begin
+#                   45ns:   [DRIVER->SENDPAYLOAD] Packets left =          6
+#                   45ns: [RECEIVER] Receiving Payload Begin
+#                   55ns:   [DRIVER->SENDPAYLOAD] Packets left =          5
+#                   65ns:   [DRIVER->SENDPAYLOAD] Packets left =          4
+#                   65ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   75ns:   [DRIVER->SENDPAYLOAD] Packets left =          3
+#                   75ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   85ns:   [DRIVER->SENDPAYLOAD] Packets left =          2
+#                   85ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   95ns:   [DRIVER->SENDPAYLOAD] Packets left =          1
+#                   95ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  105ns: [DRIVER] Sending Payload End
+#                  105ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  115ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  125ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  125 ns: [RECEIVER]   Receiving Payload End
+#                  125ns: [CHECKER] Checker Start
+# 
+# 
+#                  125ns:   [CHECKER] ALU Result from DUT = 00000000   and  ALU Result from Model = 00000000
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 000049d7, src2 = 00000d26, imm = 00001110, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 000, 
+#                  125ns:   [CHECKER] ALU Result from DUT = 000056fd   and  ALU Result from Model = 000056fd
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 00006f56, src2 = 0000fe1d, imm = 0000dc95, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 000, 
+#                  125ns:   [CHECKER] ALU Result from DUT = 00016d73   and  ALU Result from Model = 00016d73
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 000096fb, src2 = 0000c179, imm = 000055fa, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 000, 
+#                  125ns:   [CHECKER] ALU Result from DUT = 0000ecf5   and  ALU Result from Model = 0000ecf5
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 00007ea6, src2 = 0000116a, imm = 00003bb9, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 010, 
+#                  125ns:   [CHECKER] ALU Result from DUT = 00006d3c   and  ALU Result from Model = 00006d3c
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 00000b8f, src2 = 0000fa11, imm = 0000df38, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 010, 
+#                  125ns:   [CHECKER] ALU Result from DUT = ffff2c57   and  ALU Result from Model = ffff2c57
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 000068fc, src2 = 000055ee, imm = 00001b6a, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 000, 
+#                  125ns:   [CHECKER] ALU Result from DUT = 0000beea   and  ALU Result from Model = 0000beea
+# 
+#                  125ns: Sending Another Packet
+#                  125ns: [GENERATE] Generate Finished Creating          10 Packets  
+#                  125ns: [DRIVER] Sending Payload Begin
+#                  125ns:   [DRIVER->SENDPAYLOAD] Packets left =         10
+#                  125ns: [RECEIVER] Receiving Payload Begin
+#                  135ns:   [DRIVER->SENDPAYLOAD] Packets left =          9
+#                  145ns:   [DRIVER->SENDPAYLOAD] Packets left =          8
+#                  145ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  155ns:   [DRIVER->SENDPAYLOAD] Packets left =          7
+#                  155ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  165ns:   [DRIVER->SENDPAYLOAD] Packets left =          6
+#                  165ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  175ns:   [DRIVER->SENDPAYLOAD] Packets left =          5
+#                  175ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  185ns:   [DRIVER->SENDPAYLOAD] Packets left =          4
+#                  185ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  195ns:   [DRIVER->SENDPAYLOAD] Packets left =          3
+#                  195ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained

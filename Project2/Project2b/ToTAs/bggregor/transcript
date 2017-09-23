@@ -1,0 +1,144 @@
+# //  QuestaSim 6.3c Sep 11 2007 Linux 2.6.9-78.0.8.ELsmp
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+do ta_compile.do 
+# ** Warning: (vlib-34) Library already exists at "mti_lib".
+# modelsim.ini
+# ../Wrapper
+# QuestaSim vlog 6.3c Compiler 2007.09 Sep 11 2007
+# -- Compiling module CacheRAM
+# -- Compiling module DataCache
+# -- Compiling module Memory
+# -- Compiling module LC3
+# -- Compiling module LC3_Cache
+# -- Compiling module CacheController
+# -- Compiling module CacheData
+# -- Compiling module Controller_Pipeline
+# -- Compiling module Decode
+# -- Compiling module Execute
+# -- Compiling module extension
+# -- Compiling module ALU
+# -- Compiling module Fetch
+# -- Compiling module MemInterface
+# -- Compiling module MemAccess
+# -- Compiling module ProcInterface_Data
+# -- Compiling module ValidArray
+# -- Compiling module Writeback
+# -- Compiling module RegFile
+# 
+# Top level modules:
+# 	LC3_Cache
+# QuestaSim vlog 6.3c Compiler 2007.09 Sep 11 2007
+# -- Compiling interface TA_Probe_io
+# -- Compiling interface LC3_io
+# -- Compiling interface Cache_Probe_if
+# -- Compiling interface CacheController_Probe_if
+# -- Compiling interface ProcInterface_Probe_if
+# -- Compiling interface ValidArray_Probe_if
+# -- Compiling interface CacheData_Probe_if
+# -- Compiling interface MemInterface_Probe_if
+# -- Compiling interface Fetch_Probe_if
+# -- Compiling interface Decode_Probe_if
+# -- Compiling interface Execute_Probe_if
+# -- Compiling interface WriteBack_Probe_if
+# -- Compiling interface Control_Probe_if
+# -- Compiling interface MemAccess_Probe_if
+# -- Compiling package Packet_sv_unit
+# -- Compiling interface MemAccess_Probe_if
+# -- Compiling interface Control_Probe_if
+# -- Compiling interface WriteBack_Probe_if
+# -- Compiling interface Execute_Probe_if
+# -- Compiling interface Decode_Probe_if
+# -- Compiling interface Fetch_Probe_if
+# -- Compiling interface MemInterface_Probe_if
+# -- Compiling interface CacheData_Probe_if
+# -- Compiling interface ValidArray_Probe_if
+# -- Compiling interface ProcInterface_Probe_if
+# -- Compiling interface CacheController_Probe_if
+# -- Compiling interface Cache_Probe_if
+# -- Compiling interface LC3_io
+# -- Compiling module LC3_test_top
+# -- Compiling program LC3_test
+# -- Compiling interface TA_Probe_io
+# 
+# Top level modules:
+# 	LC3_test_top
+# vsim -coverage -sv_seed 75354 -novopt LC3_test_top 
+# Loading sv_std.std
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Packet_sv_unit
+# Loading work.Packet_sv_unit
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.LC3_test_top
+# Loading work.LC3_test_top
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.LC3_io
+# Loading work.LC3_io
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.CacheController_Probe_if
+# Loading work.CacheController_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.ProcInterface_Probe_if
+# Loading work.ProcInterface_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.ValidArray_Probe_if
+# Loading work.ValidArray_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.CacheData_Probe_if
+# Loading work.CacheData_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.MemInterface_Probe_if
+# Loading work.MemInterface_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Fetch_Probe_if
+# Loading work.Fetch_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Decode_Probe_if
+# Loading work.Decode_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Control_Probe_if
+# Loading work.Control_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Execute_Probe_if
+# Loading work.Execute_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.WriteBack_Probe_if
+# Loading work.WriteBack_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.MemAccess_Probe_if
+# Loading work.MemAccess_Probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.TA_Probe_io
+# Loading work.TA_Probe_io
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.LC3_test
+# Loading work.LC3_test
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.LC3_Cache
+# Loading work.LC3_Cache
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.LC3
+# Loading work.LC3
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Fetch
+# Loading work.Fetch
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Decode
+# Loading work.Decode
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Execute
+# Loading work.Execute
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.ALU
+# Loading work.ALU
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.extension
+# Loading work.extension
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.MemAccess
+# Loading work.MemAccess
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Writeback
+# Loading work.Writeback
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.RegFile
+# Loading work.RegFile
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Controller_Pipeline
+# Loading work.Controller_Pipeline
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.DataCache
+# Loading work.DataCache
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.CacheController
+# Loading work.CacheController
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.ProcInterface_Data
+# Loading work.ProcInterface_Data
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.MemInterface
+# Loading work.MemInterface
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.ValidArray
+# Loading work.ValidArray
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.CacheData
+# Loading work.CacheData
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.CacheRAM
+# Loading work.CacheRAM
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/FromRSJ/Project3/ToTAs/bggregor/mti_lib.Memory
+# Loading work.Memory

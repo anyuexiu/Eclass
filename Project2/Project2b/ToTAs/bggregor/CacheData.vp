@@ -1,0 +1,39 @@
+`include "data_defs.vp"
+module CacheData(clock, state, count, valid, miss, rd, addr, din, blockdata, 
+                 offdata);
+	input clock, valid, rd;
+	input [3:0] state; 
+	input [1:0] count;
+	input [15:0] addr, din, offdata;
+	output miss;
+	output [63:0] blockdata;
+
+	wire ramrd;
+	wire [73:0] memdata;
+	wire [15:0]	offdata_int;
+
+	reg [63:0] blockreg;
+  	
+	CacheRAM cram(memdata, addr[5:2], ramrd);
+`protected 
+    MTI!#jUrjzI_?Omo*[sJzEEHl_!W+G\B=Qx^5|.,wR["Y~I1A5K7\|3wvCF[_eQw<='{^!$rB-;?
+    Djm,$3Y0v>-,1sEnx$-DA{}zGHu~CWTWWYJUsKT+5bECu^l;*R]Vo'ruUK(FoTUDC,$7_u[}xGZj
+    emu_$Gj3+],i\^ZX1mX5r}-'?*\#>lZVsYHYdVaje2o<rX'+,~n_jGDv;~a!m#*a~Y.ORiuZ}YGO
+    \mkX]3?H<K+^UxroJp=#$an&}~+-#OHBYG~CvJXXNvv?2U>^D,JXeIoz-5Za'~VIWeWAIc>[wIOz
+    QuZxX~,j$eZHmA\?C+M#ra$Yww-[$\}VRas*+Y\'U<C)&+xa[vi-evIBX*'Q;nl1^~$X[$[m{B]U
+    1lTTG>*Q#wavHe'<ZTV[B-+5];No2z$]{^s+-up2o#'_0#<QoYHZl(M+w7pojDV<HAl[x+1tX'!{
+    [!W5}<!GJRV@X[C2=pQ?yI*z=T.^x\TY2Q_exR}QJna5uIrE5H[<O#=yv>${s\[z7iGQlVAH$gwD
+    XzpD]KL=OQCxwrEeO,oJnQ!~vps%_7[$J**CO2CEj57VpR<73A-5Y2G]X5'G]EVRw\j5M^_^'R'<
+    [I3K2[XAHbJaZ@B$l2&#jwYT[_,-jEWC2B<rRi'o^R'Jr[_2^'aG\pkhY-(L#]XnVapl5D]oEQX$
+    Bo7H#s#,I;nw=;2O>=Qmn*RQ0=Q{}};6#w*RnYAr5]^+~wB=[]*<7]ZVGH3m}TD|mUAKWri5o}_n
+    Wa3?k+v-[^2Xk{zCXz)WRZ\O~@{YrTHAeR1b69k[Xre3O<edX\[-5KD}SZ$-lDn]!7.ve;UZ{V\p
+    {Wv5*r>D[w~6@5KezoGuM%<BZRY{ZpC[XBf>p,~}H-BX^-wfUadk,T@]v['xmraV-}KGUT@k>akp
+    x$u<XnaC@~r:zDV[<^}a15i\|Bi7<,0=XsRG?lu5{OsYmloq?zWY,_JQAhaB?7o@Q},?T~$~@7Vg
+    sE=+lG~-np'v0*xGk.K^w[3\~wKAlU0BiJU1{W@}+e<,HOICCi1K'i'c}O^{9aQrEOOXn6=={=hi
+    Dr+zC*,2\_$_aQRbA'BO7Lpa{D"-C2xo5}-Da=T5mx?#prBb}uXRo-5io+QoY+R\5wjw5z\puaWx
+    nj?wk,EWm[mG[YB=*>[GTG}Ef,R{xvVaC9~Hw[r21iajpGG2-uo>-a3r]$QAJE7k*OiE}K+s}
+`endprotected
+
+endmodule
+
+

@@ -1,0 +1,10 @@
+@3000
+5020 //            	AND    R0, R0, #0     
+1027 //            	ADD    R0, R0, #7     
+5260 //            	AND    R1, R1, #0     
+1265 //  			ADD    R1, R1, #5     
+103F //            	ADD    R0, R0, #-1    
+1401 // 			ADD 	R2, R0, R1		
+0000 // 			NOOP
+96BF //				NOT 	R3, R2		R3 = 	~R1
+EC04 //            	LEA    R6, dest       

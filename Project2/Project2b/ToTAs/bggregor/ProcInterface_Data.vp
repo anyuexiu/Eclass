@@ -1,0 +1,27 @@
+`include "data_defs.vp"
+module ProcInterface_Data(clock, rd, addr, dout, complete, state, miss, blockdata);
+	input clock, rd, miss;
+	input [15:0] addr;
+	input [63:0] blockdata;
+	input [3:0] state;
+	output complete;
+	output [15:0] dout;
+
+	reg complete;
+	reg [15:0] dout;
+
+`protected
+    MTI!#2w,D!B\v,Yo,=ssXn9*;{5U'##<<[i:"[M]'#=o}}[,^ZIN,4*}o'",,pmIx[}bQ;HAi{[s
+    -<AZGW7zEA!~HA_u}ip3aRpX**AoGmEn-s71f|<n+!I5{V]j?};$=Zl+sO{sB-!oH273K[]}z>~v
+    I_Y5x1!=)_,uavAAe2H\XJG-!z=X_=!ow7GV2_pZ7$C1prvQBm1i<]=Y-z+e+4*O+_a6.%k>h~B1
+    B!}T5kUdka;x=in2=_Bb;O!-\piwZw[]2YT]?<>@v${Yz,VBFUXs{iT=[}-'pl?$@=K1$v\?oRnr
+    uiI[~\2\UCB_U+$wTzTYA<ev-~+spOQx~j#r?<AjJu<>QKCp-ouCAllEvv$-?8W^}Zy~<{Yi=J\J
+    VX>W^-rs$ZGCXBi}wn;^+>Z@n-XoWT[kR[1T+_,eKzi[j3;rvR,O~,{&7\75}{7Qp2IE_l5uG=A+
+    TQWx\^xo:i\rxTAn_}mRCQvC=!1+@-\=Up;Cr^aZ]o^ClblJ}{lZ5*oBn*0>x!j!p\H}L#7p{,?p
+    w!1RTrT=wHU$m6'7EYvEeKPGOOX1x^Ev;Gz_RK{p}33_jxaY1j*]~mo>oJ}Op,jV;>1l!YoVrv1{
+    lJCB>>3kn{7pj[G}o7~WUB3NkwVilREe@n~5[p@<qJ]mT$_nJ~wl;Qsi2yWC+p3sa
+`endprotected
+
+
+endmodule
+

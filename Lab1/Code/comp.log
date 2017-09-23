@@ -1,0 +1,14 @@
+Start time: 22:10:29 on Sep 23,2017
+/qixin/eda/mentor/questasim/10.3/questasim/bin/../linux/vlog -l comp.log -sv data_defs.v Top.v Execute.if.sv Execute.tb.sv Execute.test_top.sv ALU.vp Arith_ALU.vp Ex_Preproc.vp Shift_ALU.vp 
+-- Compiling module Top
+-- Compiling interface Execute_io
+-- Compiling program Execute_test
+-- Compiling module Execute_test_top
+-- Compiling module ALU
+-- Compiling module Arith_ALU
+-- Compiling module Ex_Preproc
+-- Compiling module Shift_ALU
+
+Top level modules:
+	Execute_test_top
+End time: 22:10:29 on Sep 23,2017

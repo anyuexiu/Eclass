@@ -1,0 +1,173 @@
+m255
+K3
+13
+cModel Technology
+d/ncsu/rsjenkal/eos_research/Mentor/Project1/Clean_Code
+vALU
+VHY>O8PC6WHdd@5Hl5[_cf2
+r1
+31
+IZZ>PB96h]`0hJL9lM[>^m1
+Z0 d/afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/TA_stuff/Clean_Code
+Z1 w1222473563
+Z2 8Execute.v
+Z3 FExecute.v
+L0 219
+Z4 OE;L;6.3c;37
+n@a@l@u
+!s85 0
+vController_Pipeline
+VkH>no1bIe7>MM7a2cN0LT3
+r1
+31
+I3J8Sh504P^HgSLe^`ISML0
+Z5 d/afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/TA_stuff/Clean_Code
+R1
+8Controller_Pipeline_Ver2.v
+FController_Pipeline_Ver2.v
+L0 1
+R4
+n@controller_@pipeline
+!s85 0
+vData_Memory
+VFIK=6P7cJ87XDmNLD2>0F2
+r1
+!s85 0
+31
+IZe5F@05IeQ4^gl:No>emW1
+R5
+R1
+Z6 8Test_LC3.v
+Z7 FTest_LC3.v
+L0 24
+R4
+n@data_@memory
+vDecode
+VJcnbSaT2^:[lnSKzXeUYK0
+r1
+31
+I117zL_lfa[nj>zObzmjc:0
+R5
+R1
+8Decode_Pipelined.v
+FDecode_Pipelined.v
+L0 1
+R4
+n@decode
+!s85 0
+vExecute
+VliHKVY>hbUcXD51FSHcZ42
+r1
+31
+Id[82_Kh0;bZYXdYRVVZGH1
+R5
+R1
+R2
+R3
+L0 1
+R4
+n@execute
+!s85 0
+vextension
+VkCgmm:8Tn@mS5YP:T9B2C1
+r1
+31
+IH^`NT^9aWzd<;iVko7K0W3
+R5
+R1
+R2
+R3
+L0 203
+R4
+!s85 0
+vFetch
+VF^=K=4N9bXV8b^OZ4i@a=3
+r1
+31
+I_4]bjCb5zXhlzE66NJN1<2
+R5
+R1
+8Fetch.v
+FFetch.v
+L0 1
+R4
+n@fetch
+!s85 0
+vInstr_Memory
+VdM=1kO[W>9]1EMD0PIL5Q2
+r1
+31
+IX0MTIC8`UE4QA]N25ZN[F0
+R5
+R1
+R6
+R7
+L0 1
+R4
+n@instr_@memory
+!s85 0
+vLC3
+VJ_f?bIbY12_0KjBXVhDGB1
+r1
+31
+IkGF2PH_fild:?bChBUTL@3
+R5
+R1
+8TopLevelLC3.v
+FTopLevelLC3.v
+L0 1
+R4
+n@l@c3
+!s85 0
+vMemAccess
+VI8I8nGM5JJi7U?bnfk?YV1
+r1
+31
+ICSNbCSkWbeIEm_YT^z?Kg1
+R5
+R1
+8Mem_Access.v
+FMem_Access.v
+L0 1
+R4
+n@mem@access
+!s85 0
+vRegFile
+V1o7z=GBceTN;2]3b8A9?H0
+r1
+31
+I0UXJ]I0QhK[DE^M<<8;bB2
+R5
+R1
+Z8 8WriteBack.v
+Z9 FWriteBack.v
+L0 52
+R4
+n@reg@file
+!s85 0
+vTest_LC3
+Vh:E4N8lhQSK;6:9QO7m6k0
+r1
+31
+I6^0>dmOaWd]TnjD`nC5@F1
+R5
+R1
+R6
+R7
+L0 47
+R4
+n@test_@l@c3
+!s85 0
+vWriteback
+V^dnV^0kj[2n3`je]iUY^Y3
+r1
+31
+IkVMg@WT=WV=i?YVJh4KQE2
+R5
+R1
+R8
+R9
+L0 1
+R4
+n@writeback
+!s85 0

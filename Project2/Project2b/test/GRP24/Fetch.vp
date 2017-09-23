@@ -1,0 +1,39 @@
+`include "data_defs.vp"
+module Fetch(clock, reset, enable_updatePC, enable_fetch, pc, npc_out, instrmem_rd, taddr, br_taken);
+  	input 			clock, reset, br_taken, enable_fetch, enable_updatePC;
+  	input 	[15:0] 	taddr;
+  	//input [3:0] 	state;
+  	output 	[15:0] 	pc, npc_out;   // current and next PC
+  	output 			instrmem_rd;
+	
+  	//reg		[15:0]	npc_out;
+  	reg 	[15:0] 	ipc;        // internal PC
+  	wire 	[15:0] 	muxout;
+`protected
+
+    MTI!#L4#_j5rz^3n^i[e<H{^i;^=V7D~}Ao>'?=VlC["[$7$=3[>pi\Rp~z#_IA!@CI2e,jUxx<7
+    Y=~o|i\]1KY{[RX4p!Y#B<7O}#<Zh>V3plJ_p'Z}*BZK[kon[@}#H|9UDnAiqIiR>'H\UX7p}*AQ
+    ~^Z\_|rhYW5<.Jvir^Xp[9B\Eit9BC3[!I^$[?{!rGUwQeYIwR,[jHDw=~s5_=1{h3$#s!HP5!Wo
+    IlXK__*$Z[5@'0@$ZKr>X@W7!?1>wzG]eaGZr@[G7v*?\$CCX]VOwTW-rE!}jv&*-_;R/[^u=!>B
+    $EK1U)M[5,Rns,jOv5?V\H\pZ-**_W7#DZ[MP7@n7bkoi]w}w#N2Er~4I3J~Va3De7$3.L?Uol#^
+    lWJXvr7Di?[%7;r{1G*pZDR{*lG\}Z;QW5$s/3o7uZ<l]n5-+W=ipG4_?7!7wrij*Ymo-IE+QjJv
+    OeE1I~^F{I@<loJs5!^C,QE}n-B1Ke]-Yj31H{<$?{1Yd'Tx$!52TAsj=dp;VVC*~oBJ]YfiwOuy
+    [vE[r]GuTT[#e$,@rqB?G*L}#@\"Yw}Q7bJX1pO+JDrwGBua72prK+F$+Q?2{BGzG+'[Y[H1~ZwY
+    ol=]A~xQa2pV~o+V_l{r]JpBB2[|]3p~!]KGiwH_su[R,>]keTe]h}2!ex2[ex5K#C'JlKsx5Y5+
+    5;O#?<Bi\#IX{5vfD{]ofH\rk}rk~o5W~E{Axd@'EU#<+=$B,@DJnk5B=oaRvz#[SvGRn}w7{F**
+    j$uRolEaxiMkTw3jH@V$ps#zkQT;}_Cm-xZrZ!'_E\x83h.$C\pO<XH:;_o'1Wl50,s[2r@Jj'H3
+    -UX75s;*u#l33Oru^5U[vyzA'*[5+z}a^as\}Ak<j}0E6^{IUpV;r0m[IJBe1jE3[$D-D2#'sBO?
+    2KtXS*J$!ZRs*+>{eaS5iVZ+C?l[X,Es@-uHE<?y^s[O4g{p{'zO,i&i,'Kz[}B
+`endprotected
+  								// it is achieved by the control of the pc value
+endmodule
+
+
+
+
+
+
+
+
+
+

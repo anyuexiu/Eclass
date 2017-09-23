@@ -1,0 +1,23 @@
+`include "data_defs.v"
+module Shift_ALU ( clock, reset, enable, in, shift, 
+                     shift_operation, aluout  );
+
+    parameter   reg_wd    	=   `REGISTER_WIDTH;
+
+    input                   		clock, reset, enable;
+    input   		[reg_wd -1:0]   in; 
+    input   		[4:0]           shift;
+    input   		[2:0]           shift_operation;
+    output  reg    	[reg_wd -1:0] 	aluout;
+
+`protected 
+    MTI!#]*=}oGsIcz+lj\zv},xWRH$IV1ROxVpv[,~vR|Q!m-leo[t<R2[}Z<s}n-77+\Q'?}io?+Q
+    ?VR]M"#'pv7QB@IrrX1QrC[O\$kn1\s[*p'?~[k}$C$e@^^B-@ITK#PEm5^nID2AR{~w'#Uro7iL
+    Y;@oia'<UQ?^p_!m\6LPlma})Rk!\Kj\O!D##{[$E*n][~U-Dl+<mZD#BA]+YzZ_uFB=!C[3oRzI
+    GG(mIi$Y^AQsm2CcrQv}]Z\l'+<^^,pWOo$Ht$XoD=#e<V]?eOn5Qp3Uj~]lGK1z>kw>[J^-PX,H
+    l7nB3G2ITT^J#Glxl|gPzaCo__Ko57juB[Vesm,<Uw-[%#QvZ[Z$!]QBDvG-n#Y-e1qo$Ja~Xp<$
+    91r-v_2n5143'#1|=KUKZU\ZoJ\klYUB*9#]J^^{TvXH'J)1rD<<\3~0V>KJ;-,~QPGr*2n^V=N#
+    5=wu\#5[3[i7R<J<-$*ks{<7*?!k$kTj+-X~5QZ'r#!OK*v}+,O
+`endprotected
+   
+endmodule

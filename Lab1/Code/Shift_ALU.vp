@@ -1,0 +1,22 @@
+`include "data_defs.v"
+module Shift_ALU ( clock, reset, enable, in, shift, 
+                     shift_operation, aluout  );
+
+    parameter   reg_wd    	=   `REGISTER_WIDTH;
+
+    input                   		clock, reset, enable;
+    input   		[reg_wd -1:0]   in; 
+    input   		[4:0]           shift;
+    input   		[2:0]           shift_operation;
+    output  reg    	[reg_wd -1:0] 	aluout;
+
+`protected 
+    MTI!#EI!r&KBH^v-*CsVO{aIV-\BvGxz5RG}zij@OD|"[O?j=Z*mbE\<K=NI-lI}T@$}"N=ch*$R
+    kB~oT5Ri>=zI?m$E[!QDDzXU~VBU*Q?jeY-opRk[{YT,@[@U\_}V-CJm#sY{nr,rYpZomYHV$5[r
+    i_rkV{HWrjsisb+Dp[$Z[\oM<vOmCrKW\*_eiE+zn'pa{]\A'A!*Z'*$VkJEGHID*;~2[>7,[DBQ
+    'mxYtQmt@oN-G#e#Ex}Hp~Bx;px7kH{hJ*-xRa{7$WD]}Z_s}WszT}TR?=nrk1'\[@{2~[AuixvZ
+    _XzmoCEXYOQIj#~>(mC?~u7?lO+Y,m>AIipm\!BWK-oB^T<WKE3T'js*i^a*7]5wkv53~}_nE7#7
+    EA$Z-R!!$UE?U^,D1l}?xR+^o_@'iCoDHT[sE=ew!bAOp<ns{Qx#T3RUn<H}0}m,}1Y!B^i
+`endprotected
+   
+endmodule

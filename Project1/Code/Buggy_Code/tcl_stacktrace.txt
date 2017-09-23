@@ -1,0 +1,21 @@
+Thu Oct 09 10:52:47 PM EDT 2008
+Trace back: window ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs" isn't a top-level window
+    while executing
+"wm minsize  $topName 365 215"
+    (procedure "undockPane" line 14)
+    invoked from within
+"undockPane $name $w"
+    (procedure "Wave::toggleDock" line 14)
+    invoked from within
+"Wave::toggleDock cli_0 .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf"
+    invoked from within
+".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.system.expelbutton invoke"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 [list $w invoke]"
+    (procedure "tk::ButtonUp" line 22)
+    invoked from within
+"tk::ButtonUp .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.system.expelbutton"
+    (command bound to event)
+  2: ::tkerror {window ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs" isn't a top-level window}
+  1: ::bgerror {window ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs" isn't a top-level window}

@@ -1,0 +1,123 @@
+`include "data_defs.vp"
+module Execute(		clock, reset, E_Control, IR, npc, W_Control_in, Mem_Control_in, 
+					VSR1, VSR2, enable_execute,  W_Control_out, Mem_Control_out, 
+					NZP, aluout, pcout, sr1, sr2, dr, M_Data
+			); 	// MODIFICATION_RAVI Need in put in the bypass that could 
+   // be either VSR1 or VSR2. Need controls for that as well. 
+
+   input				clock, reset, enable_execute;
+   input [1:0] 			W_Control_in;													
+   input 				Mem_Control_in;													
+   input [5:0] 			E_Control;
+   input [15:0] 		IR;
+   input [15:0] 		npc;
+   input [15:0] 		VSR1, VSR2;
+//   input			bypass_alu_1, bypass_alu_2, bypass_mem_1, bypass_mem_2; //bypass1 and bypass2 allow for the use of bypass values for either VSR1 or VSR2 
+   output [15:0] 		aluout, pcout;
+   output [1:0] 		W_Control_out;
+   output				Mem_Control_out;
+   output [2:0] 		NZP;
+   
+   output [2:0] 		sr1, sr2, dr;
+   output [15:0] 		M_Data;
+   
+   reg [2:0] 			sr1, sr2, dr;
+   reg [1:0] 			W_Control_out;
+   reg					Mem_Control_out;
+   reg [15:0] 			M_Data;
+   reg [15:0]                   pcout;
+
+   wire [15:0] 			offset11, offset9, offset6, imm5, trapvect8;
+   wire [1:0] 			pcselect1, alu_control, alu_control_temp;
+   wire 				pcselect2, op2select;
+   reg [15:0] 			addrin1, addrin2, aluin1_temp, aluin2_temp;
+   wire 				alucarry; 		// overflow checking not implemented
+   wire [15:0] 			VSR1_int, VSR2_int;
+   wire 				alu_or_pc; 
+   wire [15:0] 			aluin1, aluin2;
+   reg [2:0] 			NZP;
+   //assign {IR, VSR1, VSR2}=D_Data; // the D_Data values is going to come in from the register file based on the 
+   // the sr1 and sr2 values sent to the RF from the Execute. 
+   // create the correct sr1 sr2 values for reading the register file
+   
+   ALU 		alu		(clock, reset, aluin1, aluin2, alu_control, enable_execute, aluout, alucarry);
+   extension 	ext		(IR, offset11, offset9, offset6, trapvect8, imm5); // IR and trapvect8 are not used for this project
+`protected
+    MTI!#nOH;g}zXo7R!{ma~$xXHK_vA,))H5s^};<RYskU<HL}O+w|YH@}[+Qji[kuD3R<rzs2BHYa
+    sri_i7V;vzv>AU]pH'k'T{W\UUjI[3^A}[au@=\QR#;w1>IJk\r}{V^<}kvYU$YJ@e?[kOQ[0U$\
+    sv#_Z)"uYD[PY>ZstY,z2uAJ!j3ZX;>T2{[opV-GY2=BxQI!adsA2wx<^C7?lR+{7-GF_p#l".W=
+    *B,Z5O==VGYjmUVVB{>TBu^JDeW1x7{a@O{B<wAjou_|\r]Z2BpET5pUQ-IANK^Ap-]p_!-pn)s[
+    \>ko?#*\~*vE?7^2zZ,VEn-5v_r3_5DAKY-z#7jv-$Aw[5]5+a>sJ+~]n2#ErT[@-I[AK]$[#3-E
+    {\ECU5OZO;Box*E}UHKUHo1G*Gz_e[zTWx=<W_D]W\O-$@A$E!KX,D*=wk3XYJs>Izo[uj>_JXTI
+    _2~n2\E5=5es5wB=BuE$'fI~{z},D}VD?oQj_W^lj'(]WJ_RZxU*Nm_=,>=1'=I!Q~7p^os5oysY
+    7!cln}}7Js?M7[KEbAr?UvRDmp;J2>*a\o1wD=uZas<[TYUz+7~}{<=XU]x~~&eKv5voHKUwu~W'
+    ]<)|0Rr,Y1a-Huj[5:d2oU!:PsQ@UB;5AGQ2DQ[DiDCzvp3vj=axs-[{T~{\<j+A*[wK<Al!j;<U
+    ^i^kGV=7G,vpOp3pp[n,~g~7E[?rn}^#Ho4aopDLlAgh9]WUp$;*;'fVYuYY_vvGv7;~{*18x#7W
+    QmwJq=GV}o7+<zO!Ka*kQvH-+2^o{snnXz*K*Gs=$,B#J=R?pTAVQl_@!Yu^B/^xBu1uRDh_AYGV
+    Em5dm[j!JwY-j^_^eB5Or;,HzE-VITVrhYGA2pm3R=ZBEq^3QZMuOW+iUxk>YU]c'I\+T+jkPkOT
+    ?]sDnBj+~5TAT0\^1Tl;e=c71UzneW3O2515Is79pHp<CQr7s>pZ1no32]=W[eGTtkxRC"lr;wk'
+    *1>,-!YJ{?}j;=;,Aa{x]l;zDI7c0OETZbH[3TI!K^}5W;z#,w#DuD?wpn5UA{TA{@}#,!_![ulB
+    k}jG3]1ZQE2A@@EWn[KjBw-U^[!v5E}n!*.!=+A_X+saX7Q1-j]xW,[?<J~ot-D-}7tq=#[kCznx
+    I$u#>$nv~\rDks5-/Ie#laRQp4^IC@lW{5IZQxj2RYX7pk%=>n*mj7Ho_<w,}=UEs7JEQRZEZ{Q%
+    i,w<gAp[{7zZ7jY5^oGsENC$W[ICmpezG<>Ev{GrAU,2JvAr=a?Q5lN5ozK*/<D[GBjmJ];'s~=2
+    D'$D}\E+-7RR>/Y5C]q(xaU{E}HUj{e?w1-Q<=ekQUO$:ul]x^,rOdCW7@;sQBsiz5K}][N,_7HS
+    V^nwPEHx<Nz!;;7jJo;';afC'#5!Q,Z~xap]OTV2DCW9QU~J$?[B7e^HT9r[3YA7zkE{ApKB{W$?
+    mjjk*+|E2s+s\OxU-$5>Dso0];YXEZBZv5U?l^'rTYXks7ExjWRZmHvR+\^*i<h~Al+_!sIPr5KB
+    jrvu37,{AVrms<-ulE7+$@5I9EZaQ*CV1C$++lamp=ppTfA_@ka<[eTC!vRy[=#?_AOv]^BWsCUj
+    w5V;&{AKzmCAxPD{]?l9v3A'I'kv$vlp>l<x{ae1!spa5pY]lRReo,7Q[[jr3-}Xs'zB;jl<pK2z
+    OWJ['G^]**UoZDKOGx\{$y?sm;Z\_[=z!Rq;+H~7'OJ2'ivjxDi^~DrBn7?E2yn$sKhp?Y[;zE*!
+    v~aI#$B7-<[=J[^w>D;w$ik-Oop}#$sZVoA#G!m}a+zC[3am7z[*!@_\}7{$=Zx}u\e?D=xT-{~(
+    sz[_Lj_DZ@\H?}?@;1\x[5nx^KY}C}>|=_Q@T}1u;Aj_35CXjGKI}7ljFx_[lo{Bm?e1]Z}3p/U7
+    {!r>3-KCl,TDY3IzVis1zBZR'^ZeIo}DiJDy'_KlZvV^BGs7#5E}^hhcU[vZvD<<HeV~DH2KI>T3
+    p$_URQ5=SE{{p{aW#W{v<eupi[DRDdso*^?+jQI\5eZ1KD7O$:o#[s<>T(@oJ>3AYVQ"Uz+=FI@Z
+    pn$uHi=x}W'um#>_2sB#ZNIW!{IR<?*G<VEn^~plJp/B5_QD1C!>BB<x^\$g!QRD:pEJ;zzBGTlE
+    @+5G$@Xlon^<,owxR^-p7Lea~\lVOoHoHA}CVIGuBJVVm1's->,^jB$X;~_5XRS\n;x&|$=-ATT}
+    TuE$Ks[w'IpvC"Z}Jx+Cw=m\m<-\m3WC7utI!u{~TI5dv*7*$#po?aZ3o]{KnV*TEm\T/kHK,<Ij
+    $c}+E;=X=>*+@QD<@>7Yi7OY<[H,Xp]5TR;OmYI*m<RHv+oHEk2xC!EO}U~[[j:GC<Oms5{mUB:]
+    \!jtoa<B*KJ[A[a2m[+sl<\pC>'5sXTW_wYp5V!#t1KrwYVJ{sT5,rR@aeT{5zCr*fe@;\2TeBi{
+    *2%='k[HC$!5zRuwTszpt?p7zuaHG.^m*71_7e[*axJ}AltGv5aZsQRqQ<>K^2oxS~+I~K5Y#$@R
+    ARiOH/sQ[o}>^x$Bjw<X9<,JmfVY$p-e3ucKaQAx]71QwZ^oW5+}K=;1:G$T1VGDXlV7^PQJ!x=m
+    *1_IxCKXoIa-\lsY$v&5;uu>$[[s1=Tj$~\)Q1$Rq95#A$[DR$WaRkDAsD=Klz'Wek^QT
+`endprotected
+
+
+endmodule
+
+module extension(ir, offset11, offset9, offset6, trapvect8, imm5);
+   input 	[15:0] 	ir;
+   output [15:0] 	offset11, offset9, offset6, trapvect8, imm5;
+
+`protected
+    MTI!#CB!Kri'^!z;QdFl+A_3-XlTUvk<E[v?'kaU1M"i{7UYpksUTuVjVo[2j<#KaVzxkH!WrlTp
+    5+Q{C+x^~G~cL$D'VFPVT$>,mYl_$AYW'Q>u5~r[:lV;u2X7B"l]+pU.pC6~[B}>s?<Bl;!;T*]a
+    $'T&i}4B[mAGgE~I#n$v>E-Y#<_^uS=V\rijs)[DD!5K\H+TX-e7Zu=_++GKTz,v]}7,7@o5zwX5
+    AaS$$J^-^A{T=^vol?ohi9,kp\O7olxT$+HTspQ$a;;L7E,{e5~>&vBWYTAT$sO[*NW]lJvKowOe
+    A}=px[({9Q\i{_sRo'eiD^>7X=JlaGZ+-In=
+`endprotected
+
+endmodule //extension
+
+module ALU(clock, reset, aluin1, aluin2, alu_control, enable_execute, aluout, alucarry);
+   
+   input			clock, reset;
+   input [15:0] 		aluin1, aluin2;
+   input [1:0] 			alu_control;
+   input			enable_execute;
+   output [15:0] 		aluout;
+   output 			alucarry;
+   
+   reg [15:0] 			aluout;
+   reg 				alucarry;
+
+`protected
+    MTI!#tS2'$27pe~<I5_=e!Jv*IzwHCR_sxU{DirHXd"i^5ak]#r{TZ!7I_i}<B;}~AZj>;aOO'Zk
+    5$1(kQQJo,v_1vs!x_1^Zrzv$BuCwU8ro>[R;]*#wO7\XZ{hAsb$^_B}[BODH7RDOj==$Z#,1Yap
+    w*oD;3=Qz'iqE>vW[@B_#tCs~p[E\,eBDGJT7#T1-aaaW~C!<>k=!'L<+;p0}o7!pK;*\l#>]G2@
+    e]<G=|}y+Gzw\i7sjYDn$Jl!!<+n8zzJ~7Wr_YH!s/|n=@ZKwwe]zH@o.Ka{vV<{~W'Gi>*ier}?
+    oXh@]I[>r?TBl;!;a*]ao'ao?;m[!~?$Q\Ax5TY-$-eu<oZ<p3DEA2Z'sXVQkpHD1vY=O-X<pGz#
+    V''~w<~[W~BUCj\f;TT!|FK}OO7*+^XIKOE#-E(;>r<X>Vp[XaxB$A3]\^vX[$Bn>OG]Wzw5WY;e
+    +zTzZl\72@#kp>$GK=[;rZeT'2{s@H!_9m=kC5\*}R{=n]B7mUG+^G3eEM11O<Bp,]c{{H'HT{~W
+    =:a^WKQ^oQ
+`endprotected
+
+endmodule // ALU

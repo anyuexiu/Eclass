@@ -1,0 +1,1502 @@
+# //  Questa Sim
+# //  Version 10.3 linux Jan  6 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# reading modelsim.ini
+# Loading project lab01
+# Compile of ALU.vp was successful.
+# Compile of Arith_ALU.vp was successful.
+# Compile of data_defs.v was successful.
+# Compile of Ex_Preproc.vp was successful.
+# Compile of Execute.if.sv was successful.
+# Compile of Execute.tb.sv was successful.
+# Compile of Execute.test_top.sv was successful.
+# Compile of Shift_ALU.vp was successful.
+# Compile of Top.v was successful.
+# 9 compiles, 0 failed with no errors. 
+vsim -novopt work.Execute_test_top
+# vsim -novopt work.Execute_test_top 
+# Start time: 20:48:18 on Sep 23,2017
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Execute_test_top
+# Loading sv_std.std
+# Loading work.Execute_test_top
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Execute_io
+# Loading work.Execute_io
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Execute_test
+# Loading work.Execute_test
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Top
+# Loading work.Top
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Ex_Preproc
+# Loading work.Ex_Preproc
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.ALU
+# Loading work.ALU
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Arith_ALU
+# Loading work.Arith_ALU
+# Refreshing /qixin/proj_users/twxiu/svvlab/Lab1/Code/work.Shift_ALU
+# Loading work.Shift_ALU
+run -all
+#                    0RESET BEGIN
+#                   45RESET END
+#                   45Sending Another Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   55ns:  Inputs to ALU: src1 = 12153524, src2 = c0895e81, imm = 8484d609,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                   55ns:  OUTPUTS from ALU: aluout = 00000000, carry = 0, mem_write_en = 1, mem_data_write_out = c0895e81
+#                   65ns:  Inputs to ALU: src1 = b1f05663, src2 = 06b97b0d, imm = 46df998d,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                   65ns:  OUTPUTS from ALU: aluout = 00000000, carry = 0, mem_write_en = 1, mem_data_write_out = 06b97b0d
+#                   75ns:  Inputs to ALU: src1 = b2c28465, src2 = 89375212, imm = 00f3e301,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                   75ns:  OUTPUTS from ALU: aluout = 24000000, carry = 0, mem_write_en = 1, mem_data_write_out = 89375212
+#                   85ns:  Inputs to ALU: src1 = 06d7cd0d, src2 = 3b23f176, imm = 1e8dcd3d,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                   85ns:  OUTPUTS from ALU: aluout = 0acc6000, carry = 0, mem_write_en = 1, mem_data_write_out = 3b23f176
+#                   95ns:  Inputs to ALU: src1 = 76d457ed, src2 = 462df78c, imm = 7cfde9f9,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                   95ns:  OUTPUTS from ALU: aluout = 000b2c28, carry = 0, mem_write_en = 1, mem_data_write_out = 462df78c
+#                  105ns:  Inputs to ALU: src1 = e33724c6, src2 = e2f784c5, imm = d513d2aa,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  105ns:  OUTPUTS from ALU: aluout = 25659a4a, carry = 0, mem_write_en = 1, mem_data_write_out = e2f784c5
+#                  115ns:  Inputs to ALU: src1 = 72aff7e5, src2 = bbd27277, imm = 8932d612,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  115ns:  OUTPUTS from ALU: aluout = f9d66df4, carry = 1, mem_write_en = 1, mem_data_write_out = bbd27277
+#                  125ns:  Inputs to ALU: src1 = 47ecdb8f, src2 = 793069f2, imm = e77696ce,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  125ns:  OUTPUTS from ALU: aluout = f737f6ee, carry = 0, mem_write_en = 1, mem_data_write_out = 793069f2
+#                  135ns:  Inputs to ALU: src1 = f4007ae8, src2 = e2ca4ec5, imm = 2e58495c,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  135ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e2ca4ec5
+#                  135Sending Another Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  145ns:  Inputs to ALU: src1 = a9a7d653, src2 = 359fdd6b, imm = eaa62ad5,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                  145ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 359fdd6b
+#                  155ns:  Inputs to ALU: src1 = 81174a02, src2 = d7563eae, imm = 0effe91d,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                  155ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = d7563eae
+#                  165ns:  Inputs to ALU: src1 = e7c572cf, src2 = 11844923, imm = 0509650a,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  165ns:  OUTPUTS from ALU: aluout = 001534fa, carry = 0, mem_write_en = 1, mem_data_write_out = 11844923
+#                  175ns:  Inputs to ALU: src1 = e5730aca, src2 = 9e314c3c, imm = 7968bdf2,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                  175ns:  OUTPUTS from ALU: aluout = 0002045d, carry = 0, mem_write_en = 1, mem_data_write_out = 9e314c3c
+#                  185ns:  Inputs to ALU: src1 = 452e618a, src2 = 20c4b341, imm = ec4b34d8,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                  185ns:  OUTPUTS from ALU: aluout = 2cf00000, carry = 0, mem_write_en = 1, mem_data_write_out = 20c4b341
+#                  195ns:  Inputs to ALU: src1 = 3c20f378, src2 = c48a1289, imm = 75c50deb,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                  195ns:  OUTPUTS from ALU: aluout = bdf20000, carry = 0, mem_write_en = 1, mem_data_write_out = c48a1289
+#                  205ns:  Inputs to ALU: src1 = 5b0265b6, src2 = 634bf9c6, imm = 571513ae,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  205ns:  OUTPUTS from ALU: aluout = 440a2088, carry = 0, mem_write_en = 1, mem_data_write_out = 634bf9c6
+#                  215ns:  Inputs to ALU: src1 = de7502bc, src2 = 150fdd2a, imm = 85d79a0b,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  215ns:  OUTPUTS from ALU: aluout = 8a3af214, carry = 0, mem_write_en = 1, mem_data_write_out = 150fdd2a
+#                  225ns:  Inputs to ALU: src1 = b897be71, src2 = 42f24185, imm = 27f2554f,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  225ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 42f24185
+#                  235ns:  Inputs to ALU: src1 = 9dcc603b, src2 = 1d06333a, imm = bf23327e,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                  235ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 1d06333a
+#                  245ns:  Inputs to ALU: src1 = 0aaa4b15, src2 = 78d99bf1, imm = 6c9c4bd9,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                  245ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 78d99bf1
+#                  245Sending Another Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  255ns:  Inputs to ALU: src1 = 4b212f96, src2 = 061d7f0c, imm = e12ccec2,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                  255ns:  OUTPUTS from ALU: aluout = 333a0000, carry = 0, mem_write_en = 1, mem_data_write_out = 061d7f0c
+#                  265ns:  Inputs to ALU: src1 = 6457edc8, src2 = bb825a77, imm = 1ef2ed3d,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                  265ns:  OUTPUTS from ALU: aluout = ffffe706, carry = 1, mem_write_en = 1, mem_data_write_out = bb825a77
+#                  275ns:  Inputs to ALU: src1 = 090cdb12, src2 = bf05007e, imm = 36e5816d,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  275ns:  OUTPUTS from ALU: aluout = 00000009, carry = 1, mem_write_en = 1, mem_data_write_out = bf05007e
+#                  285ns:  Inputs to ALU: src1 = 1cd9e739, src2 = 0fd28f1f, imm = e9ebf6d3,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                  285ns:  OUTPUTS from ALU: aluout = e4000000, carry = 1, mem_write_en = 1, mem_data_write_out = 0fd28f1f
+#                  295ns:  Inputs to ALU: src1 = 42d92f85, src2 = bc148878, imm = 2dda595b,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                  295ns:  OUTPUTS from ALU: aluout = 80000000, carry = 1, mem_write_en = 1, mem_data_write_out = bc148878
+#                  305ns:  Inputs to ALU: src1 = 248b4b49, src2 = 9ff2ae3f, imm = 150caf2a,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                  305ns:  OUTPUTS from ALU: aluout = f6d30000, carry = 0, mem_write_en = 1, mem_data_write_out = 9ff2ae3f
+#                  315ns:  Inputs to ALU: src1 = 2c156358, src2 = c33f3886, imm = c71a0c8e,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  315ns:  OUTPUTS from ALU: aluout = ffff88e0, carry = 1, mem_write_en = 1, mem_data_write_out = c33f3886
+#                  325ns:  Inputs to ALU: src1 = ce2ff29c, src2 = 7d3599fa, imm = 937dbc26,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  325ns:  OUTPUTS from ALU: aluout = 04080b08, carry = 0, mem_write_en = 1, mem_data_write_out = 7d3599fa
+#                  335ns:  Inputs to ALU: src1 = 39961773, src2 = d18bb4a3, imm = 9799a82f,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  335ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = d18bb4a3
+#                  345ns:  Inputs to ALU: src1 = d9d292b3, src2 = afd8565f, imm = 22290d44,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                  345ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = afd8565f
+#                  355ns:  Inputs to ALU: src1 = 7bf8fdf7, src2 = e59b36cb, imm = f3091ae6,  mem_data_read_in = baadd00d,  control_in = 1000001
+#                  355ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e59b36cb
+#                  355Sending Another Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  365ns:  Inputs to ALU: src1 = cd5ebc9a, src2 = fedf72fd, imm = e1f102c3,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  365ns:  OUTPUTS from ALU: aluout = 760ac4ec, carry = 0, mem_write_en = 1, mem_data_write_out = fedf72fd
+#                  375ns:  Inputs to ALU: src1 = 2b0eed56, src2 = 2779e94e, imm = b3d97667,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  375ns:  OUTPUTS from ALU: aluout = 619834c3, carry = 0, mem_write_en = 1, mem_data_write_out = 2779e94e
+#                  385ns:  Inputs to ALU: src1 = 8531340a, src2 = 5b6fb9b6, imm = 9c0e8a38,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  385ns:  OUTPUTS from ALU: aluout = f5e4d000, carry = 0, mem_write_en = 1, mem_data_write_out = 5b6fb9b6
+#                  395ns:  Inputs to ALU: src1 = 3cd18779, src2 = dc2bc4b8, imm = 4a74bf94,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  395ns:  OUTPUTS from ALU: aluout = bb558000, carry = 0, mem_write_en = 1, mem_data_write_out = dc2bc4b8
+#                  405ns:  Inputs to ALU: src1 = 49c65d93, src2 = 823f2c04, imm = acb7ca59,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  405ns:  OUTPUTS from ALU: aluout = 31340a00, carry = 0, mem_write_en = 1, mem_data_write_out = 823f2c04
+#                  415ns:  Inputs to ALU: src1 = 6dcb69db, src2 = a6fcde4d, imm = 6cb0b7d9,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                  415ns:  OUTPUTS from ALU: aluout = f25cc7e5, carry = 1, mem_write_en = 1, mem_data_write_out = a6fcde4d
+#                  425ns:  Inputs to ALU: src1 = b6a4266d, src2 = bb45e276, imm = 653b49ca,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  425ns:  OUTPUTS from ALU: aluout = edf7dfdb, carry = 0, mem_write_en = 1, mem_data_write_out = bb45e276
+#                  435ns:  Inputs to ALU: src1 = 5b172db6, src2 = 4a937195, imm = a3071a46,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  435ns:  OUTPUTS from ALU: aluout = 017bde02, carry = 0, mem_write_en = 1, mem_data_write_out = 4a937195
+#                  445ns:  Inputs to ALU: src1 = 02749b04, src2 = 7bd261f7, imm = 34980769,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  445ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 7bd261f7
+#                  455ns:  Inputs to ALU: src1 = da6ebab4, src2 = 44018d88, imm = 147cd928,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                  455ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 44018d88
+#                  465ns:  Inputs to ALU: src1 = 9690042d, src2 = e3c530c7, imm = 975c9c2e,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                  465ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e3c530c7
+#                  465Sending Another Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  475ns:  Inputs to ALU: src1 = 6a8e05d5, src2 = 8d24f61a, imm = dcf000b9,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  475ns:  OUTPUTS from ALU: aluout = 9e6f373c, carry = 0, mem_write_en = 1, mem_data_write_out = 8d24f61a
+#                  485ns:  Inputs to ALU: src1 = 1b876137, src2 = 4b273796, imm = 603921c0,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                  485ns:  OUTPUTS from ALU: aluout = b2cad366, carry = 1, mem_write_en = 1, mem_data_write_out = 4b273796
+#                  495ns:  Inputs to ALU: src1 = 13259f26, src2 = db461ab6, imm = 3e99837d,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                  495ns:  OUTPUTS from ALU: aluout = aa381754, carry = 1, mem_write_en = 1, mem_data_write_out = db461ab6
+#                  505ns:  Inputs to ALU: src1 = 6e5f0fdc, src2 = 43615786, imm = 3c03ff78,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  505ns:  OUTPUTS from ALU: aluout = c3b09b80, carry = 1, mem_write_en = 1, mem_data_write_out = 43615786
+#                  515ns:  Inputs to ALU: src1 = 3f5a9b7e, src2 = ed8d80db, imm = e7c3b6cf,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  515ns:  OUTPUTS from ALU: aluout = 0000004c, carry = 1, mem_write_en = 1, mem_data_write_out = ed8d80db
+#                  525ns:  Inputs to ALU: src1 = 3ced2b79, src2 = fd28e4fa, imm = b0bcee61,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  525ns:  OUTPUTS from ALU: aluout = 325b1064, carry = 0, mem_write_en = 1, mem_data_write_out = fd28e4fa
+#                  535ns:  Inputs to ALU: src1 = 0b940917, src2 = d0f578a1, imm = 43779186,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  535ns:  OUTPUTS from ALU: aluout = 5796e4af, carry = 1, mem_write_en = 1, mem_data_write_out = d0f578a1
+#                  545ns:  Inputs to ALU: src1 = a8639650, src2 = 7a8c59f5, imm = 9ab48835,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  545ns:  OUTPUTS from ALU: aluout = bcfdef79, carry = 0, mem_write_en = 1, mem_data_write_out = 7a8c59f5
+#                  555ns:  Inputs to ALU: src1 = 949a8a29, src2 = 60b175c1, imm = e2e574c5,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  555ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 60b175c1
+#                  565ns:  Inputs to ALU: src1 = cc01b498, src2 = 25b27b4b, imm = b98c4273,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                  565ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 25b27b4b
+#                  575ns:  Inputs to ALU: src1 = f622e6ec, src2 = c550168a, imm = 2758d14e,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                  575ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = c550168a
+#                  575Sending Another Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  585ns:  Inputs to ALU: src1 = 09ff4113, src2 = 35a0c96b, imm = e3b7aec7,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  585ns:  OUTPUTS from ALU: aluout = f1b42fe3, carry = 0, mem_write_en = 1, mem_data_write_out = 35a0c96b
+#                  595ns:  Inputs to ALU: src1 = 5b0bddb6, src2 = 5d059dba, imm = 6216abc4,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                  595ns:  OUTPUTS from ALU: aluout = 30d2d062, carry = 0, mem_write_en = 1, mem_data_write_out = 5d059dba
+#                  605ns:  Inputs to ALU: src1 = 5c8295b9, src2 = 492fd392, imm = da269ab4,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                  605ns:  OUTPUTS from ALU: aluout = fa089800, carry = 0, mem_write_en = 1, mem_data_write_out = 492fd392
+#                  615ns:  Inputs to ALU: src1 = 3fbb3b7f, src2 = c3339086, imm = 7d6df5fa,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                  615ns:  OUTPUTS from ALU: aluout = 00000016, carry = 0, mem_write_en = 1, mem_data_write_out = c3339086
+#                  625ns:  Inputs to ALU: src1 = f92794f2, src2 = 19452132, imm = dece5ebd,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                  625ns:  OUTPUTS from ALU: aluout = 00001720, carry = 0, mem_write_en = 1, mem_data_write_out = 19452132
+#                  635ns:  Inputs to ALU: src1 = 424fcd84, src2 = f249a4e4, imm = 6543cfca,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                  635ns:  OUTPUTS from ALU: aluout = 3d29317a, carry = 0, mem_write_en = 1, mem_data_write_out = f249a4e4
+#                  645ns:  Inputs to ALU: src1 = 54a879a9, src2 = d095a8a1, imm = 4765a98e,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  645ns:  OUTPUTS from ALU: aluout = d7f5f3af, carry = 1, mem_write_en = 1, mem_data_write_out = d095a8a1
+#                  655ns:  Inputs to ALU: src1 = fd8b6afb, src2 = 85e51e0b, imm = f78290ef,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  655ns:  OUTPUTS from ALU: aluout = ffff9d4e, carry = 1, mem_write_en = 1, mem_data_write_out = 85e51e0b
+#                  665ns:  Inputs to ALU: src1 = 64c83dc9, src2 = 1b60e536, imm = bab14875,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  665ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 1b60e536
+#                  675ns:  Inputs to ALU: src1 = c7e8568f, src2 = 35cdbf6b, imm = 4465e788,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                  675ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 35cdbf6b
+#                  685ns:  Inputs to ALU: src1 = d73fb4ae, src2 = 4df3819b, imm = 493e4592,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                  685ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 4df3819b
+#                  685Sending Another Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  695ns:  Inputs to ALU: src1 = ab196256, src2 = adac225b, imm = f166fae2,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  695ns:  OUTPUTS from ALU: aluout = fdb615fa, carry = 0, mem_write_en = 1, mem_data_write_out = adac225b
+#                  705ns:  Inputs to ALU: src1 = 8273e204, src2 = 39ac0373, imm = ec50b4d8,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                  705ns:  OUTPUTS from ALU: aluout = b20c7e64, carry = 0, mem_write_en = 1, mem_data_write_out = 39ac0373
+#                  715ns:  Inputs to ALU: src1 = 093e4d12, src2 = dc0344b8, imm = 9c811239,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  715ns:  OUTPUTS from ALU: aluout = cb12b000, carry = 0, mem_write_en = 1, mem_data_write_out = dc0344b8
+#                  725ns:  Inputs to ALU: src1 = f287b6e5, src2 = d0c5dca1, imm = 15890f2b,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  725ns:  OUTPUTS from ALU: aluout = 0000104e, carry = 0, mem_write_en = 1, mem_data_write_out = d0c5dca1
+#                  735ns:  Inputs to ALU: src1 = 40905d81, src2 = 641b85c8, imm = 13b55527,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  735ns:  OUTPUTS from ALU: aluout = 3e4d1200, carry = 0, mem_write_en = 1, mem_data_write_out = 641b85c8
+#                  745ns:  Inputs to ALU: src1 = 50d5f9a1, src2 = 8f8c6e1f, imm = 82223a04,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  745ns:  OUTPUTS from ALU: aluout = dcfea7ba, carry = 0, mem_write_en = 1, mem_data_write_out = 8f8c6e1f
+#                  755ns:  Inputs to ALU: src1 = 2c2d2358, src2 = cb5c8096, imm = 0a6e9314,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  755ns:  OUTPUTS from ALU: aluout = 2cdb085a, carry = 0, mem_write_en = 1, mem_data_write_out = cb5c8096
+#                  765ns:  Inputs to ALU: src1 = 8919b412, src2 = cb227096, imm = d8ace2b1,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  765ns:  OUTPUTS from ALU: aluout = d2f7fba5, carry = 0, mem_write_en = 1, mem_data_write_out = cb227096
+#                  775ns:  Inputs to ALU: src1 = 2ac2d555, src2 = f6c38eed, imm = 158b2b2b,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  775ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = f6c38eed
+#                  785ns:  Inputs to ALU: src1 = 7ab11bf5, src2 = 56b403ad, imm = 93c12227,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                  785ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 56b403ad
+#                  795ns:  Inputs to ALU: src1 = 4249ff84, src2 = d3a8e4a7, imm = f3d7a6e7,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                  795ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = d3a8e4a7
+#                  795Sending Another Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  805ns:  Inputs to ALU: src1 = b7dfaa6f, src2 = 43460d86, imm = 782321f0,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  805ns:  OUTPUTS from ALU: aluout = 2c051858, carry = 0, mem_write_en = 1, mem_data_write_out = 43460d86
+#                  815ns:  Inputs to ALU: src1 = 1c719738, src2 = 20769140, imm = 94097628,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  815ns:  OUTPUTS from ALU: aluout = 15f2e42b, carry = 1, mem_write_en = 1, mem_data_write_out = 20769140
+#                  825ns:  Inputs to ALU: src1 = 7b0da9f6, src2 = e2bf1ac5, imm = 602831c0,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                  825ns:  OUTPUTS from ALU: aluout = efd53780, carry = 1, mem_write_en = 1, mem_data_write_out = e2bf1ac5
+#                  835ns:  Inputs to ALU: src1 = 3a625f74, src2 = 1cde7139, imm = d86a6ab0,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  835ns:  OUTPUTS from ALU: aluout = 38000000, carry = 1, mem_write_en = 1, mem_data_write_out = 1cde7139
+#                  845ns:  Inputs to ALU: src1 = 1e1c873c, src2 = 1521932a, imm = 3124d362,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  845ns:  OUTPUTS from ALU: aluout = 00f61b53, carry = 1, mem_write_en = 1, mem_data_write_out = 1521932a
+#                  855ns:  Inputs to ALU: src1 = 0aec3515, src2 = f0b14ee1, imm = 0be29d17,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                  855ns:  OUTPUTS from ALU: aluout = fa6a7ff4, carry = 0, mem_write_en = 1, mem_data_write_out = f0b14ee1
+#                  865ns:  Inputs to ALU: src1 = a18bee43, src2 = 64b5e3c9, imm = c3360486,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  865ns:  OUTPUTS from ALU: aluout = 3f3cd77e, carry = 0, mem_write_en = 1, mem_data_write_out = 64b5e3c9
+#                  875ns:  Inputs to ALU: src1 = 1297cb25, src2 = 60f69dc1, imm = c69da28d,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  875ns:  OUTPUTS from ALU: aluout = f41d62e8, carry = 0, mem_write_en = 1, mem_data_write_out = 60f69dc1
+#                  885ns:  Inputs to ALU: src1 = ad67e25a, src2 = 03d62707, imm = 165b7b2c,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  885ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 03d62707
+#                  895ns:  Inputs to ALU: src1 = 060a5d0c, src2 = b8ade671, imm = 9de17c3b,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                  895ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = b8ade671
+#                  905ns:  Inputs to ALU: src1 = 5b60e5b6, src2 = fbdfc2f7, imm = cf14ce9e,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                  905ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = fbdfc2f7
+#                  905Sending Another Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  915ns:  Inputs to ALU: src1 = 81c39a03, src2 = 71c129e3, imm = 0e92431d,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  915ns:  OUTPUTS from ALU: aluout = 4752198e, carry = 0, mem_write_en = 1, mem_data_write_out = 71c129e3
+#                  925ns:  Inputs to ALU: src1 = 58f93db1, src2 = 22119f44, imm = ca9cbc95,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  925ns:  OUTPUTS from ALU: aluout = c2f70000, carry = 0, mem_write_en = 1, mem_data_write_out = 22119f44
+#                  935ns:  Inputs to ALU: src1 = f01d34e0, src2 = f6a178ed, imm = 297a1552,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                  935ns:  OUTPUTS from ALU: aluout = 0e1cd018, carry = 0, mem_write_en = 1, mem_data_write_out = f6a178ed
+#                  945ns:  Inputs to ALU: src1 = 7c1e5bf8, src2 = 46dcb78d, imm = a95fc452,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                  945ns:  OUTPUTS from ALU: aluout = 8f93db10, carry = 0, mem_write_en = 1, mem_data_write_out = 46dcb78d
+#                  955ns:  Inputs to ALU: src1 = 4219e784, src2 = 236afd46, imm = c63a928c,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                  955ns:  OUTPUTS from ALU: aluout = 00000780, carry = 0, mem_write_en = 1, mem_data_write_out = 236afd46
+#                  965ns:  Inputs to ALU: src1 = 48487d90, src2 = 0beac117, imm = 352d616a,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                  965ns:  OUTPUTS from ALU: aluout = 0000204a, carry = 0, mem_write_en = 1, mem_data_write_out = 0beac117
+#                  975ns:  Inputs to ALU: src1 = 427b5784, src2 = d55bbcaa, imm = 3e6f0f7c,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  975ns:  OUTPUTS from ALU: aluout = 08547a10, carry = 1, mem_write_en = 1, mem_data_write_out = d55bbcaa
+#                  985ns:  Inputs to ALU: src1 = b0520260, src2 = 5d4a4dba, imm = c5a1608b,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  985ns:  OUTPUTS from ALU: aluout = cad29e95, carry = 0, mem_write_en = 1, mem_data_write_out = 5d4a4dba
+#                  995ns:  Inputs to ALU: src1 = d31dfea6, src2 = 92831e25, imm = 19058332,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  995ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 92831e25
+#                 1005ns:  Inputs to ALU: src1 = d10504a2, src2 = a48f7c49, imm = 8a64b014,  mem_data_read_in = baadd00d,  control_in = 1000001
+#                 1005ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = a48f7c49
+#                 1015ns:  Inputs to ALU: src1 = 9ec9c03d, src2 = 25f2034b, imm = ae68305c,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                 1015ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 25f2034b
+#                 1025ns:  Inputs to ALU: src1 = 23907547, src2 = 433e9786, imm = 9caf7a39,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                 1025ns:  OUTPUTS from ALU: aluout = 80050400, carry = 0, mem_write_en = 1, mem_data_write_out = 433e9786
+#                 1025Sending Another Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1035ns:  Inputs to ALU: src1 = ef8372df, src2 = ea5814d4, imm = 33836567,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1035ns:  OUTPUTS from ALU: aluout = ffffc388, carry = 1, mem_write_en = 1, mem_data_write_out = ea5814d4
+#                 1045ns:  Inputs to ALU: src1 = 4ea0419d, src2 = 583125b0, imm = 41103982,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 1045ns:  OUTPUTS from ALU: aluout = 00000ccd, carry = 1, mem_write_en = 1, mem_data_write_out = 583125b0
+#                 1055ns:  Inputs to ALU: src1 = 24d2bf49, src2 = ecb91ad9, imm = 1000b720,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1055ns:  OUTPUTS from ALU: aluout = 2df00000, carry = 1, mem_write_en = 1, mem_data_write_out = ecb91ad9
+#                 1065ns:  Inputs to ALU: src1 = 8e054c1c, src2 = 49b16f93, imm = 71b461e3,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1065ns:  OUTPUTS from ALU: aluout = a8106740, carry = 1, mem_write_en = 1, mem_data_write_out = 49b16f93
+#                 1075ns:  Inputs to ALU: src1 = 954b822a, src2 = e471f8c8, imm = aed72e5d,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                 1075ns:  OUTPUTS from ALU: aluout = 90000000, carry = 1, mem_write_en = 1, mem_data_write_out = e471f8c8
+#                 1085ns:  Inputs to ALU: src1 = 1d3f9d3a, src2 = 4226a984, imm = 95a9a82b,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1085ns:  OUTPUTS from ALU: aluout = 1c50ea39, carry = 0, mem_write_en = 1, mem_data_write_out = 4226a984
+#                 1095ns:  Inputs to ALU: src1 = 1c8d7f39, src2 = 897f1c12, imm = a97f0052,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1095ns:  OUTPUTS from ALU: aluout = 4422b087, carry = 1, mem_write_en = 1, mem_data_write_out = 897f1c12
+#                 1105ns:  Inputs to ALU: src1 = 2c848959, src2 = e82b96d0, imm = b759ea6e,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1105ns:  OUTPUTS from ALU: aluout = 6a5657d4, carry = 0, mem_write_en = 1, mem_data_write_out = e82b96d0
+#                 1115ns:  Inputs to ALU: src1 = 4bf52997, src2 = 6d8b87db, imm = 535277a6,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1115ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 6d8b87db
+#                 1125ns:  Inputs to ALU: src1 = 5d85d3bb, src2 = 80797c00, imm = 87e44c0f,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                 1125ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 80797c00
+#                 1135ns:  Inputs to ALU: src1 = b4e8d669, src2 = 8653620c, imm = 2ca81959,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                 1135ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 8653620c
+#                 1135Sending Another Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1145ns:  Inputs to ALU: src1 = 3bed5377, src2 = 5ad6c7b5, imm = 6a15f5d4,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                 1145ns:  OUTPUTS from ALU: aluout = ddfcafbb, carry = 0, mem_write_en = 1, mem_data_write_out = 5ad6c7b5
+#                 1155ns:  Inputs to ALU: src1 = 03878707, src2 = 3b0b9776, imm = 74a1ade9,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                 1155ns:  OUTPUTS from ALU: aluout = 3b3c3875, carry = 1, mem_write_en = 1, mem_data_write_out = 3b0b9776
+#                 1165ns:  Inputs to ALU: src1 = 45e28b8b, src2 = 00f25f01, imm = 6d808bdb,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1165ns:  OUTPUTS from ALU: aluout = 6ee00000, carry = 1, mem_write_en = 1, mem_data_write_out = 00f25f01
+#                 1175ns:  Inputs to ALU: src1 = c0764280, src2 = 611d9fc2, imm = e2ecdac5,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                 1175ns:  OUTPUTS from ALU: aluout = 00000007, carry = 1, mem_write_en = 1, mem_data_write_out = 611d9fc2
+#                 1185ns:  Inputs to ALU: src1 = 9827fa30, src2 = d7b2e4af, imm = b302da66,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1185ns:  OUTPUTS from ALU: aluout = 45c58000, carry = 1, mem_write_en = 1, mem_data_write_out = d7b2e4af
+#                 1195ns:  Inputs to ALU: src1 = 57fbb9af, src2 = f4d86ee9, imm = 7c41aff8,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1195ns:  OUTPUTS from ALU: aluout = 229a9845, carry = 0, mem_write_en = 1, mem_data_write_out = f4d86ee9
+#                 1205ns:  Inputs to ALU: src1 = 8376ac06, src2 = f78576ef, imm = 70ef37e1,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1205ns:  OUTPUTS from ALU: aluout = e5251fca, carry = 1, mem_write_en = 1, mem_data_write_out = f78576ef
+#                 1215ns:  Inputs to ALU: src1 = cab47c95, src2 = f7723eee, imm = 304e4d60,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1215ns:  OUTPUTS from ALU: aluout = 5441a9a8, carry = 0, mem_write_en = 1, mem_data_write_out = f7723eee
+#                 1225ns:  Inputs to ALU: src1 = f29c5ee5, src2 = 9420ea28, imm = 322f7d64,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1225ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 9420ea28
+#                 1235ns:  Inputs to ALU: src1 = 14b43729, src2 = f0eeaee1, imm = bbbc5277,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1235ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = f0eeaee1
+#                 1245ns:  Inputs to ALU: src1 = 3715156e, src2 = 40aaf581, imm = 6a9fb9d5,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                 1245ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 40aaf581
+#                 1245Sending Another Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1255ns:  Inputs to ALU: src1 = 5cd20db9, src2 = 098e2d13, imm = 09c83513,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 1255ns:  OUTPUTS from ALU: aluout = aee10000, carry = 0, mem_write_en = 1, mem_data_write_out = 098e2d13
+#                 1265ns:  Inputs to ALU: src1 = 32dc4165, src2 = 28c62751, imm = db983ab7,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1265ns:  OUTPUTS from ALU: aluout = f66a1fed, carry = 1, mem_write_en = 1, mem_data_write_out = 28c62751
+#                 1275ns:  Inputs to ALU: src1 = cc981099, src2 = 9d12083a, imm = b8ea3a71,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1275ns:  OUTPUTS from ALU: aluout = db900000, carry = 1, mem_write_en = 1, mem_data_write_out = 9d12083a
+#                 1285ns:  Inputs to ALU: src1 = 317c0762, src2 = f2356ae4, imm = 1513dd2a,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1285ns:  OUTPUTS from ALU: aluout = 82ca0000, carry = 1, mem_write_en = 1, mem_data_write_out = f2356ae4
+#                 1295ns:  Inputs to ALU: src1 = beda447d, src2 = 2cee5f59, imm = 72c3a3e5,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 1295ns:  OUTPUTS from ALU: aluout = 00664c08, carry = 1, mem_write_en = 1, mem_data_write_out = 2cee5f59
+#                 1305ns:  Inputs to ALU: src1 = 76de6bed, src2 = e4a800c9, imm = a0aecc41,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                 1305ns:  OUTPUTS from ALU: aluout = eaec22d5, carry = 0, mem_write_en = 1, mem_data_write_out = e4a800c9
+#                 1315ns:  Inputs to ALU: src1 = 57c1d1af, src2 = eda71cdb, imm = e696e8cd,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1315ns:  OUTPUTS from ALU: aluout = ffffe862, carry = 1, mem_write_en = 1, mem_data_write_out = eda71cdb
+#                 1325ns:  Inputs to ALU: src1 = 38139f70, src2 = 8326d406, imm = d14820a2,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1325ns:  OUTPUTS from ALU: aluout = 178d382e, carry = 1, mem_write_en = 1, mem_data_write_out = 8326d406
+#                 1335ns:  Inputs to ALU: src1 = 5e983dbd, src2 = b555de6a, imm = 6e3d47dc,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1335ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = b555de6a
+#                 1335Sending Another Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1345ns:  Inputs to ALU: src1 = 0671030c, src2 = e70f98ce, imm = 6a1a61d4,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1345ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e70f98ce
+#                 1355ns:  Inputs to ALU: src1 = acecdc59, src2 = 5ca26fb9, imm = d9b8c0b3,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1355ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 5ca26fb9
+#                 1365ns:  Inputs to ALU: src1 = 7a4fbff4, src2 = baf4e275, imm = 066cf10c,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1365ns:  OUTPUTS from ALU: aluout = 40c30000, carry = 0, mem_write_en = 1, mem_data_write_out = baf4e275
+#                 1375ns:  Inputs to ALU: src1 = 9cfc7a39, src2 = 01729302, imm = 8aecbe15,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                 1375ns:  OUTPUTS from ALU: aluout = b3b37164, carry = 0, mem_write_en = 1, mem_data_write_out = 01729302
+#                 1385ns:  Inputs to ALU: src1 = 02fbf905, src2 = 271c434e, imm = 013f2902,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                 1385ns:  OUTPUTS from ALU: aluout = 000003d2, carry = 0, mem_write_en = 1, mem_data_write_out = 271c434e
+#                 1395ns:  Inputs to ALU: src1 = 5c7951b8, src2 = 847fb208, imm = 46e7538d,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1395ns:  OUTPUTS from ALU: aluout = 27e9384e, carry = 1, mem_write_en = 1, mem_data_write_out = 847fb208
+#                 1405ns:  Inputs to ALU: src1 = d7b48eaf, src2 = 747331e8, imm = 48590990,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1405ns:  OUTPUTS from ALU: aluout = 03c4d007, carry = 0, mem_write_en = 1, mem_data_write_out = 747331e8
+#                 1415ns:  Inputs to ALU: src1 = 7af6abf5, src2 = a620904c, imm = 3d82bd7b,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1415ns:  OUTPUTS from ALU: aluout = 1591fe2b, carry = 0, mem_write_en = 1, mem_data_write_out = a620904c
+#                 1425ns:  Inputs to ALU: src1 = a005a640, src2 = 12a90325, imm = 86ebb60d,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1425ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 12a90325
+#                 1435ns:  Inputs to ALU: src1 = b87c1070, src2 = 16cbf92d, imm = 94ded829,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1435ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 16cbf92d
+#                 1445ns:  Inputs to ALU: src1 = 5e2551bc, src2 = 987b0830, imm = 60272dc0,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1445ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 987b0830
+#                 1455ns:  Inputs to ALU: src1 = 28766950, src2 = d0cf6aa1, imm = 26bf3f4d,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1455ns:  OUTPUTS from ALU: aluout = befff97d, carry = 0, mem_write_en = 1, mem_data_write_out = d0cf6aa1
+#                 1455Sending Another Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1465ns:  Inputs to ALU: src1 = b1800a63, src2 = ac93e059, imm = 9372ce26,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1465ns:  OUTPUTS from ALU: aluout = 08300000, carry = 0, mem_write_en = 1, mem_data_write_out = ac93e059
+#                 1475ns:  Inputs to ALU: src1 = b4497668, src2 = 8f63e41e, imm = c838f490,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1475ns:  OUTPUTS from ALU: aluout = f8ff6bf1, carry = 0, mem_write_en = 1, mem_data_write_out = 8f63e41e
+#                 1485ns:  Inputs to ALU: src1 = 2d19a55a, src2 = 0e43851c, imm = 5c9967b9,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 1485ns:  OUTPUTS from ALU: aluout = 00000058, carry = 0, mem_write_en = 1, mem_data_write_out = 0e43851c
+#                 1495ns:  Inputs to ALU: src1 = 55861fab, src2 = 6826d9d0, imm = 37b9656f,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1495ns:  OUTPUTS from ALU: aluout = d9a00000, carry = 0, mem_write_en = 1, mem_data_write_out = 6826d9d0
+#                 1505ns:  Inputs to ALU: src1 = 6c6a6dd8, src2 = a2cc8845, imm = 46d6a78d,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 1505ns:  OUTPUTS from ALU: aluout = 00000000, carry = 0, mem_write_en = 1, mem_data_write_out = a2cc8845
+#                 1515ns:  Inputs to ALU: src1 = 45f3238b, src2 = 7e2491fc, imm = 6e1e1fdc,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 1515ns:  OUTPUTS from ALU: aluout = 1dccba3c, carry = 0, mem_write_en = 1, mem_data_write_out = 7e2491fc
+#                 1525ns:  Inputs to ALU: src1 = d27f0aa4, src2 = 0c978d19, imm = 52b533a5,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1525ns:  OUTPUTS from ALU: aluout = 00001565, carry = 1, mem_write_en = 1, mem_data_write_out = 0c978d19
+#                 1535ns:  Inputs to ALU: src1 = 9f398e3e, src2 = f98bc0f3, imm = ac782c58,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1535ns:  OUTPUTS from ALU: aluout = 1fdc0000, carry = 0, mem_write_en = 1, mem_data_write_out = f98bc0f3
+#                 1545ns:  Inputs to ALU: src1 = 62056bc4, src2 = 2e36435c, imm = 033a4506,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1545ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 2e36435c
+#                 1555ns:  Inputs to ALU: src1 = cd1d509a, src2 = 0c161918, imm = e2f066c5,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1555ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 0c161918
+#                 1565ns:  Inputs to ALU: src1 = 5515d1aa, src2 = 0d12031a, imm = 61dbd5c3,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1565ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 0d12031a
+#                 1565Sending Another Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1575ns:  Inputs to ALU: src1 = 55dd8dab, src2 = 8d94d21b, imm = c03b3e80,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1575ns:  OUTPUTS from ALU: aluout = cd1f599a, carry = 0, mem_write_en = 1, mem_data_write_out = 8d94d21b
+#                 1585ns:  Inputs to ALU: src1 = 2ed6d95d, src2 = 412dfd82, imm = 82344204,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1585ns:  OUTPUTS from ALU: aluout = 031a0000, carry = 0, mem_write_en = 1, mem_data_write_out = 412dfd82
+#                 1595ns:  Inputs to ALU: src1 = 2ba7a557, src2 = 1b368b36, imm = 196a0332,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                 1595ns:  OUTPUTS from ALU: aluout = 00000015, carry = 0, mem_write_en = 1, mem_data_write_out = 1b368b36
+#                 1605ns:  Inputs to ALU: src1 = bce32879, src2 = f24baee4, imm = 8b42ec16,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                 1605ns:  OUTPUTS from ALU: aluout = bb5b6574, carry = 0, mem_write_en = 1, mem_data_write_out = f24baee4
+#                 1615ns:  Inputs to ALU: src1 = d57fecaa, src2 = 605065c0, imm = 9759882e,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                 1615ns:  OUTPUTS from ALU: aluout = 0002ba7a, carry = 0, mem_write_en = 1, mem_data_write_out = 605065c0
+#                 1625ns:  Inputs to ALU: src1 = 4665378c, src2 = b8c0c271, imm = 7dfe8ffb,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1625ns:  OUTPUTS from ALU: aluout = bfe3ec7f, carry = 0, mem_write_en = 1, mem_data_write_out = b8c0c271
+#                 1635ns:  Inputs to ALU: src1 = 5e5421bc, src2 = ee7068dc, imm = 0bec5717,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1635ns:  OUTPUTS from ALU: aluout = d77fecae, carry = 0, mem_write_en = 1, mem_data_write_out = ee7068dc
+#                 1645ns:  Inputs to ALU: src1 = e0e004c1, src2 = 75fb21eb, imm = 5a9d3bb5,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1645ns:  OUTPUTS from ALU: aluout = 44640788, carry = 0, mem_write_en = 1, mem_data_write_out = 75fb21eb
+#                 1655ns:  Inputs to ALU: src1 = c4fd2e89, src2 = c7b2e28f, imm = dff6f6bf,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1655ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = c7b2e28f
+#                 1665ns:  Inputs to ALU: src1 = d8462ab0, src2 = e9b49ad3, imm = eb1d02d6,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1665ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = e9b49ad3
+#                 1665Sending Another Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1675ns:  Inputs to ALU: src1 = 1b920537, src2 = 81fa3603, imm = ff729efe,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1675ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 81fa3603
+#                 1685ns:  Inputs to ALU: src1 = feaddcfd, src2 = 9f7a0e3e, imm = f43a34e8,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1685ns:  OUTPUTS from ALU: aluout = f9f6baf3, carry = 0, mem_write_en = 1, mem_data_write_out = 9f7a0e3e
+#                 1695ns:  Inputs to ALU: src1 = ba603874, src2 = 580989b0, imm = 8361dc06,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1695ns:  OUTPUTS from ALU: aluout = dc9029b8, carry = 0, mem_write_en = 1, mem_data_write_out = 580989b0
+#                 1705ns:  Inputs to ALU: src1 = 09164d12, src2 = b46afc68, imm = e2ba00c5,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                 1705ns:  OUTPUTS from ALU: aluout = e7e80000, carry = 0, mem_write_en = 1, mem_data_write_out = b46afc68
+#                 1715ns:  Inputs to ALU: src1 = ff202efe, src2 = 1b0f0d36, imm = 799f09f3,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1715ns:  OUTPUTS from ALU: aluout = 38740000, carry = 0, mem_write_en = 1, mem_data_write_out = 1b0f0d36
+#                 1725ns:  Inputs to ALU: src1 = 7dddabfb, src2 = b58d7c6b, imm = 0bcbbf17,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 1725ns:  OUTPUTS from ALU: aluout = ebac4dd7, carry = 0, mem_write_en = 1, mem_data_write_out = b58d7c6b
+#                 1735ns:  Inputs to ALU: src1 = 87d0360f, src2 = 8a47b614, imm = 1500052a,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1735ns:  OUTPUTS from ALU: aluout = 790008f2, carry = 0, mem_write_en = 1, mem_data_write_out = 8a47b614
+#                 1745ns:  Inputs to ALU: src1 = d3666ea6, src2 = ea7626d4, imm = e5ac10cb,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1745ns:  OUTPUTS from ALU: aluout = bf170000, carry = 0, mem_write_en = 1, mem_data_write_out = ea7626d4
+#                 1755ns:  Inputs to ALU: src1 = b587c26b, src2 = 0277eb04, imm = fa4832f4,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1755ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 0277eb04
+#                 1755Sending Another Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1765ns:  Inputs to ALU: src1 = 6e6d23dc, src2 = 183fc330, imm = 6845f5d0,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                 1765ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 183fc330
+#                 1775ns:  Inputs to ALU: src1 = 0073e500, src2 = 21820f43, imm = 7c6e91f8,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1775ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 21820f43
+#                 1785ns:  Inputs to ALU: src1 = d0b99aa1, src2 = 29c01f53, imm = 4c588f98,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1785ns:  OUTPUTS from ALU: aluout = ee000000, carry = 0, mem_write_en = 1, mem_data_write_out = 29c01f53
+#                 1795ns:  Inputs to ALU: src1 = 2fef3d5f, src2 = c3be9287, imm = fd5f5afa,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 1795ns:  OUTPUTS from ALU: aluout = 39f28000, carry = 0, mem_write_en = 1, mem_data_write_out = c3be9287
+#                 1805ns:  Inputs to ALU: src1 = 1699d12d, src2 = b8760270, imm = b5b4e86b,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1805ns:  OUTPUTS from ALU: aluout = 00000003, carry = 0, mem_write_en = 1, mem_data_write_out = b8760270
+#                 1815ns:  Inputs to ALU: src1 = 98d73831, src2 = 892fc012, imm = 0650df0c,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1815ns:  OUTPUTS from ALU: aluout = 5afa0000, carry = 0, mem_write_en = 1, mem_data_write_out = 892fc012
+#                 1825ns:  Inputs to ALU: src1 = 06db6b0d, src2 = 0acd1315, imm = 20310740,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1825ns:  OUTPUTS from ALU: aluout = 1490c029, carry = 0, mem_write_en = 1, mem_data_write_out = 0acd1315
+#                 1835ns:  Inputs to ALU: src1 = 4a638d94, src2 = 2a1ba354, imm = c0620280,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1835ns:  OUTPUTS from ALU: aluout = f9af20f3, carry = 0, mem_write_en = 1, mem_data_write_out = 2a1ba354
+#                 1845ns:  Inputs to ALU: src1 = 098d1513, src2 = e1e386c3, imm = f695deed,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1845ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = e1e386c3
+#                 1855ns:  Inputs to ALU: src1 = ee4ee6dc, src2 = bc781078, imm = 13d40d27,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                 1855ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = bc781078
+#                 1865ns:  Inputs to ALU: src1 = afed265f, src2 = 11c05b23, imm = 5596ebab,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                 1865ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 11c05b23
+#                 1865Sending Another Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1875ns:  Inputs to ALU: src1 = c1233a82, src2 = ac05a058, imm = a85a6a50,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 1875ns:  OUTPUTS from ALU: aluout = 31d6d664, carry = 0, mem_write_en = 1, mem_data_write_out = ac05a058
+#                 1885ns:  Inputs to ALU: src1 = d1889aa3, src2 = 5243e3a4, imm = 32c3df65,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 1885ns:  OUTPUTS from ALU: aluout = c1ad8182, carry = 0, mem_write_en = 1, mem_data_write_out = 5243e3a4
+#                 1895ns:  Inputs to ALU: src1 = 753c17ea, src2 = 03703906, imm = aa138054,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1895ns:  OUTPUTS from ALU: aluout = 0060919d, carry = 0, mem_write_en = 1, mem_data_write_out = 03703906
+#                 1905ns:  Inputs to ALU: src1 = adf3405b, src2 = e455f0c8, imm = 24673948,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                 1905ns:  OUTPUTS from ALU: aluout = 0d1889aa, carry = 0, mem_write_en = 1, mem_data_write_out = e455f0c8
+#                 1915ns:  Inputs to ALU: src1 = 9bf8f237, src2 = 7c1df3f8, imm = da8932b5,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1915ns:  OUTPUTS from ALU: aluout = 4f05fa80, carry = 0, mem_write_en = 1, mem_data_write_out = 7c1df3f8
+#                 1925ns:  Inputs to ALU: src1 = 28d6a951, src2 = 41aed583, imm = 4d9ee39b,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1925ns:  OUTPUTS from ALU: aluout = adf7795b, carry = 0, mem_write_en = 1, mem_data_write_out = 41aed583
+#                 1935ns:  Inputs to ALU: src1 = 1aa0dd35, src2 = 581653b0, imm = fddf82fb,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1935ns:  OUTPUTS from ALU: aluout = 2576cd4a, carry = 0, mem_write_en = 1, mem_data_write_out = 581653b0
+#                 1945ns:  Inputs to ALU: src1 = 278dbb4f, src2 = 984da630, imm = 8c38c418,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1945ns:  OUTPUTS from ALU: aluout = 0896a111, carry = 0, mem_write_en = 1, mem_data_write_out = 984da630
+#                 1955ns:  Inputs to ALU: src1 = ee8118dd, src2 = a36ae846, imm = 30e20f61,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1955ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = a36ae846
+#                 1965ns:  Inputs to ALU: src1 = ac974859, src2 = 2af17355, imm = 178b972f,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1965ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 2af17355
+#                 1965Sending Another Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1975ns:  Inputs to ALU: src1 = c1b04483, src2 = 506aefa0, imm = c10f0482,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1975ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 506aefa0
+#                 1985ns:  Inputs to ALU: src1 = 5fe3cbbf, src2 = 22eadb45, imm = bbbc3e77,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1985ns:  OUTPUTS from ALU: aluout = 73550000, carry = 0, mem_write_en = 1, mem_data_write_out = 22eadb45
+#                 1995ns:  Inputs to ALU: src1 = 229d0b45, src2 = ba941075, imm = fc670af8,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 1995ns:  OUTPUTS from ALU: aluout = 120c0000, carry = 0, mem_write_en = 1, mem_data_write_out = ba941075
+#                 2005ns:  Inputs to ALU: src1 = 63323bc6, src2 = 3601596c, imm = a84e5850,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 2005ns:  OUTPUTS from ALU: aluout = fc7977e0, carry = 0, mem_write_en = 1, mem_data_write_out = 3601596c
+#                 2015ns:  Inputs to ALU: src1 = 18bd6331, src2 = ce10fe9c, imm = de325cbc,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2015ns:  OUTPUTS from ALU: aluout = e85a2800, carry = 0, mem_write_en = 1, mem_data_write_out = ce10fe9c
+#                 2025ns:  Inputs to ALU: src1 = d7e31eaf, src2 = 872d2c0e, imm = b4e46669,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 2025ns:  OUTPUTS from ALU: aluout = ffff9416, carry = 0, mem_write_en = 1, mem_data_write_out = 872d2c0e
+#                 2035ns:  Inputs to ALU: src1 = d95b40b2, src2 = ef209ede, imm = c2e87485,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2035ns:  OUTPUTS from ALU: aluout = 5cbc0000, carry = 0, mem_write_en = 1, mem_data_write_out = ef209ede
+#                 2045ns:  Inputs to ALU: src1 = 555c0faa, src2 = 1407f128, imm = 610ed5c2,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2045ns:  OUTPUTS from ALU: aluout = 94e00629, carry = 0, mem_write_en = 1, mem_data_write_out = 1407f128
+#                 2055ns:  Inputs to ALU: src1 = 4d20099a, src2 = 69e751d3, imm = dd111aba,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 2055ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 69e751d3
+#                 2065ns:  Inputs to ALU: src1 = fdeb7cfb, src2 = c5cf728b, imm = 61114dc2,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 2065ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = c5cf728b
+#                 2075ns:  Inputs to ALU: src1 = e64828cc, src2 = 38e61371, imm = 4f49019e,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 2075ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 38e61371
+#                 2085ns:  Inputs to ALU: src1 = 309cdb61, src2 = bde3487b, imm = df9bd0bf,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                 2085ns:  OUTPUTS from ALU: aluout = fdef7efb, carry = 0, mem_write_en = 1, mem_data_write_out = bde3487b
+#                 2085Sending Another Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2095ns:  Inputs to ALU: src1 = 732c5fe6, src2 = d7e1aeaf, imm = 0238e104,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                 2095ns:  OUTPUTS from ALU: aluout = 13710000, carry = 0, mem_write_en = 1, mem_data_write_out = d7e1aeaf
+#                 2105ns:  Inputs to ALU: src1 = 89646012, src2 = 7e29b3fc, imm = d5ba48ab,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 2105ns:  OUTPUTS from ALU: aluout = 000023dc, carry = 0, mem_write_en = 1, mem_data_write_out = 7e29b3fc
+#                 2115ns:  Inputs to ALU: src1 = e203f0c4, src2 = 1ffb813f, imm = e13256c2,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 2115ns:  OUTPUTS from ALU: aluout = 0000e658, carry = 0, mem_write_en = 1, mem_data_write_out = 1ffb813f
+#                 2125ns:  Inputs to ALU: src1 = 398a1973, src2 = 2d4d9b5a, imm = d066e4a0,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 2125ns:  OUTPUTS from ALU: aluout = 22591804, carry = 0, mem_write_en = 1, mem_data_write_out = 2d4d9b5a
+#                 2135ns:  Inputs to ALU: src1 = ff73cafe, src2 = 3a096b74, imm = 5d86b7bb,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2135ns:  OUTPUTS from ALU: aluout = 20000000, carry = 0, mem_write_en = 1, mem_data_write_out = 3a096b74
+#                 2145ns:  Inputs to ALU: src1 = 7132bbe2, src2 = f16948e2, imm = eff34cdf,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 2145ns:  OUTPUTS from ALU: aluout = 692334d3, carry = 1, mem_write_en = 1, mem_data_write_out = f16948e2
+#                 2155ns:  Inputs to ALU: src1 = cc13e298, src2 = 4fdbed9f, imm = 0817cb10,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 2155ns:  OUTPUTS from ALU: aluout = b7bb0000, carry = 0, mem_write_en = 1, mem_data_write_out = 4fdbed9f
+#                 2165ns:  Inputs to ALU: src1 = 791189f2, src2 = 5ee97bbd, imm = 55bc27ab,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 2165ns:  OUTPUTS from ALU: aluout = 000008c1, carry = 0, mem_write_en = 1, mem_data_write_out = 5ee97bbd
+#                 2175ns:  Inputs to ALU: src1 = 5a0a0fb4, src2 = aa08ac54, imm = 44e79b89,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 2175ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = aa08ac54
+#                 2185ns:  Inputs to ALU: src1 = 89b5d413, src2 = 560c91ac, imm = 1ae40335,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                 2185ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 560c91ac
+#                 2185Sending Another Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2195ns:  Inputs to ALU: src1 = e69dd0cd, src2 = 7fcff3ff, imm = dac986b5,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 2195ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 7fcff3ff
+#                 2205ns:  Inputs to ALU: src1 = f42082e8, src2 = a5955c4b, imm = 89042e12,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                 2205ns:  OUTPUTS from ALU: aluout = 33a94267, carry = 0, mem_write_en = 1, mem_data_write_out = a5955c4b
+#                 2215ns:  Inputs to ALU: src1 = 1b978f37, src2 = 574e1dae, imm = fc4ca4f8,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 2215ns:  OUTPUTS from ALU: aluout = 00000001, carry = 0, mem_write_en = 1, mem_data_write_out = 574e1dae
+#                 2225ns:  Inputs to ALU: src1 = 90184e20, src2 = ed1b50da, imm = 913e0222,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 2225ns:  OUTPUTS from ALU: aluout = 000000f4, carry = 0, mem_write_en = 1, mem_data_write_out = ed1b50da
+#                 2235ns:  Inputs to ALU: src1 = 763355ec, src2 = 9535122a, imm = 3d7f5b7a,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2235ns:  OUTPUTS from ALU: aluout = 79b80000, carry = 0, mem_write_en = 1, mem_data_write_out = 9535122a
+#                 2245ns:  Inputs to ALU: src1 = 0f1e511e, src2 = f4a1dae9, imm = f5a4f2eb,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2245ns:  OUTPUTS from ALU: aluout = 90180220, carry = 0, mem_write_en = 1, mem_data_write_out = f4a1dae9
+#                 2255ns:  Inputs to ALU: src1 = 05b4f70b, src2 = b704e26e, imm = af455e5e,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 2255ns:  OUTPUTS from ALU: aluout = 5b7a0000, carry = 0, mem_write_en = 1, mem_data_write_out = b704e26e
+#                 2265ns:  Inputs to ALU: src1 = 3e502d7c, src2 = 22c03145, imm = c5cb548b,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2265ns:  OUTPUTS from ALU: aluout = f2eb0000, carry = 0, mem_write_en = 1, mem_data_write_out = 22c03145
+#                 2275ns:  Inputs to ALU: src1 = 094bd312, src2 = 1bf8bd37, imm = c1c3d683,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2275ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 1bf8bd37
+#                 2285ns:  Inputs to ALU: src1 = f0ab00e1, src2 = 674fdfce, imm = a5365c4a,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                 2285ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 674fdfce
+#                 2295ns:  Inputs to ALU: src1 = 6acd73d5, src2 = 669907cd, imm = f204eee4,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                 2295ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 669907cd
+#                 2305ns:  Inputs to ALU: src1 = fa328cf4, src2 = 766153ec, imm = 0d623f1a,  mem_data_read_in = baadd00d,  control_in = 1000001
+#                 2305ns:  OUTPUTS from ALU: aluout = 98b02031, carry = 0, mem_write_en = 1, mem_data_write_out = 766153ec
+# 1
+# Simulation stop requested.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.Execute_test_top
+# Loading work.Execute_io
+# Loading work.Execute_test
+add wave -position insertpoint  \
+sim:/Execute_test_top/dut/instr_wd \
+sim:/Execute_test_top/dut/reg_wd \
+sim:/Execute_test_top/dut/imm_wd \
+sim:/Execute_test_top/dut/clock \
+sim:/Execute_test_top/dut/reset \
+sim:/Execute_test_top/dut/enable_ex \
+sim:/Execute_test_top/dut/src1 \
+sim:/Execute_test_top/dut/src2 \
+sim:/Execute_test_top/dut/imm \
+sim:/Execute_test_top/dut/control_in \
+sim:/Execute_test_top/dut/mem_data_read_in \
+sim:/Execute_test_top/dut/mem_data_write_out \
+sim:/Execute_test_top/dut/mem_write_en \
+sim:/Execute_test_top/dut/aluout \
+sim:/Execute_test_top/dut/carry \
+sim:/Execute_test_top/dut/aluin1 \
+sim:/Execute_test_top/dut/aluin2 \
+sim:/Execute_test_top/dut/opselect \
+sim:/Execute_test_top/dut/operation \
+sim:/Execute_test_top/dut/shift_number \
+sim:/Execute_test_top/dut/enable_shift \
+sim:/Execute_test_top/dut/enable_arith
+run -all
+#                    0RESET BEGIN
+#                   45RESET END
+#                   45Sending Another Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   45		Created Payload Packet
+#                   55ns:  Inputs to ALU: src1 = 12153524, src2 = c0895e81, imm = 8484d609,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                   55ns:  OUTPUTS from ALU: aluout = 00000000, carry = 0, mem_write_en = 1, mem_data_write_out = c0895e81
+#                   65ns:  Inputs to ALU: src1 = b1f05663, src2 = 06b97b0d, imm = 46df998d,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                   65ns:  OUTPUTS from ALU: aluout = 00000000, carry = 0, mem_write_en = 1, mem_data_write_out = 06b97b0d
+#                   75ns:  Inputs to ALU: src1 = b2c28465, src2 = 89375212, imm = 00f3e301,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                   75ns:  OUTPUTS from ALU: aluout = 24000000, carry = 0, mem_write_en = 1, mem_data_write_out = 89375212
+#                   85ns:  Inputs to ALU: src1 = 06d7cd0d, src2 = 3b23f176, imm = 1e8dcd3d,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                   85ns:  OUTPUTS from ALU: aluout = 0acc6000, carry = 0, mem_write_en = 1, mem_data_write_out = 3b23f176
+#                   95ns:  Inputs to ALU: src1 = 76d457ed, src2 = 462df78c, imm = 7cfde9f9,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                   95ns:  OUTPUTS from ALU: aluout = 000b2c28, carry = 0, mem_write_en = 1, mem_data_write_out = 462df78c
+#                  105ns:  Inputs to ALU: src1 = e33724c6, src2 = e2f784c5, imm = d513d2aa,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  105ns:  OUTPUTS from ALU: aluout = 25659a4a, carry = 0, mem_write_en = 1, mem_data_write_out = e2f784c5
+#                  115ns:  Inputs to ALU: src1 = 72aff7e5, src2 = bbd27277, imm = 8932d612,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  115ns:  OUTPUTS from ALU: aluout = f9d66df4, carry = 1, mem_write_en = 1, mem_data_write_out = bbd27277
+#                  125ns:  Inputs to ALU: src1 = 47ecdb8f, src2 = 793069f2, imm = e77696ce,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  125ns:  OUTPUTS from ALU: aluout = f737f6ee, carry = 0, mem_write_en = 1, mem_data_write_out = 793069f2
+#                  135ns:  Inputs to ALU: src1 = f4007ae8, src2 = e2ca4ec5, imm = 2e58495c,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  135ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e2ca4ec5
+#                  135Sending Another Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  135		Created Payload Packet
+#                  145ns:  Inputs to ALU: src1 = a9a7d653, src2 = 359fdd6b, imm = eaa62ad5,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                  145ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 359fdd6b
+#                  155ns:  Inputs to ALU: src1 = 81174a02, src2 = d7563eae, imm = 0effe91d,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                  155ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = d7563eae
+#                  165ns:  Inputs to ALU: src1 = e7c572cf, src2 = 11844923, imm = 0509650a,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  165ns:  OUTPUTS from ALU: aluout = 001534fa, carry = 0, mem_write_en = 1, mem_data_write_out = 11844923
+#                  175ns:  Inputs to ALU: src1 = e5730aca, src2 = 9e314c3c, imm = 7968bdf2,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                  175ns:  OUTPUTS from ALU: aluout = 0002045d, carry = 0, mem_write_en = 1, mem_data_write_out = 9e314c3c
+#                  185ns:  Inputs to ALU: src1 = 452e618a, src2 = 20c4b341, imm = ec4b34d8,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                  185ns:  OUTPUTS from ALU: aluout = 2cf00000, carry = 0, mem_write_en = 1, mem_data_write_out = 20c4b341
+#                  195ns:  Inputs to ALU: src1 = 3c20f378, src2 = c48a1289, imm = 75c50deb,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                  195ns:  OUTPUTS from ALU: aluout = bdf20000, carry = 0, mem_write_en = 1, mem_data_write_out = c48a1289
+#                  205ns:  Inputs to ALU: src1 = 5b0265b6, src2 = 634bf9c6, imm = 571513ae,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  205ns:  OUTPUTS from ALU: aluout = 440a2088, carry = 0, mem_write_en = 1, mem_data_write_out = 634bf9c6
+#                  215ns:  Inputs to ALU: src1 = de7502bc, src2 = 150fdd2a, imm = 85d79a0b,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  215ns:  OUTPUTS from ALU: aluout = 8a3af214, carry = 0, mem_write_en = 1, mem_data_write_out = 150fdd2a
+#                  225ns:  Inputs to ALU: src1 = b897be71, src2 = 42f24185, imm = 27f2554f,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  225ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 42f24185
+#                  235ns:  Inputs to ALU: src1 = 9dcc603b, src2 = 1d06333a, imm = bf23327e,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                  235ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 1d06333a
+#                  245ns:  Inputs to ALU: src1 = 0aaa4b15, src2 = 78d99bf1, imm = 6c9c4bd9,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                  245ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 78d99bf1
+#                  245Sending Another Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  245		Created Payload Packet
+#                  255ns:  Inputs to ALU: src1 = 4b212f96, src2 = 061d7f0c, imm = e12ccec2,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                  255ns:  OUTPUTS from ALU: aluout = 333a0000, carry = 0, mem_write_en = 1, mem_data_write_out = 061d7f0c
+#                  265ns:  Inputs to ALU: src1 = 6457edc8, src2 = bb825a77, imm = 1ef2ed3d,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                  265ns:  OUTPUTS from ALU: aluout = ffffe706, carry = 1, mem_write_en = 1, mem_data_write_out = bb825a77
+#                  275ns:  Inputs to ALU: src1 = 090cdb12, src2 = bf05007e, imm = 36e5816d,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  275ns:  OUTPUTS from ALU: aluout = 00000009, carry = 1, mem_write_en = 1, mem_data_write_out = bf05007e
+#                  285ns:  Inputs to ALU: src1 = 1cd9e739, src2 = 0fd28f1f, imm = e9ebf6d3,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                  285ns:  OUTPUTS from ALU: aluout = e4000000, carry = 1, mem_write_en = 1, mem_data_write_out = 0fd28f1f
+#                  295ns:  Inputs to ALU: src1 = 42d92f85, src2 = bc148878, imm = 2dda595b,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                  295ns:  OUTPUTS from ALU: aluout = 80000000, carry = 1, mem_write_en = 1, mem_data_write_out = bc148878
+#                  305ns:  Inputs to ALU: src1 = 248b4b49, src2 = 9ff2ae3f, imm = 150caf2a,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                  305ns:  OUTPUTS from ALU: aluout = f6d30000, carry = 0, mem_write_en = 1, mem_data_write_out = 9ff2ae3f
+#                  315ns:  Inputs to ALU: src1 = 2c156358, src2 = c33f3886, imm = c71a0c8e,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  315ns:  OUTPUTS from ALU: aluout = ffff88e0, carry = 1, mem_write_en = 1, mem_data_write_out = c33f3886
+#                  325ns:  Inputs to ALU: src1 = ce2ff29c, src2 = 7d3599fa, imm = 937dbc26,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  325ns:  OUTPUTS from ALU: aluout = 04080b08, carry = 0, mem_write_en = 1, mem_data_write_out = 7d3599fa
+#                  335ns:  Inputs to ALU: src1 = 39961773, src2 = d18bb4a3, imm = 9799a82f,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  335ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = d18bb4a3
+#                  345ns:  Inputs to ALU: src1 = d9d292b3, src2 = afd8565f, imm = 22290d44,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                  345ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = afd8565f
+#                  355ns:  Inputs to ALU: src1 = 7bf8fdf7, src2 = e59b36cb, imm = f3091ae6,  mem_data_read_in = baadd00d,  control_in = 1000001
+#                  355ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e59b36cb
+#                  355Sending Another Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  355		Created Payload Packet
+#                  365ns:  Inputs to ALU: src1 = cd5ebc9a, src2 = fedf72fd, imm = e1f102c3,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  365ns:  OUTPUTS from ALU: aluout = 760ac4ec, carry = 0, mem_write_en = 1, mem_data_write_out = fedf72fd
+#                  375ns:  Inputs to ALU: src1 = 2b0eed56, src2 = 2779e94e, imm = b3d97667,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  375ns:  OUTPUTS from ALU: aluout = 619834c3, carry = 0, mem_write_en = 1, mem_data_write_out = 2779e94e
+#                  385ns:  Inputs to ALU: src1 = 8531340a, src2 = 5b6fb9b6, imm = 9c0e8a38,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  385ns:  OUTPUTS from ALU: aluout = f5e4d000, carry = 0, mem_write_en = 1, mem_data_write_out = 5b6fb9b6
+#                  395ns:  Inputs to ALU: src1 = 3cd18779, src2 = dc2bc4b8, imm = 4a74bf94,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  395ns:  OUTPUTS from ALU: aluout = bb558000, carry = 0, mem_write_en = 1, mem_data_write_out = dc2bc4b8
+#                  405ns:  Inputs to ALU: src1 = 49c65d93, src2 = 823f2c04, imm = acb7ca59,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  405ns:  OUTPUTS from ALU: aluout = 31340a00, carry = 0, mem_write_en = 1, mem_data_write_out = 823f2c04
+#                  415ns:  Inputs to ALU: src1 = 6dcb69db, src2 = a6fcde4d, imm = 6cb0b7d9,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                  415ns:  OUTPUTS from ALU: aluout = f25cc7e5, carry = 1, mem_write_en = 1, mem_data_write_out = a6fcde4d
+#                  425ns:  Inputs to ALU: src1 = b6a4266d, src2 = bb45e276, imm = 653b49ca,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  425ns:  OUTPUTS from ALU: aluout = edf7dfdb, carry = 0, mem_write_en = 1, mem_data_write_out = bb45e276
+#                  435ns:  Inputs to ALU: src1 = 5b172db6, src2 = 4a937195, imm = a3071a46,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  435ns:  OUTPUTS from ALU: aluout = 017bde02, carry = 0, mem_write_en = 1, mem_data_write_out = 4a937195
+#                  445ns:  Inputs to ALU: src1 = 02749b04, src2 = 7bd261f7, imm = 34980769,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  445ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 7bd261f7
+#                  455ns:  Inputs to ALU: src1 = da6ebab4, src2 = 44018d88, imm = 147cd928,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                  455ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 44018d88
+#                  465ns:  Inputs to ALU: src1 = 9690042d, src2 = e3c530c7, imm = 975c9c2e,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                  465ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e3c530c7
+#                  465Sending Another Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  465		Created Payload Packet
+#                  475ns:  Inputs to ALU: src1 = 6a8e05d5, src2 = 8d24f61a, imm = dcf000b9,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  475ns:  OUTPUTS from ALU: aluout = 9e6f373c, carry = 0, mem_write_en = 1, mem_data_write_out = 8d24f61a
+#                  485ns:  Inputs to ALU: src1 = 1b876137, src2 = 4b273796, imm = 603921c0,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                  485ns:  OUTPUTS from ALU: aluout = b2cad366, carry = 1, mem_write_en = 1, mem_data_write_out = 4b273796
+#                  495ns:  Inputs to ALU: src1 = 13259f26, src2 = db461ab6, imm = 3e99837d,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                  495ns:  OUTPUTS from ALU: aluout = aa381754, carry = 1, mem_write_en = 1, mem_data_write_out = db461ab6
+#                  505ns:  Inputs to ALU: src1 = 6e5f0fdc, src2 = 43615786, imm = 3c03ff78,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  505ns:  OUTPUTS from ALU: aluout = c3b09b80, carry = 1, mem_write_en = 1, mem_data_write_out = 43615786
+#                  515ns:  Inputs to ALU: src1 = 3f5a9b7e, src2 = ed8d80db, imm = e7c3b6cf,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  515ns:  OUTPUTS from ALU: aluout = 0000004c, carry = 1, mem_write_en = 1, mem_data_write_out = ed8d80db
+#                  525ns:  Inputs to ALU: src1 = 3ced2b79, src2 = fd28e4fa, imm = b0bcee61,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  525ns:  OUTPUTS from ALU: aluout = 325b1064, carry = 0, mem_write_en = 1, mem_data_write_out = fd28e4fa
+#                  535ns:  Inputs to ALU: src1 = 0b940917, src2 = d0f578a1, imm = 43779186,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  535ns:  OUTPUTS from ALU: aluout = 5796e4af, carry = 1, mem_write_en = 1, mem_data_write_out = d0f578a1
+#                  545ns:  Inputs to ALU: src1 = a8639650, src2 = 7a8c59f5, imm = 9ab48835,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  545ns:  OUTPUTS from ALU: aluout = bcfdef79, carry = 0, mem_write_en = 1, mem_data_write_out = 7a8c59f5
+#                  555ns:  Inputs to ALU: src1 = 949a8a29, src2 = 60b175c1, imm = e2e574c5,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  555ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 60b175c1
+#                  565ns:  Inputs to ALU: src1 = cc01b498, src2 = 25b27b4b, imm = b98c4273,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                  565ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 25b27b4b
+#                  575ns:  Inputs to ALU: src1 = f622e6ec, src2 = c550168a, imm = 2758d14e,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                  575ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = c550168a
+#                  575Sending Another Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  575		Created Payload Packet
+#                  585ns:  Inputs to ALU: src1 = 09ff4113, src2 = 35a0c96b, imm = e3b7aec7,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  585ns:  OUTPUTS from ALU: aluout = f1b42fe3, carry = 0, mem_write_en = 1, mem_data_write_out = 35a0c96b
+#                  595ns:  Inputs to ALU: src1 = 5b0bddb6, src2 = 5d059dba, imm = 6216abc4,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                  595ns:  OUTPUTS from ALU: aluout = 30d2d062, carry = 0, mem_write_en = 1, mem_data_write_out = 5d059dba
+#                  605ns:  Inputs to ALU: src1 = 5c8295b9, src2 = 492fd392, imm = da269ab4,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                  605ns:  OUTPUTS from ALU: aluout = fa089800, carry = 0, mem_write_en = 1, mem_data_write_out = 492fd392
+#                  615ns:  Inputs to ALU: src1 = 3fbb3b7f, src2 = c3339086, imm = 7d6df5fa,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                  615ns:  OUTPUTS from ALU: aluout = 00000016, carry = 0, mem_write_en = 1, mem_data_write_out = c3339086
+#                  625ns:  Inputs to ALU: src1 = f92794f2, src2 = 19452132, imm = dece5ebd,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                  625ns:  OUTPUTS from ALU: aluout = 00001720, carry = 0, mem_write_en = 1, mem_data_write_out = 19452132
+#                  635ns:  Inputs to ALU: src1 = 424fcd84, src2 = f249a4e4, imm = 6543cfca,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                  635ns:  OUTPUTS from ALU: aluout = 3d29317a, carry = 0, mem_write_en = 1, mem_data_write_out = f249a4e4
+#                  645ns:  Inputs to ALU: src1 = 54a879a9, src2 = d095a8a1, imm = 4765a98e,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  645ns:  OUTPUTS from ALU: aluout = d7f5f3af, carry = 1, mem_write_en = 1, mem_data_write_out = d095a8a1
+#                  655ns:  Inputs to ALU: src1 = fd8b6afb, src2 = 85e51e0b, imm = f78290ef,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  655ns:  OUTPUTS from ALU: aluout = ffff9d4e, carry = 1, mem_write_en = 1, mem_data_write_out = 85e51e0b
+#                  665ns:  Inputs to ALU: src1 = 64c83dc9, src2 = 1b60e536, imm = bab14875,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  665ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 1b60e536
+#                  675ns:  Inputs to ALU: src1 = c7e8568f, src2 = 35cdbf6b, imm = 4465e788,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                  675ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 35cdbf6b
+#                  685ns:  Inputs to ALU: src1 = d73fb4ae, src2 = 4df3819b, imm = 493e4592,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                  685ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 4df3819b
+#                  685Sending Another Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  685		Created Payload Packet
+#                  695ns:  Inputs to ALU: src1 = ab196256, src2 = adac225b, imm = f166fae2,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  695ns:  OUTPUTS from ALU: aluout = fdb615fa, carry = 0, mem_write_en = 1, mem_data_write_out = adac225b
+#                  705ns:  Inputs to ALU: src1 = 8273e204, src2 = 39ac0373, imm = ec50b4d8,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                  705ns:  OUTPUTS from ALU: aluout = b20c7e64, carry = 0, mem_write_en = 1, mem_data_write_out = 39ac0373
+#                  715ns:  Inputs to ALU: src1 = 093e4d12, src2 = dc0344b8, imm = 9c811239,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                  715ns:  OUTPUTS from ALU: aluout = cb12b000, carry = 0, mem_write_en = 1, mem_data_write_out = dc0344b8
+#                  725ns:  Inputs to ALU: src1 = f287b6e5, src2 = d0c5dca1, imm = 15890f2b,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  725ns:  OUTPUTS from ALU: aluout = 0000104e, carry = 0, mem_write_en = 1, mem_data_write_out = d0c5dca1
+#                  735ns:  Inputs to ALU: src1 = 40905d81, src2 = 641b85c8, imm = 13b55527,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                  735ns:  OUTPUTS from ALU: aluout = 3e4d1200, carry = 0, mem_write_en = 1, mem_data_write_out = 641b85c8
+#                  745ns:  Inputs to ALU: src1 = 50d5f9a1, src2 = 8f8c6e1f, imm = 82223a04,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  745ns:  OUTPUTS from ALU: aluout = dcfea7ba, carry = 0, mem_write_en = 1, mem_data_write_out = 8f8c6e1f
+#                  755ns:  Inputs to ALU: src1 = 2c2d2358, src2 = cb5c8096, imm = 0a6e9314,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  755ns:  OUTPUTS from ALU: aluout = 2cdb085a, carry = 0, mem_write_en = 1, mem_data_write_out = cb5c8096
+#                  765ns:  Inputs to ALU: src1 = 8919b412, src2 = cb227096, imm = d8ace2b1,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  765ns:  OUTPUTS from ALU: aluout = d2f7fba5, carry = 0, mem_write_en = 1, mem_data_write_out = cb227096
+#                  775ns:  Inputs to ALU: src1 = 2ac2d555, src2 = f6c38eed, imm = 158b2b2b,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  775ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = f6c38eed
+#                  785ns:  Inputs to ALU: src1 = 7ab11bf5, src2 = 56b403ad, imm = 93c12227,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                  785ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 56b403ad
+#                  795ns:  Inputs to ALU: src1 = 4249ff84, src2 = d3a8e4a7, imm = f3d7a6e7,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                  795ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = d3a8e4a7
+#                  795Sending Another Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  795		Created Payload Packet
+#                  805ns:  Inputs to ALU: src1 = b7dfaa6f, src2 = 43460d86, imm = 782321f0,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                  805ns:  OUTPUTS from ALU: aluout = 2c051858, carry = 0, mem_write_en = 1, mem_data_write_out = 43460d86
+#                  815ns:  Inputs to ALU: src1 = 1c719738, src2 = 20769140, imm = 94097628,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  815ns:  OUTPUTS from ALU: aluout = 15f2e42b, carry = 1, mem_write_en = 1, mem_data_write_out = 20769140
+#                  825ns:  Inputs to ALU: src1 = 7b0da9f6, src2 = e2bf1ac5, imm = 602831c0,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                  825ns:  OUTPUTS from ALU: aluout = efd53780, carry = 1, mem_write_en = 1, mem_data_write_out = e2bf1ac5
+#                  835ns:  Inputs to ALU: src1 = 3a625f74, src2 = 1cde7139, imm = d86a6ab0,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  835ns:  OUTPUTS from ALU: aluout = 38000000, carry = 1, mem_write_en = 1, mem_data_write_out = 1cde7139
+#                  845ns:  Inputs to ALU: src1 = 1e1c873c, src2 = 1521932a, imm = 3124d362,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                  845ns:  OUTPUTS from ALU: aluout = 00f61b53, carry = 1, mem_write_en = 1, mem_data_write_out = 1521932a
+#                  855ns:  Inputs to ALU: src1 = 0aec3515, src2 = f0b14ee1, imm = 0be29d17,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                  855ns:  OUTPUTS from ALU: aluout = fa6a7ff4, carry = 0, mem_write_en = 1, mem_data_write_out = f0b14ee1
+#                  865ns:  Inputs to ALU: src1 = a18bee43, src2 = 64b5e3c9, imm = c3360486,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  865ns:  OUTPUTS from ALU: aluout = 3f3cd77e, carry = 0, mem_write_en = 1, mem_data_write_out = 64b5e3c9
+#                  875ns:  Inputs to ALU: src1 = 1297cb25, src2 = 60f69dc1, imm = c69da28d,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                  875ns:  OUTPUTS from ALU: aluout = f41d62e8, carry = 0, mem_write_en = 1, mem_data_write_out = 60f69dc1
+#                  885ns:  Inputs to ALU: src1 = ad67e25a, src2 = 03d62707, imm = 165b7b2c,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                  885ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 03d62707
+#                  895ns:  Inputs to ALU: src1 = 060a5d0c, src2 = b8ade671, imm = 9de17c3b,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                  895ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = b8ade671
+#                  905ns:  Inputs to ALU: src1 = 5b60e5b6, src2 = fbdfc2f7, imm = cf14ce9e,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                  905ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = fbdfc2f7
+#                  905Sending Another Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  905		Created Payload Packet
+#                  915ns:  Inputs to ALU: src1 = 81c39a03, src2 = 71c129e3, imm = 0e92431d,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  915ns:  OUTPUTS from ALU: aluout = 4752198e, carry = 0, mem_write_en = 1, mem_data_write_out = 71c129e3
+#                  925ns:  Inputs to ALU: src1 = 58f93db1, src2 = 22119f44, imm = ca9cbc95,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                  925ns:  OUTPUTS from ALU: aluout = c2f70000, carry = 0, mem_write_en = 1, mem_data_write_out = 22119f44
+#                  935ns:  Inputs to ALU: src1 = f01d34e0, src2 = f6a178ed, imm = 297a1552,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                  935ns:  OUTPUTS from ALU: aluout = 0e1cd018, carry = 0, mem_write_en = 1, mem_data_write_out = f6a178ed
+#                  945ns:  Inputs to ALU: src1 = 7c1e5bf8, src2 = 46dcb78d, imm = a95fc452,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                  945ns:  OUTPUTS from ALU: aluout = 8f93db10, carry = 0, mem_write_en = 1, mem_data_write_out = 46dcb78d
+#                  955ns:  Inputs to ALU: src1 = 4219e784, src2 = 236afd46, imm = c63a928c,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                  955ns:  OUTPUTS from ALU: aluout = 00000780, carry = 0, mem_write_en = 1, mem_data_write_out = 236afd46
+#                  965ns:  Inputs to ALU: src1 = 48487d90, src2 = 0beac117, imm = 352d616a,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                  965ns:  OUTPUTS from ALU: aluout = 0000204a, carry = 0, mem_write_en = 1, mem_data_write_out = 0beac117
+#                  975ns:  Inputs to ALU: src1 = 427b5784, src2 = d55bbcaa, imm = 3e6f0f7c,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  975ns:  OUTPUTS from ALU: aluout = 08547a10, carry = 1, mem_write_en = 1, mem_data_write_out = d55bbcaa
+#                  985ns:  Inputs to ALU: src1 = b0520260, src2 = 5d4a4dba, imm = c5a1608b,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                  985ns:  OUTPUTS from ALU: aluout = cad29e95, carry = 0, mem_write_en = 1, mem_data_write_out = 5d4a4dba
+#                  995ns:  Inputs to ALU: src1 = d31dfea6, src2 = 92831e25, imm = 19058332,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                  995ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 92831e25
+#                 1005ns:  Inputs to ALU: src1 = d10504a2, src2 = a48f7c49, imm = 8a64b014,  mem_data_read_in = baadd00d,  control_in = 1000001
+#                 1005ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = a48f7c49
+#                 1015ns:  Inputs to ALU: src1 = 9ec9c03d, src2 = 25f2034b, imm = ae68305c,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                 1015ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 25f2034b
+#                 1025ns:  Inputs to ALU: src1 = 23907547, src2 = 433e9786, imm = 9caf7a39,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                 1025ns:  OUTPUTS from ALU: aluout = 80050400, carry = 0, mem_write_en = 1, mem_data_write_out = 433e9786
+#                 1025Sending Another Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1025		Created Payload Packet
+#                 1035ns:  Inputs to ALU: src1 = ef8372df, src2 = ea5814d4, imm = 33836567,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1035ns:  OUTPUTS from ALU: aluout = ffffc388, carry = 1, mem_write_en = 1, mem_data_write_out = ea5814d4
+#                 1045ns:  Inputs to ALU: src1 = 4ea0419d, src2 = 583125b0, imm = 41103982,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 1045ns:  OUTPUTS from ALU: aluout = 00000ccd, carry = 1, mem_write_en = 1, mem_data_write_out = 583125b0
+#                 1055ns:  Inputs to ALU: src1 = 24d2bf49, src2 = ecb91ad9, imm = 1000b720,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1055ns:  OUTPUTS from ALU: aluout = 2df00000, carry = 1, mem_write_en = 1, mem_data_write_out = ecb91ad9
+#                 1065ns:  Inputs to ALU: src1 = 8e054c1c, src2 = 49b16f93, imm = 71b461e3,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1065ns:  OUTPUTS from ALU: aluout = a8106740, carry = 1, mem_write_en = 1, mem_data_write_out = 49b16f93
+#                 1075ns:  Inputs to ALU: src1 = 954b822a, src2 = e471f8c8, imm = aed72e5d,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                 1075ns:  OUTPUTS from ALU: aluout = 90000000, carry = 1, mem_write_en = 1, mem_data_write_out = e471f8c8
+#                 1085ns:  Inputs to ALU: src1 = 1d3f9d3a, src2 = 4226a984, imm = 95a9a82b,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1085ns:  OUTPUTS from ALU: aluout = 1c50ea39, carry = 0, mem_write_en = 1, mem_data_write_out = 4226a984
+#                 1095ns:  Inputs to ALU: src1 = 1c8d7f39, src2 = 897f1c12, imm = a97f0052,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1095ns:  OUTPUTS from ALU: aluout = 4422b087, carry = 1, mem_write_en = 1, mem_data_write_out = 897f1c12
+#                 1105ns:  Inputs to ALU: src1 = 2c848959, src2 = e82b96d0, imm = b759ea6e,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1105ns:  OUTPUTS from ALU: aluout = 6a5657d4, carry = 0, mem_write_en = 1, mem_data_write_out = e82b96d0
+#                 1115ns:  Inputs to ALU: src1 = 4bf52997, src2 = 6d8b87db, imm = 535277a6,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1115ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 6d8b87db
+#                 1125ns:  Inputs to ALU: src1 = 5d85d3bb, src2 = 80797c00, imm = 87e44c0f,  mem_data_read_in = baadd00d,  control_in = 1100001
+#                 1125ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 80797c00
+#                 1135ns:  Inputs to ALU: src1 = b4e8d669, src2 = 8653620c, imm = 2ca81959,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                 1135ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 8653620c
+#                 1135Sending Another Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1135		Created Payload Packet
+#                 1145ns:  Inputs to ALU: src1 = 3bed5377, src2 = 5ad6c7b5, imm = 6a15f5d4,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                 1145ns:  OUTPUTS from ALU: aluout = ddfcafbb, carry = 0, mem_write_en = 1, mem_data_write_out = 5ad6c7b5
+#                 1155ns:  Inputs to ALU: src1 = 03878707, src2 = 3b0b9776, imm = 74a1ade9,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                 1155ns:  OUTPUTS from ALU: aluout = 3b3c3875, carry = 1, mem_write_en = 1, mem_data_write_out = 3b0b9776
+#                 1165ns:  Inputs to ALU: src1 = 45e28b8b, src2 = 00f25f01, imm = 6d808bdb,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1165ns:  OUTPUTS from ALU: aluout = 6ee00000, carry = 1, mem_write_en = 1, mem_data_write_out = 00f25f01
+#                 1175ns:  Inputs to ALU: src1 = c0764280, src2 = 611d9fc2, imm = e2ecdac5,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                 1175ns:  OUTPUTS from ALU: aluout = 00000007, carry = 1, mem_write_en = 1, mem_data_write_out = 611d9fc2
+#                 1185ns:  Inputs to ALU: src1 = 9827fa30, src2 = d7b2e4af, imm = b302da66,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1185ns:  OUTPUTS from ALU: aluout = 45c58000, carry = 1, mem_write_en = 1, mem_data_write_out = d7b2e4af
+#                 1195ns:  Inputs to ALU: src1 = 57fbb9af, src2 = f4d86ee9, imm = 7c41aff8,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1195ns:  OUTPUTS from ALU: aluout = 229a9845, carry = 0, mem_write_en = 1, mem_data_write_out = f4d86ee9
+#                 1205ns:  Inputs to ALU: src1 = 8376ac06, src2 = f78576ef, imm = 70ef37e1,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1205ns:  OUTPUTS from ALU: aluout = e5251fca, carry = 1, mem_write_en = 1, mem_data_write_out = f78576ef
+#                 1215ns:  Inputs to ALU: src1 = cab47c95, src2 = f7723eee, imm = 304e4d60,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1215ns:  OUTPUTS from ALU: aluout = 5441a9a8, carry = 0, mem_write_en = 1, mem_data_write_out = f7723eee
+#                 1225ns:  Inputs to ALU: src1 = f29c5ee5, src2 = 9420ea28, imm = 322f7d64,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1225ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 9420ea28
+#                 1235ns:  Inputs to ALU: src1 = 14b43729, src2 = f0eeaee1, imm = bbbc5277,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1235ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = f0eeaee1
+#                 1245ns:  Inputs to ALU: src1 = 3715156e, src2 = 40aaf581, imm = 6a9fb9d5,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                 1245ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 40aaf581
+#                 1245Sending Another Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1245		Created Payload Packet
+#                 1255ns:  Inputs to ALU: src1 = 5cd20db9, src2 = 098e2d13, imm = 09c83513,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 1255ns:  OUTPUTS from ALU: aluout = aee10000, carry = 0, mem_write_en = 1, mem_data_write_out = 098e2d13
+#                 1265ns:  Inputs to ALU: src1 = 32dc4165, src2 = 28c62751, imm = db983ab7,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1265ns:  OUTPUTS from ALU: aluout = f66a1fed, carry = 1, mem_write_en = 1, mem_data_write_out = 28c62751
+#                 1275ns:  Inputs to ALU: src1 = cc981099, src2 = 9d12083a, imm = b8ea3a71,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1275ns:  OUTPUTS from ALU: aluout = db900000, carry = 1, mem_write_en = 1, mem_data_write_out = 9d12083a
+#                 1285ns:  Inputs to ALU: src1 = 317c0762, src2 = f2356ae4, imm = 1513dd2a,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1285ns:  OUTPUTS from ALU: aluout = 82ca0000, carry = 1, mem_write_en = 1, mem_data_write_out = f2356ae4
+#                 1295ns:  Inputs to ALU: src1 = beda447d, src2 = 2cee5f59, imm = 72c3a3e5,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 1295ns:  OUTPUTS from ALU: aluout = 00664c08, carry = 1, mem_write_en = 1, mem_data_write_out = 2cee5f59
+#                 1305ns:  Inputs to ALU: src1 = 76de6bed, src2 = e4a800c9, imm = a0aecc41,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                 1305ns:  OUTPUTS from ALU: aluout = eaec22d5, carry = 0, mem_write_en = 1, mem_data_write_out = e4a800c9
+#                 1315ns:  Inputs to ALU: src1 = 57c1d1af, src2 = eda71cdb, imm = e696e8cd,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1315ns:  OUTPUTS from ALU: aluout = ffffe862, carry = 1, mem_write_en = 1, mem_data_write_out = eda71cdb
+#                 1325ns:  Inputs to ALU: src1 = 38139f70, src2 = 8326d406, imm = d14820a2,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1325ns:  OUTPUTS from ALU: aluout = 178d382e, carry = 1, mem_write_en = 1, mem_data_write_out = 8326d406
+#                 1335ns:  Inputs to ALU: src1 = 5e983dbd, src2 = b555de6a, imm = 6e3d47dc,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1335ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = b555de6a
+#                 1335Sending Another Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1335		Created Payload Packet
+#                 1345ns:  Inputs to ALU: src1 = 0671030c, src2 = e70f98ce, imm = 6a1a61d4,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1345ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = e70f98ce
+#                 1355ns:  Inputs to ALU: src1 = acecdc59, src2 = 5ca26fb9, imm = d9b8c0b3,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1355ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 5ca26fb9
+#                 1365ns:  Inputs to ALU: src1 = 7a4fbff4, src2 = baf4e275, imm = 066cf10c,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1365ns:  OUTPUTS from ALU: aluout = 40c30000, carry = 0, mem_write_en = 1, mem_data_write_out = baf4e275
+#                 1375ns:  Inputs to ALU: src1 = 9cfc7a39, src2 = 01729302, imm = 8aecbe15,  mem_data_read_in = baadd00d,  control_in = 0001001
+#                 1375ns:  OUTPUTS from ALU: aluout = b3b37164, carry = 0, mem_write_en = 1, mem_data_write_out = 01729302
+#                 1385ns:  Inputs to ALU: src1 = 02fbf905, src2 = 271c434e, imm = 013f2902,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                 1385ns:  OUTPUTS from ALU: aluout = 000003d2, carry = 0, mem_write_en = 1, mem_data_write_out = 271c434e
+#                 1395ns:  Inputs to ALU: src1 = 5c7951b8, src2 = 847fb208, imm = 46e7538d,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1395ns:  OUTPUTS from ALU: aluout = 27e9384e, carry = 1, mem_write_en = 1, mem_data_write_out = 847fb208
+#                 1405ns:  Inputs to ALU: src1 = d7b48eaf, src2 = 747331e8, imm = 48590990,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1405ns:  OUTPUTS from ALU: aluout = 03c4d007, carry = 0, mem_write_en = 1, mem_data_write_out = 747331e8
+#                 1415ns:  Inputs to ALU: src1 = 7af6abf5, src2 = a620904c, imm = 3d82bd7b,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1415ns:  OUTPUTS from ALU: aluout = 1591fe2b, carry = 0, mem_write_en = 1, mem_data_write_out = a620904c
+#                 1425ns:  Inputs to ALU: src1 = a005a640, src2 = 12a90325, imm = 86ebb60d,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1425ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 12a90325
+#                 1435ns:  Inputs to ALU: src1 = b87c1070, src2 = 16cbf92d, imm = 94ded829,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1435ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 16cbf92d
+#                 1445ns:  Inputs to ALU: src1 = 5e2551bc, src2 = 987b0830, imm = 60272dc0,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1445ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 987b0830
+#                 1455ns:  Inputs to ALU: src1 = 28766950, src2 = d0cf6aa1, imm = 26bf3f4d,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1455ns:  OUTPUTS from ALU: aluout = befff97d, carry = 0, mem_write_en = 1, mem_data_write_out = d0cf6aa1
+#                 1455Sending Another Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1455		Created Payload Packet
+#                 1465ns:  Inputs to ALU: src1 = b1800a63, src2 = ac93e059, imm = 9372ce26,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1465ns:  OUTPUTS from ALU: aluout = 08300000, carry = 0, mem_write_en = 1, mem_data_write_out = ac93e059
+#                 1475ns:  Inputs to ALU: src1 = b4497668, src2 = 8f63e41e, imm = c838f490,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1475ns:  OUTPUTS from ALU: aluout = f8ff6bf1, carry = 0, mem_write_en = 1, mem_data_write_out = 8f63e41e
+#                 1485ns:  Inputs to ALU: src1 = 2d19a55a, src2 = 0e43851c, imm = 5c9967b9,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 1485ns:  OUTPUTS from ALU: aluout = 00000058, carry = 0, mem_write_en = 1, mem_data_write_out = 0e43851c
+#                 1495ns:  Inputs to ALU: src1 = 55861fab, src2 = 6826d9d0, imm = 37b9656f,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 1495ns:  OUTPUTS from ALU: aluout = d9a00000, carry = 0, mem_write_en = 1, mem_data_write_out = 6826d9d0
+#                 1505ns:  Inputs to ALU: src1 = 6c6a6dd8, src2 = a2cc8845, imm = 46d6a78d,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 1505ns:  OUTPUTS from ALU: aluout = 00000000, carry = 0, mem_write_en = 1, mem_data_write_out = a2cc8845
+#                 1515ns:  Inputs to ALU: src1 = 45f3238b, src2 = 7e2491fc, imm = 6e1e1fdc,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 1515ns:  OUTPUTS from ALU: aluout = 1dccba3c, carry = 0, mem_write_en = 1, mem_data_write_out = 7e2491fc
+#                 1525ns:  Inputs to ALU: src1 = d27f0aa4, src2 = 0c978d19, imm = 52b533a5,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1525ns:  OUTPUTS from ALU: aluout = 00001565, carry = 1, mem_write_en = 1, mem_data_write_out = 0c978d19
+#                 1535ns:  Inputs to ALU: src1 = 9f398e3e, src2 = f98bc0f3, imm = ac782c58,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1535ns:  OUTPUTS from ALU: aluout = 1fdc0000, carry = 0, mem_write_en = 1, mem_data_write_out = f98bc0f3
+#                 1545ns:  Inputs to ALU: src1 = 62056bc4, src2 = 2e36435c, imm = 033a4506,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1545ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 2e36435c
+#                 1555ns:  Inputs to ALU: src1 = cd1d509a, src2 = 0c161918, imm = e2f066c5,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1555ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 0c161918
+#                 1565ns:  Inputs to ALU: src1 = 5515d1aa, src2 = 0d12031a, imm = 61dbd5c3,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1565ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 0d12031a
+#                 1565Sending Another Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1565		Created Payload Packet
+#                 1575ns:  Inputs to ALU: src1 = 55dd8dab, src2 = 8d94d21b, imm = c03b3e80,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1575ns:  OUTPUTS from ALU: aluout = cd1f599a, carry = 0, mem_write_en = 1, mem_data_write_out = 8d94d21b
+#                 1585ns:  Inputs to ALU: src1 = 2ed6d95d, src2 = 412dfd82, imm = 82344204,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1585ns:  OUTPUTS from ALU: aluout = 031a0000, carry = 0, mem_write_en = 1, mem_data_write_out = 412dfd82
+#                 1595ns:  Inputs to ALU: src1 = 2ba7a557, src2 = 1b368b36, imm = 196a0332,  mem_data_read_in = baadd00d,  control_in = 0101000
+#                 1595ns:  OUTPUTS from ALU: aluout = 00000015, carry = 0, mem_write_en = 1, mem_data_write_out = 1b368b36
+#                 1605ns:  Inputs to ALU: src1 = bce32879, src2 = f24baee4, imm = 8b42ec16,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                 1605ns:  OUTPUTS from ALU: aluout = bb5b6574, carry = 0, mem_write_en = 1, mem_data_write_out = f24baee4
+#                 1615ns:  Inputs to ALU: src1 = d57fecaa, src2 = 605065c0, imm = 9759882e,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                 1615ns:  OUTPUTS from ALU: aluout = 0002ba7a, carry = 0, mem_write_en = 1, mem_data_write_out = 605065c0
+#                 1625ns:  Inputs to ALU: src1 = 4665378c, src2 = b8c0c271, imm = 7dfe8ffb,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1625ns:  OUTPUTS from ALU: aluout = bfe3ec7f, carry = 0, mem_write_en = 1, mem_data_write_out = b8c0c271
+#                 1635ns:  Inputs to ALU: src1 = 5e5421bc, src2 = ee7068dc, imm = 0bec5717,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1635ns:  OUTPUTS from ALU: aluout = d77fecae, carry = 0, mem_write_en = 1, mem_data_write_out = ee7068dc
+#                 1645ns:  Inputs to ALU: src1 = e0e004c1, src2 = 75fb21eb, imm = 5a9d3bb5,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1645ns:  OUTPUTS from ALU: aluout = 44640788, carry = 0, mem_write_en = 1, mem_data_write_out = 75fb21eb
+#                 1655ns:  Inputs to ALU: src1 = c4fd2e89, src2 = c7b2e28f, imm = dff6f6bf,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1655ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = c7b2e28f
+#                 1665ns:  Inputs to ALU: src1 = d8462ab0, src2 = e9b49ad3, imm = eb1d02d6,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 1665ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = e9b49ad3
+#                 1665Sending Another Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1665		Created Payload Packet
+#                 1675ns:  Inputs to ALU: src1 = 1b920537, src2 = 81fa3603, imm = ff729efe,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1675ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 81fa3603
+#                 1685ns:  Inputs to ALU: src1 = feaddcfd, src2 = 9f7a0e3e, imm = f43a34e8,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1685ns:  OUTPUTS from ALU: aluout = f9f6baf3, carry = 0, mem_write_en = 1, mem_data_write_out = 9f7a0e3e
+#                 1695ns:  Inputs to ALU: src1 = ba603874, src2 = 580989b0, imm = 8361dc06,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1695ns:  OUTPUTS from ALU: aluout = dc9029b8, carry = 0, mem_write_en = 1, mem_data_write_out = 580989b0
+#                 1705ns:  Inputs to ALU: src1 = 09164d12, src2 = b46afc68, imm = e2ba00c5,  mem_data_read_in = baadd00d,  control_in = 1101001
+#                 1705ns:  OUTPUTS from ALU: aluout = e7e80000, carry = 0, mem_write_en = 1, mem_data_write_out = b46afc68
+#                 1715ns:  Inputs to ALU: src1 = ff202efe, src2 = 1b0f0d36, imm = 799f09f3,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1715ns:  OUTPUTS from ALU: aluout = 38740000, carry = 0, mem_write_en = 1, mem_data_write_out = 1b0f0d36
+#                 1725ns:  Inputs to ALU: src1 = 7dddabfb, src2 = b58d7c6b, imm = 0bcbbf17,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 1725ns:  OUTPUTS from ALU: aluout = ebac4dd7, carry = 0, mem_write_en = 1, mem_data_write_out = b58d7c6b
+#                 1735ns:  Inputs to ALU: src1 = 87d0360f, src2 = 8a47b614, imm = 1500052a,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1735ns:  OUTPUTS from ALU: aluout = 790008f2, carry = 0, mem_write_en = 1, mem_data_write_out = 8a47b614
+#                 1745ns:  Inputs to ALU: src1 = d3666ea6, src2 = ea7626d4, imm = e5ac10cb,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 1745ns:  OUTPUTS from ALU: aluout = bf170000, carry = 0, mem_write_en = 1, mem_data_write_out = ea7626d4
+#                 1755ns:  Inputs to ALU: src1 = b587c26b, src2 = 0277eb04, imm = fa4832f4,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1755ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 0277eb04
+#                 1755Sending Another Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1755		Created Payload Packet
+#                 1765ns:  Inputs to ALU: src1 = 6e6d23dc, src2 = 183fc330, imm = 6845f5d0,  mem_data_read_in = baadd00d,  control_in = 0000000
+#                 1765ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 183fc330
+#                 1775ns:  Inputs to ALU: src1 = 0073e500, src2 = 21820f43, imm = 7c6e91f8,  mem_data_read_in = baadd00d,  control_in = 0011000
+#                 1775ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 21820f43
+#                 1785ns:  Inputs to ALU: src1 = d0b99aa1, src2 = 29c01f53, imm = 4c588f98,  mem_data_read_in = baadd00d,  control_in = 0100000
+#                 1785ns:  OUTPUTS from ALU: aluout = ee000000, carry = 0, mem_write_en = 1, mem_data_write_out = 29c01f53
+#                 1795ns:  Inputs to ALU: src1 = 2fef3d5f, src2 = c3be9287, imm = fd5f5afa,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 1795ns:  OUTPUTS from ALU: aluout = 39f28000, carry = 0, mem_write_en = 1, mem_data_write_out = c3be9287
+#                 1805ns:  Inputs to ALU: src1 = 1699d12d, src2 = b8760270, imm = b5b4e86b,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1805ns:  OUTPUTS from ALU: aluout = 00000003, carry = 0, mem_write_en = 1, mem_data_write_out = b8760270
+#                 1815ns:  Inputs to ALU: src1 = 98d73831, src2 = 892fc012, imm = 0650df0c,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1815ns:  OUTPUTS from ALU: aluout = 5afa0000, carry = 0, mem_write_en = 1, mem_data_write_out = 892fc012
+#                 1825ns:  Inputs to ALU: src1 = 06db6b0d, src2 = 0acd1315, imm = 20310740,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1825ns:  OUTPUTS from ALU: aluout = 1490c029, carry = 0, mem_write_en = 1, mem_data_write_out = 0acd1315
+#                 1835ns:  Inputs to ALU: src1 = 4a638d94, src2 = 2a1ba354, imm = c0620280,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1835ns:  OUTPUTS from ALU: aluout = f9af20f3, carry = 0, mem_write_en = 1, mem_data_write_out = 2a1ba354
+#                 1845ns:  Inputs to ALU: src1 = 098d1513, src2 = e1e386c3, imm = f695deed,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 1845ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = e1e386c3
+#                 1855ns:  Inputs to ALU: src1 = ee4ee6dc, src2 = bc781078, imm = 13d40d27,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                 1855ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = bc781078
+#                 1865ns:  Inputs to ALU: src1 = afed265f, src2 = 11c05b23, imm = 5596ebab,  mem_data_read_in = baadd00d,  control_in = 0000001
+#                 1865ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 11c05b23
+#                 1865Sending Another Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1865		Created Payload Packet
+#                 1875ns:  Inputs to ALU: src1 = c1233a82, src2 = ac05a058, imm = a85a6a50,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 1875ns:  OUTPUTS from ALU: aluout = 31d6d664, carry = 0, mem_write_en = 1, mem_data_write_out = ac05a058
+#                 1885ns:  Inputs to ALU: src1 = d1889aa3, src2 = 5243e3a4, imm = 32c3df65,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 1885ns:  OUTPUTS from ALU: aluout = c1ad8182, carry = 0, mem_write_en = 1, mem_data_write_out = 5243e3a4
+#                 1895ns:  Inputs to ALU: src1 = 753c17ea, src2 = 03703906, imm = aa138054,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1895ns:  OUTPUTS from ALU: aluout = 0060919d, carry = 0, mem_write_en = 1, mem_data_write_out = 03703906
+#                 1905ns:  Inputs to ALU: src1 = adf3405b, src2 = e455f0c8, imm = 24673948,  mem_data_read_in = baadd00d,  control_in = 1011001
+#                 1905ns:  OUTPUTS from ALU: aluout = 0d1889aa, carry = 0, mem_write_en = 1, mem_data_write_out = e455f0c8
+#                 1915ns:  Inputs to ALU: src1 = 9bf8f237, src2 = 7c1df3f8, imm = da8932b5,  mem_data_read_in = baadd00d,  control_in = 0111001
+#                 1915ns:  OUTPUTS from ALU: aluout = 4f05fa80, carry = 0, mem_write_en = 1, mem_data_write_out = 7c1df3f8
+#                 1925ns:  Inputs to ALU: src1 = 28d6a951, src2 = 41aed583, imm = 4d9ee39b,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 1925ns:  OUTPUTS from ALU: aluout = adf7795b, carry = 0, mem_write_en = 1, mem_data_write_out = 41aed583
+#                 1935ns:  Inputs to ALU: src1 = 1aa0dd35, src2 = 581653b0, imm = fddf82fb,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 1935ns:  OUTPUTS from ALU: aluout = 2576cd4a, carry = 0, mem_write_en = 1, mem_data_write_out = 581653b0
+#                 1945ns:  Inputs to ALU: src1 = 278dbb4f, src2 = 984da630, imm = 8c38c418,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1945ns:  OUTPUTS from ALU: aluout = 0896a111, carry = 0, mem_write_en = 1, mem_data_write_out = 984da630
+#                 1955ns:  Inputs to ALU: src1 = ee8118dd, src2 = a36ae846, imm = 30e20f61,  mem_data_read_in = baadd00d,  control_in = 0101101
+#                 1955ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = a36ae846
+#                 1965ns:  Inputs to ALU: src1 = ac974859, src2 = 2af17355, imm = 178b972f,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 1965ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 2af17355
+#                 1965Sending Another Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1965		Created Payload Packet
+#                 1975ns:  Inputs to ALU: src1 = c1b04483, src2 = 506aefa0, imm = c10f0482,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1975ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 506aefa0
+#                 1985ns:  Inputs to ALU: src1 = 5fe3cbbf, src2 = 22eadb45, imm = bbbc3e77,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 1985ns:  OUTPUTS from ALU: aluout = 73550000, carry = 0, mem_write_en = 1, mem_data_write_out = 22eadb45
+#                 1995ns:  Inputs to ALU: src1 = 229d0b45, src2 = ba941075, imm = fc670af8,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 1995ns:  OUTPUTS from ALU: aluout = 120c0000, carry = 0, mem_write_en = 1, mem_data_write_out = ba941075
+#                 2005ns:  Inputs to ALU: src1 = 63323bc6, src2 = 3601596c, imm = a84e5850,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 2005ns:  OUTPUTS from ALU: aluout = fc7977e0, carry = 0, mem_write_en = 1, mem_data_write_out = 3601596c
+#                 2015ns:  Inputs to ALU: src1 = 18bd6331, src2 = ce10fe9c, imm = de325cbc,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2015ns:  OUTPUTS from ALU: aluout = e85a2800, carry = 0, mem_write_en = 1, mem_data_write_out = ce10fe9c
+#                 2025ns:  Inputs to ALU: src1 = d7e31eaf, src2 = 872d2c0e, imm = b4e46669,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 2025ns:  OUTPUTS from ALU: aluout = ffff9416, carry = 0, mem_write_en = 1, mem_data_write_out = 872d2c0e
+#                 2035ns:  Inputs to ALU: src1 = d95b40b2, src2 = ef209ede, imm = c2e87485,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2035ns:  OUTPUTS from ALU: aluout = 5cbc0000, carry = 0, mem_write_en = 1, mem_data_write_out = ef209ede
+#                 2045ns:  Inputs to ALU: src1 = 555c0faa, src2 = 1407f128, imm = 610ed5c2,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2045ns:  OUTPUTS from ALU: aluout = 94e00629, carry = 0, mem_write_en = 1, mem_data_write_out = 1407f128
+#                 2055ns:  Inputs to ALU: src1 = 4d20099a, src2 = 69e751d3, imm = dd111aba,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 2055ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 69e751d3
+#                 2065ns:  Inputs to ALU: src1 = fdeb7cfb, src2 = c5cf728b, imm = 61114dc2,  mem_data_read_in = baadd00d,  control_in = 1010001
+#                 2065ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = c5cf728b
+#                 2075ns:  Inputs to ALU: src1 = e64828cc, src2 = 38e61371, imm = 4f49019e,  mem_data_read_in = baadd00d,  control_in = 1110001
+#                 2075ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 38e61371
+#                 2085ns:  Inputs to ALU: src1 = 309cdb61, src2 = bde3487b, imm = df9bd0bf,  mem_data_read_in = baadd00d,  control_in = 0010001
+#                 2085ns:  OUTPUTS from ALU: aluout = fdef7efb, carry = 0, mem_write_en = 1, mem_data_write_out = bde3487b
+#                 2085Sending Another Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2085		Created Payload Packet
+#                 2095ns:  Inputs to ALU: src1 = 732c5fe6, src2 = d7e1aeaf, imm = 0238e104,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                 2095ns:  OUTPUTS from ALU: aluout = 13710000, carry = 0, mem_write_en = 1, mem_data_write_out = d7e1aeaf
+#                 2105ns:  Inputs to ALU: src1 = 89646012, src2 = 7e29b3fc, imm = d5ba48ab,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 2105ns:  OUTPUTS from ALU: aluout = 000023dc, carry = 0, mem_write_en = 1, mem_data_write_out = 7e29b3fc
+#                 2115ns:  Inputs to ALU: src1 = e203f0c4, src2 = 1ffb813f, imm = e13256c2,  mem_data_read_in = baadd00d,  control_in = 0010000
+#                 2115ns:  OUTPUTS from ALU: aluout = 0000e658, carry = 0, mem_write_en = 1, mem_data_write_out = 1ffb813f
+#                 2125ns:  Inputs to ALU: src1 = 398a1973, src2 = 2d4d9b5a, imm = d066e4a0,  mem_data_read_in = baadd00d,  control_in = 0101001
+#                 2125ns:  OUTPUTS from ALU: aluout = 22591804, carry = 0, mem_write_en = 1, mem_data_write_out = 2d4d9b5a
+#                 2135ns:  Inputs to ALU: src1 = ff73cafe, src2 = 3a096b74, imm = 5d86b7bb,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2135ns:  OUTPUTS from ALU: aluout = 20000000, carry = 0, mem_write_en = 1, mem_data_write_out = 3a096b74
+#                 2145ns:  Inputs to ALU: src1 = 7132bbe2, src2 = f16948e2, imm = eff34cdf,  mem_data_read_in = baadd00d,  control_in = 0011001
+#                 2145ns:  OUTPUTS from ALU: aluout = 692334d3, carry = 1, mem_write_en = 1, mem_data_write_out = f16948e2
+#                 2155ns:  Inputs to ALU: src1 = cc13e298, src2 = 4fdbed9f, imm = 0817cb10,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 2155ns:  OUTPUTS from ALU: aluout = b7bb0000, carry = 0, mem_write_en = 1, mem_data_write_out = 4fdbed9f
+#                 2165ns:  Inputs to ALU: src1 = 791189f2, src2 = 5ee97bbd, imm = 55bc27ab,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 2165ns:  OUTPUTS from ALU: aluout = 000008c1, carry = 0, mem_write_en = 1, mem_data_write_out = 5ee97bbd
+#                 2175ns:  Inputs to ALU: src1 = 5a0a0fb4, src2 = aa08ac54, imm = 44e79b89,  mem_data_read_in = baadd00d,  control_in = 0011101
+#                 2175ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = aa08ac54
+#                 2185ns:  Inputs to ALU: src1 = 89b5d413, src2 = 560c91ac, imm = 1ae40335,  mem_data_read_in = baadd00d,  control_in = 0100001
+#                 2185ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 560c91ac
+#                 2185Sending Another Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2185		Created Payload Packet
+#                 2195ns:  Inputs to ALU: src1 = e69dd0cd, src2 = 7fcff3ff, imm = dac986b5,  mem_data_read_in = baadd00d,  control_in = 0110000
+#                 2195ns:  OUTPUTS from ALU: aluout = ffffd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 7fcff3ff
+#                 2205ns:  Inputs to ALU: src1 = f42082e8, src2 = a5955c4b, imm = 89042e12,  mem_data_read_in = baadd00d,  control_in = 0111000
+#                 2205ns:  OUTPUTS from ALU: aluout = 33a94267, carry = 0, mem_write_en = 1, mem_data_write_out = a5955c4b
+#                 2215ns:  Inputs to ALU: src1 = 1b978f37, src2 = 574e1dae, imm = fc4ca4f8,  mem_data_read_in = baadd00d,  control_in = 0001000
+#                 2215ns:  OUTPUTS from ALU: aluout = 00000001, carry = 0, mem_write_en = 1, mem_data_write_out = 574e1dae
+#                 2225ns:  Inputs to ALU: src1 = 90184e20, src2 = ed1b50da, imm = 913e0222,  mem_data_read_in = baadd00d,  control_in = 1001001
+#                 2225ns:  OUTPUTS from ALU: aluout = 000000f4, carry = 0, mem_write_en = 1, mem_data_write_out = ed1b50da
+#                 2235ns:  Inputs to ALU: src1 = 763355ec, src2 = 9535122a, imm = 3d7f5b7a,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2235ns:  OUTPUTS from ALU: aluout = 79b80000, carry = 0, mem_write_en = 1, mem_data_write_out = 9535122a
+#                 2245ns:  Inputs to ALU: src1 = 0f1e511e, src2 = f4a1dae9, imm = f5a4f2eb,  mem_data_read_in = baadd00d,  control_in = 1111001
+#                 2245ns:  OUTPUTS from ALU: aluout = 90180220, carry = 0, mem_write_en = 1, mem_data_write_out = f4a1dae9
+#                 2255ns:  Inputs to ALU: src1 = 05b4f70b, src2 = b704e26e, imm = af455e5e,  mem_data_read_in = baadd00d,  control_in = 0001101
+#                 2255ns:  OUTPUTS from ALU: aluout = 5b7a0000, carry = 0, mem_write_en = 1, mem_data_write_out = b704e26e
+#                 2265ns:  Inputs to ALU: src1 = 3e502d7c, src2 = 22c03145, imm = c5cb548b,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2265ns:  OUTPUTS from ALU: aluout = f2eb0000, carry = 0, mem_write_en = 1, mem_data_write_out = 22c03145
+#                 2275ns:  Inputs to ALU: src1 = 094bd312, src2 = 1bf8bd37, imm = c1c3d683,  mem_data_read_in = baadd00d,  control_in = 0111101
+#                 2275ns:  OUTPUTS from ALU: aluout = 0000000d, carry = 0, mem_write_en = 1, mem_data_write_out = 1bf8bd37
+#                 2285ns:  Inputs to ALU: src1 = f0ab00e1, src2 = 674fdfce, imm = a5365c4a,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                 2285ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 674fdfce
+#                 2295ns:  Inputs to ALU: src1 = 6acd73d5, src2 = 669907cd, imm = f204eee4,  mem_data_read_in = baadd00d,  control_in = 0110001
+#                 2295ns:  OUTPUTS from ALU: aluout = baadd00d, carry = 0, mem_write_en = 1, mem_data_write_out = 669907cd
+#                 2305ns:  Inputs to ALU: src1 = fa328cf4, src2 = 766153ec, imm = 0d623f1a,  mem_data_read_in = baadd00d,  control_in = 1000001
+#                 2305ns:  OUTPUTS from ALU: aluout = 98b02031, carry = 0, mem_write_en = 1, mem_data_write_out = 766153ec
+# 1
+# Simulation stop requested.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Break key hit 
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
+# End time: 20:56:07 on Sep 23,2017
+# Errors: 0, Warnings: 2

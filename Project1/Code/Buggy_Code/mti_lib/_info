@@ -1,0 +1,200 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/ncsu/rsjenkal/eos_research/Mentor/Project1/Buggy_Code
+T_opt
+Vjn_`5hz>U6LHN0UFfJ1;h1
+04 3 4 work LC3 fast 0
+=1-001372fd878c-48e679eb-7510a-bbd
+Z1 o-quiet -auto_acc_if_foreign -work work
+Z2 tExplicit 1
+Z3 OE;O;6.3c;37
+T_opt1
+VQj9oLj?j<Xk<Z>LRJX0Hz2
+04 8 4 work Test_LC3 fast 0
+=1-001372fd878c-48e679ff-e256-bdc
+R1
+R2
+R3
+vALU
+I_BbQk4>HOJTd^<1KaSJ0V3
+VHY>O8PC6WHdd@5Hl5[_cf2
+Z4 d/afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/TA_stuff/Buggy_Code
+Z5 w1223602461
+Z6 8Execute.v
+Z7 FExecute.v
+L0 257
+Z8 OE;L;6.3d;37
+r1
+31
+Z9 o+protect
+n@a@l@u
+!s85 0
+vController_Pipeline
+IcRW^_=M3Z<i1<QJHPe<i60
+VkH>no1bIe7>MM7a2cN0LT3
+R4
+Z10 w1222473555
+8Controller_Pipeline_Ver2.v
+FController_Pipeline_Ver2.v
+L0 2
+R8
+r1
+31
+R9
+n@controller_@pipeline
+!s85 0
+vData_Memory
+ILmidakBDHQSYmCKAK5cHH2
+VFIK=6P7cJ87XDmNLD2>0F2
+R4
+R10
+Z11 8Test_LC3.v
+Z12 FTest_LC3.v
+L0 24
+R8
+r1
+31
+R9
+n@data_@memory
+!s85 0
+vDecode
+IePgoZ>bQz<2l5mD7V2Wlg0
+VJcnbSaT2^:[lnSKzXeUYK0
+R4
+w1223606135
+8Decode_Pipelined.v
+FDecode_Pipelined.v
+L0 2
+R8
+r1
+31
+R9
+n@decode
+!s85 0
+vExecute
+IEXKcYUZ@=L>n8[B<O7[J52
+VliHKVY>hbUcXD51FSHcZ42
+R4
+R5
+R6
+R7
+L0 2
+R8
+r1
+31
+R9
+n@execute
+!s85 0
+vextension
+I;2dA<iAcbS]B[ghYf@;<73
+VkCgmm:8Tn@mS5YP:T9B2C1
+R4
+R5
+R6
+R7
+L0 235
+R8
+r1
+31
+R9
+!s85 0
+vFetch
+I3E;jk1iOJF9cCPM8Yn]cD1
+VF^=K=4N9bXV8b^OZ4i@a=3
+R4
+w1222872111
+8Fetch.v
+FFetch.v
+L0 2
+R8
+r1
+31
+R9
+n@fetch
+!s85 0
+vInstr_Memory
+IzZE_GOnGmJa5?bOZN9W=H2
+VdM=1kO[W>9]1EMD0PIL5Q2
+R4
+R10
+R11
+R12
+L0 1
+R8
+r1
+31
+R9
+n@instr_@memory
+!s85 0
+vLC3
+I^oKPflo]39H^N1z8T2kPR0
+VJ_f?bIbY12_0KjBXVhDGB1
+R4
+R10
+8TopLevelLC3.v
+FTopLevelLC3.v
+L0 1
+R8
+r1
+31
+R9
+n@l@c3
+!s85 0
+vMemAccess
+IkA]>dTah0Ze]DYF]DJogH3
+VI8I8nGM5JJi7U?bnfk?YV1
+R4
+R10
+8Mem_Access.v
+FMem_Access.v
+L0 1
+R8
+r1
+31
+R9
+n@mem@access
+!s85 0
+vRegFile
+IK@e582`L`:bmB4cTQA_YV1
+V1o7z=GBceTN;2]3b8A9?H0
+R4
+Z13 w1223730867
+Z14 8WriteBack.v
+Z15 FWriteBack.v
+L0 63
+R8
+r1
+!s85 0
+31
+R9
+n@reg@file
+vTest_LC3
+I1ZfGJo:@h[XhFP]_@8Z4H2
+Vh:E4N8lhQSK;6:9QO7m6k0
+R4
+R10
+R11
+R12
+L0 47
+R8
+r1
+31
+R9
+n@test_@l@c3
+!s85 0
+vWriteback
+IAIZFmHVRT>>ST@NkdIA>02
+V^dnV^0kj[2n3`je]iUY^Y3
+R4
+R13
+R14
+R15
+L0 3
+R8
+r1
+!s85 0
+31
+R9
+n@writeback

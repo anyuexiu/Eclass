@@ -1,0 +1,194 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/qixin/proj_users/twxiu/svvlab/Lab1/Code
+vALU
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+!s85 0
+31
+!i10b 1
+!s100 L6M7NKZ9]aDO^b>>Z7;g]0
+IolCjJ@TiNjj>hALefQZ=@2
+!s105 ALU_vp_unit
+S1
+R0
+Z3 w1506000875
+8ALU.vp
+FALU.vp
+L0 2
+Z4 OE;L;10.3;59
+Z5 !s108 1506175829.457369
+Z6 !s107 Shift_ALU.vp|Ex_Preproc.vp|Arith_ALU.vp|ALU.vp|Execute.test_top.sv|Execute.tb.sv|Execute.if.sv|Top.v|data_defs.v|
+Z7 !s90 -l|comp.log|-sv|data_defs.v|Top.v|Execute.if.sv|Execute.tb.sv|Execute.test_top.sv|ALU.vp|Arith_ALU.vp|Ex_Preproc.vp|Shift_ALU.vp|
+!i111 0
+Z8 o-sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@l@u
+vArith_ALU
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 _oSM70^2EK3LYT_53AiTo0
+IT[@^iObW`GNhPb[WgTUUe0
+!s105 Arith_ALU_vp_unit
+S1
+R0
+R3
+8Arith_ALU.vp
+FArith_ALU.vp
+L0 2
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@arith_@a@l@u
+vEx_Preproc
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 fKLhno:[lM=e11?FHdR?X1
+I5_bni061[J<51PA]LK3PD1
+!s105 Ex_Preproc_vp_unit
+S1
+R0
+R3
+8Ex_Preproc.vp
+FEx_Preproc.vp
+L0 2
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@ex_@preproc
+YExecute_io
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 n<oBW8R?lDRoTY=6]>JjX2
+IgYa4M>QOWSR:eJG>dF4Q10
+!s105 Execute_if_sv_unit
+S1
+R0
+R3
+8Execute.if.sv
+FExecute.if.sv
+L0 2
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@execute_io
+4Execute_test
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ;QWG`?_Uc7oJFfdUF[k:`3
+I@l[bAekFZN=cT2@E>2D]b1
+!s105 Execute_tb_sv_unit
+S1
+R0
+R3
+8Execute.tb.sv
+FExecute.tb.sv
+L0 3
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@execute_test
+vExecute_test_top
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 lBHPh1Z5ho81S]=9R2Wdf3
+I:H;;Z=L2Zl`mNm5k>Q9VG3
+!s105 Execute_test_top_sv_unit
+S1
+R0
+w1506175827
+8Execute.test_top.sv
+FExecute.test_top.sv
+L0 2
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@execute_test_top
+vShift_ALU
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 oS_zdO[a9?fRAINknN]A53
+IQz=_S8UeI5Ynd4_P5<EiF0
+!s105 Shift_ALU_vp_unit
+S1
+R0
+R3
+8Shift_ALU.vp
+FShift_ALU.vp
+L0 2
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@shift_@a@l@u
+vTop
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 Cj[e@:L<]oQ2`UF^EM[8K3
+I^UPg;nLHVbN;l8bfB6n>]0
+!s105 Top_v_unit
+S1
+R0
+R3
+8Top.v
+FTop.v
+L0 3
+R4
+R5
+R6
+R7
+!i111 0
+R8
+n@top

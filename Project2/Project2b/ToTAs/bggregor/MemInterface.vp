@@ -1,0 +1,28 @@
+`include "data_defs.vp"
+module MemInterface(state, addr, din, offdata, miss, rrqst, rdacpt, wrqst);
+	input [3:0] state;
+	input [15:0] addr, din;
+	input miss;
+	output rrqst, rdacpt, wrqst;
+	output [15:0] offdata;
+
+	reg rrqst, rdacpt, wrqst;
+	reg [15:0] offdata;
+
+`protected
+    MTI!#NHO+?+a$oM|)txVksTO~TVoO+vVEGOg6oOT["B^Qo{r+Qz'#v?YJ[<$5x'QiYq',#k^,-x{
+    ]QYv_1lEAHEpgmj>eanWB4@j];]/K$p'N#$#Tsei,BWUa=1^ou-'H\>{J*5kEOv}?\!Q-wAOre'+
+    $rmxGH}v$lBiW^ua]}Y\Z77BZ^@;G2U1_,n;!kUzT~<ekDk>EHT7W!r#axK;zGvo@jCvDI$-~rTV
+    kTa+?OO{QYT^KiE][@v!n_Y2urR!C?a5o]TVRiE=X7CrxzXjlWH$7pZ<].KRX^\<;1xZ>51~1'<Y
+    2{EBIiNJe;$[JvK#UVCIX@^j?HBuA=[f[vEDPB_'vio?,a'r$,+uma{[pcUsp+<wXa=X@[K5TxAo
+    _}cvmvn{h\ZC<{Riu$]r!#RI{G-e$^mT~,;\311KjO-ol{rmX\+_Z3QXB$TC#QI7r*}KDTrTTOX@
+    _O>N*2lBGwxe\G#VRs^XhI+_CvH*jY$*2[KA1<$jXgHUjZxskm>H,uV'~HI3[!$>~2arBO$O_<<+
+    \Zju&mE^\*mZAmspA<-W~NImrK~S]E[{jwDu^[Gvx!mQL-5?xyJ7Bm}yCxaBGJ7>C*[ok*EQOo?T
+    U\zWiv7G>EW*}%I~E1+<]Eo]}7oX3x|t}1=<jn2GiEoEl]#}&a-uumXTTiHun^OGAKC5Y#5TZWj]
+    ;v?<>s[wCTU~~3D!EZ_DjKTas;9U^^KIY;'IJ+GXH>k.iUDJYf3Bj<,p3@yQ_>J~wQTr0.~,sK>[
+    *B
+`endprotected
+
+
+endmodule
+

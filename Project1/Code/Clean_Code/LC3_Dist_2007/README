@@ -1,0 +1,50 @@
+Contents of this folder: 
+a. HDL Code For LC3: 
+	Fetch.v
+	Decode_Pipelined.v
+	Execute.v
+	Mem_Access.v
+	WriteBack.v
+	Controller_Pipeline_Ver2.v
+	TopLevelLC3.v
+	
+b. Testbench for LC3 testing: 
+	Test_LC3.v
+
+c. Typical Contents of Data and Instruction Memory: 
+ Testbench presently uses: Data memory (DMem_5.dat) and Instruction 
+ Memory (IMem_5.dat) initialization files which are used to load the
+ RAM arrays in the two memories using readmemh 
+
+d. A typical .do file for modelsim that should provide the necessary
+ visibility needed to debug the progess of the LC3 microcontroller during
+ simulation.
+
+e. GenerateInstr.pl: This can be used to create an opcode for the ISA of 
+the microcontroller. Usage examples: 
+
+	ALU Instructions:
+	perl ./GenerateInstr.pl add r5, r4, r1
+	perl ./GenerateInstr.pl and r2, r5, r7
+	perl ./GenerateInstr.pl not r3, r1
+ 	perl ./GenerateInstr.pl add r2, r5, #23
+	
+	Loads Stores:
+	perl ./GenerateInstr.pl LDI R7 #24
+	perl ./GenerateInstr.pl ST R7 #140
+	perl ./GenerateInstr.pl LDR R7 R2 #12
+	
+	Branches: 
+	perl ./GenerateInstr.pl BR NZ #142
+	perl ./GenerateInstr.pl JMP R6
+
+
+	Remember to put the pound sign. Also note that the immediate values
+	need to be from 0 - 31 in this case given that I have not modelled
+	the sign here. (LAZINESS). Please go ahead and use the equivalent
+	unsigned version of the offset size as an input. For example, use 28 
+	(1_1100) which is actually -4 if you consider the last bit to be the 
+	sign for the 5 bit offset case. Therefore "add r2, r3, #-4" would be 
+	put in as "add r2, r3, #28"
+
+

@@ -1,0 +1,69 @@
+`include "data_defs.vp"
+module Writeback(	clock, reset, enable_writeback, W_Control, aluout, memout, pcout, npc, 
+					sr1, sr2, dr, d1, d2, psr // connections to register file
+				);
+  	input 			clock, reset, enable_writeback;
+  	input 	[15:0] 	aluout, memout, pcout, npc;
+  	input 	[1:0] 	W_Control;
+  	
+  	input 	[2:0] 	sr1, sr2, dr;     	// source and destination register addresses
+  	
+  	output	[2:0]	psr;
+  	output 	[15:0] 	d1, d2;				// two read port output
+
+  	reg 	[15:0] 	DR_in;      	
+	reg		[2:0]	psr;
+  	// MODIFICATION_RAVI we can write to the register file here and need a enable_writeback signal somewhere 
+  	RegFile RF 	(	.clock(clock), .sr1(sr1), .sr2(sr2), 
+  					.din(DR_in), .dr(dr), .wr(enable_writeback),
+  					.d1(d1), .d2(d2) 
+  				);
+  	
+`protected
+    MTI!#l$!3iG!Yu7zz$$!~$l?E,CW<UjC\.QKT[I#on|%<,'iKr{'}Z]OInU]~-@Q[;{5p=_>d?7~
+    Hx'x=asBO$G{_e!$<XDm!@YrG,+lJ{-*-n=AaxW2<exko=PnErko>~AmsT+k]i@=G@Q^nRmK{II%
+    jQ@a7%W]i!$Dz;OW,r~1ioGxu$lJ*=SuTKz]wW$V'Qo+DO1}G^j5W{,zl_@_!mY~\#}e1X7*mUs)
+    F.!.qB@}K<l}i~=j<mjx}Wnmm$o(WUwn'1i,+lX]HD!{/]e_$y#I1kp8$r?!5;up.^^$[N\QW;Z'
+    A7_y_\Z^n5J<F9RG-A}wo'OUBavJXW@Ur75IW'OuVsRl#*CG{*'jC~WAnp[51<uRor+-YzU]\$SI
+    CmVxYQKZ{OsU}uxiDYkKVGv;C7omU!5"eamH-<;3[UDYZ$XDd}rRi~1eU\Jp*\}_Ua]3m>oz~I_l
+    oZwXa+}?}riROo*\5nR?lrs5;eI~>VVXxVKZ],]X-jA*_I2_1zwm7s5X@9eC-]D3]B<p=;rD]@k>
+    ];R<n*N*#Xa<['BE'e=jI'79OQHTiU'#l.,m^[Vi,53+\@Ri
+`endprotected
+
+endmodule
+
+// registerfile consists of 8 general purpose registers
+module RegFile(clock, wr, sr1, sr2, din, dr, d1, d2); // 
+
+  	input 			clock, wr;
+  	input 	[2:0] 	sr1, sr2, dr;     	// source and destination register addresses
+  	input 	[15:0] 	din;             	// data will be stored
+  	output 	[15:0] 	d1, d2;				// two read port output
+
+  	reg 	[15:0] 	ram [0:7] ;
+  	wire 	[15:0] 	R0,R1,R2,R3,R4,R5,R6,R7;
+
+`protected
+    MTI!#9J=2GG$ruXQe^aUzjl-Y]i5rk^1CTko'[:7u=i|i's7V052r$vIvr77T@sY11NT=Y[Hw-'U
+    pJ[${ZkjZV>2{WH]kZVs-1up3}T*C$pa5E;3\,;On3[^+R\#Xe#zG+7D<paE3~x~aj~_{{;n<3p{
+    a;$i=<ISu'X-C{ImnouCf/'V!llin[#+7H$,uw!'{C92jCErA!r7H;2$nQ<1nj_C!nOEA-E|D[vJ
+    B3Zv@}a-oJ-r]uZ?ae,v=1iCi{]u+hxQ;+,[_Hs$;{UD^HO3Kj+Ox\c^Q_*V[B#mUEE_s{;\YY!G
+    #*ENR$u=!T+RZO23!ov3[!'><CO2IBmBa'zGGO1lE'lrsjxZQm]mYeQw:_XpRBmal=![1_uJ^M#w
+    5BdE+BYr,+!}JGX*N*1m}<z}$nsz}i7p7IRp#|ZjCR^w7[7<Ha,Dw2OwzY$V]\O#ww50arQ7BOnx
+    pji{Vo3VA{]kx'5ix<lYu<I3nRn^]So3p5r#_Ublm;_x1iz#$m?V,x[}T[HHan,1G=?opQ{>]X?M
+    Y@BI'oi_{X[uKwvxFGu[w|F\O?^;OZ72$l$,z#nwswuO+7_rT*vO=i$*n,T]_eR=2orEeX^w['
+`endprotected
+
+  // These lines are not necessary, but they allow
+  // viewing of the the registers in a waveform viewer.
+  // They do not affect synthesis.
+  	assign 	R0	=	ram[0];
+  	assign 	R1	=	ram[1];  
+  	assign 	R2	=	ram[2];
+  	assign 	R3	=	ram[3];  
+  	assign 	R4	=	ram[4];
+  	assign 	R5	=	ram[5];  
+  	assign 	R6	=	ram[6];
+  	assign 	R7	=	ram[7];
+   
+endmodule

@@ -1,0 +1,29 @@
+`include "data_defs.vp"
+
+module ValidArray(clock, reset, valid, index, state
+				//	, update_valid
+				  );
+  	input 	[3:0] 	index;
+  	input 			clock, reset;
+  	input 	[3:0] 	state;
+//  	input			update_valid;
+  	output 			valid;
+
+  	reg [15:0] validarr;
+	
+`protected	
+    MTI!#9;,R!},Kxe7QaT->vj=_\}xIR!{ZuR_Q[z~zx|QZE!ImZx7;lo|Ql7\$_?$rj=p&RV@#E@J
+    *7Z1Kg[[WrQUu=ZUo[QwT1"N_5IA:~Xl\-{<*.>o?Z1,poYk+;\2os5C+C\#VsY=*JuxjpQ3!;a]
+    Y3o{~31BZ##GQ^FwCrmBIisjJW'CTzw+Up<iC{\C[7z,3-sqYmAJbkjs[clJnZxxQ'mroUp{',KC
+    *]UC__3Xpr~x2j$B<D>>5p#7kr}{>Y)9L\*b$mBO_DiKy=![x+woi#V#r31~w=EpRIzTK=!m;CZ+
+    DY=u-B+[uD,^eIVw1sQeJXOumECYZl5'*8FE:X$?[=U^7jTJ;V@+^xJT==-u]$i];fO*}}9Es,lU
+    TZs==-VXI={ntIkDG+eI~Ezk$@_+nVjvDlrr^.ZG$A!C3@TAUR'!T!1!YH#t$n!]zDYjCe<'=m+^
+    }i]eB=\[tUj}\euz$Dx}3[GGv=EjEz-CELC*@;C#=2~jKTD,#Ia{p#ZoA-sR~#x;I]C\B2='2Qxu
+    VJB2V\PVORAh=RX]JUjxEb^=oYUvUUwYs=pj^*Q(w5@5_WzZsJ_i=AO\'pB?/FE}~j/5Bir|zi;#
+    G3$$W*-3}nd|#p'K_\BO
+`endprotected
+
+endmodule
+
+
+

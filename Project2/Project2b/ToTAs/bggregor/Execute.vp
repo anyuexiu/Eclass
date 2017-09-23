@@ -1,0 +1,118 @@
+module Execute(		clock, reset, E_Control, bypass_alu_1, bypass_alu_2, IR, npc, W_Control_in, Mem_Control_in, 
+			VSR1, VSR2, enable_execute, Mem_Bypass_Val, bypass_mem_1, bypass_mem_2, 
+			W_Control_out, Mem_Control_out, NZP, IR_Exec, 
+			aluout, pcout, sr1, sr2, dr, M_Data); 	// MODIFICATION_RAVI Need in put in the bypass that could 
+   // be either VSR1 or VSR2. Need controls for that as well. 
+
+   input			clock, reset, enable_execute;
+   input [1:0] 			W_Control_in;													
+   input 			Mem_Control_in;													
+   input [5:0] 			E_Control;
+   input [15:0] 		IR;
+   input [15:0] 		npc;
+   input [15:0] 		VSR1, VSR2, Mem_Bypass_Val;
+   input			bypass_alu_1, bypass_alu_2, bypass_mem_1, bypass_mem_2; //bypass1 and bypass2 allow for the use of bypass values for either VSR1 or VSR2 
+   output [15:0] 		aluout, pcout;
+   output [1:0] 		W_Control_out;
+   output			Mem_Control_out;
+   output [2:0] 		NZP;
+   output [15:0] 		IR_Exec;
+   
+   output [2:0] 		sr1, sr2, dr;
+   output [15:0] 		M_Data;
+   
+   reg [2:0] 			sr1, sr2, dr;
+   reg [1:0] 			W_Control_out;
+   reg				Mem_Control_out;
+   reg [15:0] 			M_Data;
+
+   wire [15:0] 			offset11, offset9, offset6, imm5, trapvect8;
+   wire [1:0] 			pcselect1, alu_control, alu_control_temp;
+   wire 			pcselect2, op2select;
+   reg [15:0] 			addrin1, addrin2, aluin1_temp, aluin2_temp;
+   wire 			alucarry; 		// overflow checking not implemented
+   wire [15:0] 			VSR1_int, VSR2_int;
+   wire 			alu_or_pc; 
+   wire [15:0] 			aluin1, aluin2;
+   reg [2:0] 			NZP;
+   reg [15:0] 			IR_Exec;
+   //assign {IR, VSR1, VSR2}=D_Data; // the D_Data values is going to come in from the register file based on the 
+   // the sr1 and sr2 values sent to the RF from the Execute. 
+   // create the correct sr1 sr2 values for reading the register file
+   
+   ALU 		alu		(clock, reset, aluin1, aluin2, alu_control, enable_execute, aluout, alucarry);
+   extension 	ext		(IR, offset11, offset9, offset6, trapvect8, imm5); // IR and trapvect8 are not used for this project
+`protected
+    MTI!#vs{vzCexz!A+u[D1ziQ=s-=rxaW?r3@uN1?vK=~o<<UI(q%^2l*[zQI[xI_7@Az\YkVZasZ
+    jnU3e~Ba#wsl;E_UDZ3K!rv{Q11nT=#~<wW7U[Tz!T+<\_?-jPZ1=D+RuCfT7o\TBaTrKr{Bp?G;
+    jI#mX]!UjT["mj+s$JuY:Y;z-*pO[DjE+#wn$l']=yYul^pGB>Tnz+]aweOs#@'*]<6%*,K3'ZmZ
+    pz1OIZv20D[T]yiYWo]Xn#(xk]mw$B?}Zr!puersgD_}lr1BG2E;!5[1;nOi$iGZ_=X3wRKm-8xN
+    _CR'U$ju5IK\Z_R_F0-77]#AmJ=1\YW5X^\!!E[a\zW'C=3wJ'lp_lEA!VB#@*Za]7^pwuKw^-!^
+    ,1RGAn'OlE>OiR=IY2p7-JI'UE!5+u[se$*RSxx!_(I_W*JR5,oxHo?B3Z[j~~<1}=sUJ-jDEAL-
+    ,ujFBH{Aj^w~KraxlzaOUXl$2vO[j#3O}zpi='iJ$5{$Ev^TT*in7A[ZCaY[W_o,>=,'kIKA$l5^
+    rsYQcOYl}c-X}s"U=i'7[KEbAr?UvRDmp;J2>*a\$wwD=uZaO7[TYUz+7~}{7=XU$,^~1=osaU'p
+    K\uBWA$~b]00R}IE1w{_fNO1r~a_<3t-R[#,k_UU'JpoQ\Gy///=T<Z>X>OarG@lZ-?YAoR3UQ1&
+    7X@@[)kClmg!Sh^gV7~mrG]nF$}xzzGezQoJB)+a!1'31{U\Dx;_Zp[23\{Q+[y+{2rOV!UZ]XkH
+    }~s}kEGHT<#YgsX[s*;l@>D#remsj\~I+hQ;ZAEnl;.5sXaX]'\QY[2aB!#w}<w?^;2su[pzYx?K
+    5G_lx-!G=,#F5TW3^_+Oomx{~ji?V,BG|*wx2QZ'T=nU*BVCZr!$#p+5Rk>j?GskODsBi=-$pRA5
+    Z8m[V2]~1o3'Hpp+'Z?j7@mU>HUX_BX^WGu}DOCr?{2Hy5kDG/m[$''I#V!]D]}LCkR}a]TEzM3=
+    #<$}2[^\BQYCrH[.&>sJ#r'>[e+W#YUBVaE*H2Vm[d}Y3vma^<}H;VW=3uIexZ-5mC$;{+A=X<xp
+    $@,fwV*21,E;+B$O[^AoCoyIGn~lZQY?[+@,[we>-l[cO$[*2eBX*easav}r:[9-ls'a{BHks>Eb
+    sXm3<>=o&xn1-8B^]YRzH+UDv\-I;CZr?[rWnmH5IvCPgi={\JpO=|*,R\sEe\;DTYzGEU4\5kJs
+    roE]a+Wd&*?~r-7T]@[,2oJC*5?U5o{A^|KvZ7n=<Z#$lEfuV$uAvm?1=+rI3lZ2,Z5R1[z6U^Tr
+    G5*#1?KKzrno&n>DQZ\#}FKwjIhX5iCHz~<j2+}l$z~IA_v^~3vpU+5*RC*o$YVMr]ZmUs>2*vxT
+    ?UVzX,W2F1iVV7;TCGJ2lvnvpmavs&RinYzeQrUEJr5psTlwXwooo>?s[m?j\~^}y-[a}r1@Z!DR
+    BW*TnI7#ae5z#W,Gj6_!^\T'2e~5<VD1kJ\~,j;BI#UBH>S1<Ce*2\kC\3]UAX+=eC}Y[]1:HlJr
+    $BO}sWzQ)F-wnTGw**&.+w-KLn'7'F\\XGVemvDx[1S<-Jvw{cH>-zFev;$Pajv7)FhaVy-XQp'=
+    HlQz2z$G?zp:VO1^7!ZYzDvQpZOJlr~_3]1OD1uH#HV{wzaQtjWRwB3XOW_A2sJv[5a,VDmIaK{X
+    J\U~~Yje?)EmExrp>!D*i2m_$W1J\GH^^zO;ulC<]#CrwG'cvE\zG-Q_7W*p+rC}1{z]CKKn3opa
+    p*K]<R;51\A31X=JNs^?zT7@;B[o[iwY5B[_>ioXAT{3VY2wVUrARCK$VJGmol#Eu3n*p1TpKna>
+    Y}OrCJjBEDEG[\H]s"BT[i=Y5z^_o{'}v~o^#^2\aTlAE<u[n\t77Ynv!av7-GUlG{Ac!pW\u7#5
+    OU;^a\1H^3Z_Xo\^],rDj@=$v3u\+rKU[2G<YAR{$JoY-Ts3E5=BAjv1=!Ij{oA2H7~3D[KKuI~Q
+    5{[K!vWp]$=?xvJ;nl<KY{DoT-JHO]$D?{<+XA^Y:_BE#:eje]lnHJC]w!#rYVVCJ!\XEwUwG5$$
+    5Y<=_3#Q$pB[5$ox6xABC$~_WwU]QBslO-VE<a$Q'+GZ1iEBW[wrDR#QCH,ZJXG$Qr1WEn$[11z1
+    x=TX!v=A!R5Ze$ev}G@[u_7j#aX4'Y/s=;#G1zX5]{VT{>_lE!z-,V]z$Ikrsw,x']'\1k[CV5O]
+    aTJ3nKR*E-7ur1H^'T>pM;X*'~Xp{_4{nlUVHJkV2UIleiQGOB~5u7','<l}V,VUUA!AR}}@j{QI
+    p=o+{<'1>VwsTp^DkG-RX+!L_v@B#z};a,i,hA}u=AwC@lc5]>'lV+[#Aak^TolJ7-3wOU}R;pk+
+    $[TETQ[/s^B,nXEXz5m,B@}!|5u~]=sAl571uuTCC^aIAuDBGA5K>,0XsZ^;Ek^%Wwo=]#*aHTuC
+    Cx!rxR~Oy=~C@oJYr}!A1|1}mpzi
+`endprotected
+
+
+endmodule
+
+module extension(ir, offset11, offset9, offset6, trapvect8, imm5);
+   input 	[15:0] 	ir;
+   output [15:0] 	offset11, offset9, offset6, trapvect8, imm5;
+
+`protected
+    MTI!#Q1E!+=Voi_l-Bl+G,*>BC_$;1n~{KEn<[yRpm[z?13=#H*o/7a5GE+Y!T=?x@o7JwEJ\I{A
+    >(E_j?@Ir\;O^~C^r~N$2ZWZ5?IWXp}^x3eCjAr]:x;eJQ>UJ=22_pY{,t+VYGi>m=Z^i<GpKYY:
+    I5RQn5\v^Dnz$v#3.UnH^*=#Z7>jQTRTJ#RJp\Zn]G2}jY*#5"ez<!Iew<$2T;=T]ruDT*Gp<OFg
+    '2=7W*G;tf!s#vHrj"GX\n^HrA
+`endprotected
+
+endmodule //extension
+
+module ALU(clock, reset, aluin1, aluin2, alu_control, enable_execute, aluout, alucarry);
+   
+   input			clock, reset;
+   input [15:0] 		aluin1, aluin2;
+   input [1:0] 			alu_control;
+   input			enable_execute;
+   output [15:0] 		aluout;
+   output 			alucarry;
+   
+   reg [15:0] 			aluout;
+   reg 				alucarry;
+
+`protected
+    MTI!#1HWmFHaXA,=;sk-+B9[}XR|inC+K[<.""mN"[>Noe[[Nenn+B-l1uoQ#D4e1O>#<YKjFp,m
+    $h?o.mwnO*rka;El["@j\Qy=j<@tE@@kv3V7YA~K@o]p#Clv=luUreBWIr]]+Eo7k$_z@a'~jRD,
+    l;Ii*G$_B_BlBjAap@KQROe-W{DZV2m$2[=zoU$A}1v;a=nawa@?HAW3g7HB5G{C2or,[}?n{:EL
+    }K*1W$#U3j@>:WOXkuB1Jo#[j7Z$[Qw[{[mVTUU;_;{m5ZzCie?2^yKaC_[ms~t[so+ZR\T_DuX}
+    eyEKXz=3^s,5eoksVo^TnW?T+kvwWr)nYD+o^R**=B7IuWk@a~*lpv]$EkV'1,uisOE*\,?o*EZC
+    mDiQ3YT4;D[T{5JC[ba*WKQraH
+`endprotected
+
+endmodule // ALU

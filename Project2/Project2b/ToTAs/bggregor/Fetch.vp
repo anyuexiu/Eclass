@@ -1,0 +1,32 @@
+module Fetch(clock, reset, enable_updatePC, enable_fetch, pc, npc_out, instrmem_rd, taddr, br_taken);
+  	input 			clock, reset, br_taken, enable_fetch, enable_updatePC;
+  	input 	[15:0] 	taddr;
+  	output 	[15:0] 	pc, npc_out;   // current and next PC
+  	output 			instrmem_rd;
+	
+  	reg 	[15:0] 	ipc;        // internal PC
+  	wire 	[15:0] 	muxout;
+`protected
+
+    MTI!#<xQsQ_=Qi*<z^Q_npU;wX}1v=G;AX}^uFlZYD="[OnU=ZYO7rDD;R^BE1,OxTm_V_vTAr;<
+    v=pQN#\]1KY{[RX4p!Y#B<7O}#<Zh>V3plJ_p'Z}*BZK[kon[@}#H|9UDnAiqIiR>'H\UX7p}*AQ
+    ~^Z\_|rhYW5<.Jvir^Xp[9B\Eit9BC3[!I^$[?{!rGUwQeYIwR,[jHDw=~s5_=1{h3$#s!HP5!Wo
+    IlXK__*$Z[5@'0@$ZKr>X@W7!?1>wzG]eaGZr@[G7v*?\$CCX]VOwTW-rE!}jv&*-_;R/[^u=!>B
+    $EK1U)M[5,Rns,jOv5?V\H\pZ-**_W7#DZ[MP7@n7bkoi]w}w#N2Er~4I3J~Va3De7$3.L?Uol#^
+    lWJXvr7Di?[%7;r{1G*pZDR{Ennv[Z;^3R-[)_T[x/-^>_I~Wv7#j#v~RiZosuY@T5*CiXA[{uIT
+    OiYkG2$wU1$a!=GGs[<X1^\knTCln]2+SO3Ia-B2}Ko!T@,i[_T7]EEj$*}*p]Ope,rs,es$vl-W
+    r}w[G?|!GK<e,>nx@'=#Y7iRW3a>,Ul#vAK2H^$Y]n{I#]QwDl#1}A<-sR]zviTlJ^;=!Q>lJ}{3
+    Ra
+`endprotected
+  								// it is achieved by the control of the pc value
+endmodule
+
+
+
+
+
+
+
+
+
+

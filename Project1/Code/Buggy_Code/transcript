@@ -1,0 +1,85 @@
+# //  QuestaSim 6.3c Sep 11 2007 Linux 2.6.18-92.1.10.el5
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -novopt Test_LC3 
+# Loading work.Test_LC3
+# Loading work.LC3
+# Loading work.Fetch
+# Loading work.Decode
+# Loading work.Execute
+# Loading work.ALU
+# Loading work.extension
+# Loading work.MemAccess
+# Loading work.Writeback
+# Loading work.RegFile
+# Loading work.Controller_Pipeline
+# Loading work.Instr_Memory
+# Loading work.Data_Memory
+do LC3.do
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Fetch/npc'.
+# Executing ONERROR command at macro ./LC3.do line 9
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ex/IR_Exec'.
+# Executing ONERROR command at macro ./LC3.do line 14
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/bypass_alu_1'.
+# Executing ONERROR command at macro ./LC3.do line 18
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/bypass_alu_2'.
+# Executing ONERROR command at macro ./LC3.do line 19
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/bypass_mem_1'.
+# Executing ONERROR command at macro ./LC3.do line 20
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/bypass_mem_2'.
+# Executing ONERROR command at macro ./LC3.do line 21
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/prev_IR'.
+# Executing ONERROR command at macro ./LC3.do line 70
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/deassert_enable_writeback'.
+# Executing ONERROR command at macro ./LC3.do line 71
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/bubble_count'.
+# Executing ONERROR command at macro ./LC3.do line 73
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/stall_pipe'.
+# Executing ONERROR command at macro ./LC3.do line 74
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/reset_counter'.
+# Executing ONERROR command at macro ./LC3.do line 75
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/inc_count'.
+# Executing ONERROR command at macro ./LC3.do line 76
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/reset_count'.
+# Executing ONERROR command at macro ./LC3.do line 77
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/mem_ctrl_Nstate'.
+# Executing ONERROR command at macro ./LC3.do line 85
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/mem_ctrl_Cstate'.
+# Executing ONERROR command at macro ./LC3.do line 86
+# ** Error: (vish-4014) No objects found matching '/Test_LC3/DUT/Ctrl/stall_pipe'.
+# Executing ONERROR command at macro ./LC3.do line 88
+restart -f ; run -all;
+# ** Note: $finish    : Test_LC3.v(78)
+#    Time: 1630 ns  Iteration: 0  Instance: /Test_LC3
+# 1
+# Break in Module Test_LC3 at Test_LC3.v line 78
+#  Trace back: window ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs" isn't a top-level window
+#     while executing
+# "wm minsize  $topName 365 215"
+#     (procedure "undockPane" line 14)
+#     invoked from within
+# "undockPane $name $w"
+#     (procedure "Wave::toggleDock" line 14)
+#     invoked from within
+# "Wave::toggleDock cli_0 .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf"
+#     invoked from within
+# ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.system.expelbutton invoke"
+#     ("uplevel" body line 1)
+#     invoked from within
+# "uplevel #0 [list $w invoke]"
+#     (procedure "tk::ButtonUp" line 22)
+#     invoked from within
+# "tk::ButtonUp .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.system.expelbutton"
+#     (command bound to event) 
+#    2: ::tkerror {window ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs" isn't a top-level window} 
+#    1: ::bgerror {window ".main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs" isn't a top-level window} 
+add wave \
+{sim:/Test_LC3/DUT/Dec/W_Control } 
+restart -f; run 300ns

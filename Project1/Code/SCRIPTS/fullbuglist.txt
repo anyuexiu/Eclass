@@ -1,0 +1,27 @@
+FETCH BUGS: (level1)
+Bug1: Reset starts at 3001 
+Bug2: npc = ipc instead of ipc + 1
+Bug3: instrmem_rd is 0 instead of Z when fetch is low 
+Bug4: instrmem_rd is swapped
+
+any 2 of (2,4) 
+
+DECODE BUGS (level2) 
+[Bug5-Bug11] & Bug29(EVERYONE GETS SCREWED)
+
+EXECUTE BUGS (level3)
+[Bug12-Bug20]
+separate (12,13) .. separate (14, 15)  Bug 17 for all 
+
+WRITEBACK BUGS (level4)
+[Bug21-Bug24]
+
+
+CONTROLLER BUGS (level5)
+[Bug25-Bug28]
+ 
+ 25 goes to all .. 3 of (27,28) 
+
+Not sent
+16,18,19,20
+26,27

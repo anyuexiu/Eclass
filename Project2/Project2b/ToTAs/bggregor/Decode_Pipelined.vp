@@ -1,0 +1,78 @@
+module Decode(clock, reset, enable_decode, dout, E_Control, npc_in, //psr, 
+	      Mem_Control, W_Control, //F_Control, 
+	      IR, npc_out); 
+
+   input 			clock, reset, enable_decode;
+   input [15:0] 		dout;
+   //input 	[2:0] 	psr;
+   input [15:0] 		npc_in;
+   output [1:0] 		W_Control; 
+   output 	 		Mem_Control;
+   output [5:0] 		E_Control;
+   output [15:0] 		IR;
+   output [15:0] 		npc_out;
+   //output 			F_Control;
+   
+   reg [1:0] 			W_Control; 
+   reg 				M_Control; 
+
+   reg [1:0] 			inst_type;
+   reg 				pc_store;
+   reg [1:0] 			pcselect1, alu_control;
+   reg 				pcselect2, op2select;
+   //reg 			br_taken;
+
+   reg [15:0] 			IR, npc_out;
+
+   
+   wire [3:0] 			opcode=dout[15:12];
+
+   //assign	F_Control = br_taken;
+   // definition of controls and data
+   assign 			Mem_Control	=	M_Control;
+   assign 			E_Control	=	{alu_control, pcselect1, pcselect2, op2select};
+   //assign 	F_Control	=	br_taken;
+
+`protected
+    MTI!#]B@kX-KoiTpp^ET_jQ=OceI@1RO^_='k[x@1O|"\G[Xo\Yer<xe1)FY}'m]}\Ui=\Uv?\i?
+    ]=YoX5o=WTYlx[,#Xl#vxnO]So@\sr35uW1<_{D+[C'I,=Qs*UQOud~=p1E'~poksscK5}'}@mrU
+    -oEW-,[p>;ok-e~CKD$[[eivws}L+U\+tB7Wu@CY'_GA')~IVU2R!pH[XW1,~J<XlA7_AT$@E\Bn
+    !Dw[#2a_x]IAWpf)[@ST+W!^#oEjr]Q?,v^1V(\j}J+]]iEBis|{RV#5rmK&c<R+Y]@V\l;-A~[D
+    ^rI*<K]7DKh6&XYx$V!\-_lK~T]n-]{XQAa~>m]jEW{+A*aWAU*{Bn,{T<'2!R|X7_^pIs7HjQ3n
+    Xn]lQ'ucW,?jCn=<i'VC_S7ZKQwA@#x,JKI}CWoWACYVav*=_TMsviXI>1U1nTI|3jA-<>\=_wRX
+    w,@Ta=$}pa;VZ*-!{nr-i1k2[e#5KYQI@<D7tl]>B7UeVX}Z!DIrI_UrwBkB*=n<#d^eJ$,G~>x[
+    ^7b<I_@]27V77=O?VKXK^a7uXm}gQBZXGW_1nXn[*^o7lDuVrEDsM}Z~Qe7_n4s_o2vA7OJ[VijZ
+    JBhC-{~w=C-;{+'O!w<1#|JDu2RT1o~7{~0N\G2ut$rH<p^<^~<A!GG-Jsi5]>+,k'aC!j$Xl^ZQ
+    @!a+B9D5C7se@pE;;;_ARw3Tro%r-z}t@5WZ=V^pO-<\?Y~}/<x![aw1'FKD77'3A-sa7p{=>};-
+    AnFlr*v+'-EeXK!ITe7.HoJ$z#@4l#'mrxw<<sk<Cr!TeKZ[YGmB^ap,ADO+p+wY'N[sElO+\e1E
+    Z2s+E1x=J>_np@OtPRwE>!Vj#$wDe=GCzwVkr8U}!K}IY=duvKO!GcX7KI'~AlC5UJ1\pE5A[]*^
+    jK?*i]rHw]l~<W%@XEUEC?[/YJ{G3xapxxaxRA5lO}G<eT@pmE+C]sW[H5Av5oi\{T@EfKv?=eEk
+    })rr$1d1QYDQJ+[2srvqrT!Z4/;soTklyj_RiS?_\}*pTxeXNCl#$3XsEJX!lOJXG?=To#Ta_maH
+    eZ]jHp*<~RI2X:9}#T!^VjjC,o7HjIv'U!X'Q\lH+*Oa_iJC1,=G$5lI{xxN]RoQr=\CZxI3K{@I
+    [*e5CxV?;X\HVpk$_AQ@_i<!9n,1vsOs[j&C\krr+WXYwV*^!BD}+@2$_lZ1_*m]$1@15u1osVon
+    T\wpJ>5R}m^=KZO[#vKCO$@Bsu$$lTu;IVZ6siC]#7a*lJ{B0S=Dj>'weZz1I3Q]_o<*+ju^K!C7
+    noeZ<>=+]WI;$KE[X[y+$\<?}\[rumCA\!CB>o7D;IqvHwA;I-]iYWmrKQ{zE-?IOCwXE[3*O3-O
+    -,^WtS,}ix[rJ]{eB,GajOQ]-uaXYE]AC{>vE>:,f@[_7$3U,.RYs,qD>}19$!lIAxZ?7kaXi$wO
+    FzVVQ'E1KVpn#m*a~8aOvW/|G;K!<oHmE;5Wh?lO=Uz5+w]#'B5\A0<Qx'mT~#b3>5$DZ=;aG}{7
+    i{{VOVT,Tr5v>ep?C'wB;<#p$Qn?wZCr~5U)=nzvR{en?7};RmDG[v<vF-}<xeD=iXY{77;5krv{
+    r$WjT,kE;wT@pN>E?>[ske*]R<]=RBcK<$BVm$'UpAW'\E<5HH-x}IE_e'!;pAxS2>3BST$\=?Ez
+    pE+]~lJX3MkDnxBRl{]]rWG$xRp'\[pR1YD_Q=@TVr;5iW>_{?xsmB-}Q;}WXQKnKYeGW'S1Zu#c
+    |?]R]evOWB?V^g*mD$*21nlvQ~'U>QEKQsBQ~GGE]mNVir;8#p]Hz!CZ1>oO@'\WKw2Oh2}o^ZpG
+    <u|S2}~x=7Eulu>uv$<Y7Rj7H{}E14}}vQuCX[R#_sf}Z^jFrYYZJO=T_21xJe_?v_I37]Ir>I-V
+    YYU^$!-p]{ojAzi;QlCVLjJoOlHwkABo*_+~-G~A;l_jY}VIJ\2]ssI]i^31vUOiR_IzZ!*Wx$_p
+    Qmeu@m5?>M2$[lG3v\Ao3#O+1[GB1mZH]W$n~u+l,,^!O>vE*;ds#&@Lx=vU?Y?znU++Iw;{9;7J
+    Cp[o]urOCpWz<ow{*%a&<*XDv@E_2GX=^5mssB;]I>lZY_~e8=aoQ_s[J*nv2ERx1?Yr^pT-e\a^
+    ^zrd2l\^]kzY=wWa6quTea};\<EX==2I!-X+nRG2s]F!e_@o-VrXHC#_km*aw}~'sU}X5jv<{m+e
+    O'-r?^Z)$vZs'a*5zOxaVBSA}IBjptQH$pS_v[~Z\z'>R;+Yp#!AXZkK_<<'~meIE1*}Kn@sZ{wY
+    #>Ec#QW]nI_ah+e7XTl*sr2[K@epkj~~jpaK]^7rXdhC^G7[]?pH,]Ws\!AQ~DOrJ@]mD7ZZ{@Q*
+    !Gmv#KuJQ^a1]TCFw5VJw'^KIXaKGHxZEJ$?lzQ_G#s@K,2O+OTX%F7uAE@=5$hk<2!=~XXOOe7w
+    Y@+=YIYl7;Ol#1};n]veE*K*n+uVxG]uOz7R2Ku^oe}ZpIjmznEo5W*1B;xwoE}QH[<xuEDxU;<)
+    o*\zSZYHvG#x_{[K]x$Xs&7m^G[[,OJ<O~'ok5+A*E1>=w)~a-mKw!Wjp\zjwsJ/-Dsi'1ij@Vv#
+    ARZR;V+r/xe<=0-5U,*kovZ[1umsG-'ez_<z1vGVekbz5zJzUr}~HAJ1Ja_TGx>&>[,U{+R=,GzD
+    {D~!YKI~jw[IYJ--3EijDrj[~>=k1i-]O;$xDwuu!rHpTEemr@^'%BnO_RH}2z]1X=eOu21-l83v
+    DAk,D<S;>'1l3Awwrv55r]VzZ^-%1QWo*aroneK_~'\2c\zW=&^={G+e\2ZCm})MUR,_Qmn;Sj1+
+    +KvjW2RY-A'j@E>GHY=r3EQuIy-TIo?jUK1$i@j!RooDRT*J$i{a@qhR7?vi{z@
+`endprotected
+
+   
+endmodule

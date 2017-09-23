@@ -1,0 +1,32 @@
+# //  Questa Sim
+# //  Version 10.3 linux Jan  6 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Project file /qixin/proj_users/twxiu/svvlab/Lab1/Code/lab01.mpf was not found.
+# Unable to open project.
+add wave -position insertpoint  \
+vsim:/Execute_test_top/dut/clock \
+vsim:/Execute_test_top/dut/reset \
+vsim:/Execute_test_top/dut/enable_ex \
+vsim:/Execute_test_top/dut/src1 \
+vsim:/Execute_test_top/dut/src2 \
+vsim:/Execute_test_top/dut/imm \
+vsim:/Execute_test_top/dut/control_in \
+vsim:/Execute_test_top/dut/mem_data_read_in \
+vsim:/Execute_test_top/dut/mem_data_write_out \
+vsim:/Execute_test_top/dut/mem_write_en \
+vsim:/Execute_test_top/dut/aluout \
+vsim:/Execute_test_top/dut/carry \
+vsim:/Execute_test_top/dut/aluin1 \
+vsim:/Execute_test_top/dut/aluin2 \
+vsim:/Execute_test_top/dut/opselect \
+vsim:/Execute_test_top/dut/operation \
+vsim:/Execute_test_top/dut/shift_number \
+vsim:/Execute_test_top/dut/enable_shift \
+vsim:/Execute_test_top/dut/enable_arith

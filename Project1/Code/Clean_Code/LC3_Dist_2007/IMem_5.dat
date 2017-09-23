@@ -1,0 +1,26 @@
+// OPCODE //	INSTRUCTION DESCRIPTION //ADDR //RESULTING FUNCTIONALITY
+@3000
+5020 //         AND    	R0, R0, #0     	3000	R0 = 0
+54A0 // 		AND    	R2, R2, #0     	3001	R2 = 0
+5260 //         AND    	R1, R1, #0     	3002	R1 = 0
+2a02 //			LD 		R5, #2			3003	addr = 3003 + 1 + 2 = 3006 => R5 = [3006] = 3008
+ec03 // 		LEA 	R6 	#3		   	3004	R6 = addr = 3004 + 1 + 3 = 3008
+6d80 //			LDR		R6, R6	#0		3005	addr = 3008 => R6 = [3008] = 300a 
+6d80 //			LDR		R6, R6	#0		3006	addr = 300a => R6 = [300a] = 300c
+1da1 //			ADD		R6 	R6 	#1		3007	R6 = 300d
+16a5 // 		ADD    	R3, R2, #5     	3008	R3 = 5
+0000 //			NO-OP					3009	
+3c01 // 		ST 		R6 	#1			300a 	addr = 300a + 1 + 1 = 300c => mem[300c] = 300d	
+ac01 // 		LDI 	R6 	#1			300b	addr = 300b + 1 + 1 = 300d => R6 = [[300d]] = [300f] = 3011
+bc01 // 		STI 	R6 	#1			300c	addr = 300c + 1 + 1 = 300e => mem[[300e]] = 3011 => mem[3010] = 3011
+ae01 // 		LDI 	R7 	#1			300d	addr = 300d + 1 + 1 = 300f => R7 = [[300f]] = [3010] = 3006
+1ac3 //			ADD 	R5, R3, R3		300e    
+1b45 //			ADD 	R5, R5, R5		300f    
+16ff // 		ADD 	R3 	R3  #-1		3010	R3 = R3 - 1 (count down to zero)
+03fa //			BR 		P 	#-6 //		3011	addr = 3011 + 1 - 8 = 300a if branch taken
+1da1 //			ADD		R6 	R6 	#1		3012    R6 = R6 + 1 ; 
+0000 //			NO-OP					3013
+1986 // 		ADD 	R4, R6, R6		3014	R4 = R6 + R6 (double bypass case)	
+1b03 //         ADD    	R5, R4, R3		3015	
+c1c0 //			JMP 	R7				3016	pc = 3006
+1f03 // 		ADD 	R7 	R4 	R3		3016

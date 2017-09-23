@@ -1,0 +1,1677 @@
+# QuestaSim vlog 6.3c Compiler 2007.09 Sep 11 2007
+# -- Compiling module ALU
+# -- Compiling module Arith_ALU
+# -- Compiling module Ex_Preproc
+# -- Compiling module Shift_ALU
+# 
+# Top level modules:
+# 	ALU
+# 	Ex_Preproc
+# QuestaSim vlog 6.3c Compiler 2007.09 Sep 11 2007
+# -- Compiling module Top
+# 
+# Top level modules:
+# 	Top
+# QuestaSim vlog 6.3c Compiler 2007.09 Sep 11 2007
+# -- Compiling interface Execute_io
+# -- Compiling interface DUT_probe_if
+# -- Compiling package data_defs_v_unit
+# -- Compiling interface DUT_probe_if
+# -- Compiling interface Execute_io
+# -- Compiling module Execute_test_top
+# -- Compiling program Execute_test
+# 
+# Top level modules:
+# 	Execute_test_top
+# vsim -sv_seed 460123497 -novopt Execute_test_top 
+# //  QuestaSim 6.3c Sep 11 2007 Linux 2.6.18-92.1.10.el5
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.data_defs_v_unit
+# Loading work.data_defs_v_unit
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Execute_test_top
+# Loading work.Execute_test_top
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Execute_io
+# Loading work.Execute_io
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.DUT_probe_if
+# Loading work.DUT_probe_if
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Execute_test
+# Loading work.Execute_test
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Top
+# Loading work.Top
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Ex_Preproc
+# Loading work.Ex_Preproc
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.ALU
+# Loading work.ALU
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Arith_ALU
+# Loading work.Arith_ALU
+# Refreshing /afs/unity.ncsu.edu/users/a/abangre/ECE_745_on_K/Lab4/mti_lib.Shift_ALU
+# Loading work.Shift_ALU
+#                    0ns:  [RESET]  Design Reset Start
+#                   45ns:  [RESET]  Design Reset End
+#                   45ns:  [GENERATOR] Generator Started
+#                   45ns:  [DRIVER] Driver Started
+#                   45ns:  [SCOREBOARD] Scoreboard Started
+#                   45ns:  [SCOREBOARD] Receiver Mailbox contentains [          0] Packets 
+#                   45[SCOREBOARD] Forking of Process Finished
+#                   45ns:  [RECEIVER]  RECEIVER STARTED
+#                   45ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                   45[DRIVER] Sending in new packet BEGIN
+#                   45ns:  [DRIVER] Sending Payload Begin
+#                   45ns:  [DRIVER] Sending in new packet END
+#                   45ns:  [DRIVER] Number of packets sent =           1
+#                   45ns:  [DRIVER] The number of Packets in the Generator Mailbox =          49
+#                   45ns:  [GENERATOR] Generation Finished Creating          50 Packets  
+#                   55[DRIVER] Sending in new packet BEGIN
+#                   55ns:  [DRIVER] Sending Payload Begin
+#                   55ns:  [DRIVER] Sending in new packet END
+#                   55ns:  [DRIVER] Number of packets sent =           2
+#                   55ns:  [DRIVER] The number of Packets in the Generator Mailbox =          48
+#                   55ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                   65ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   65[DRIVER] Sending in new packet BEGIN
+#                   65ns:  [DRIVER] Sending Payload Begin
+#                   65ns:  [DRIVER] Sending in new packet END
+#                   65ns:  [DRIVER] Number of packets sent =           3
+#                   65ns:  [DRIVER] The number of Packets in the Generator Mailbox =          47
+#                   65ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                   65ns:   [CHECKER] Pkt Contents from Driver: src1 = 8d148538, src2 = 4981817a, imm = 77352aa0, 
+#                   65ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 001, 
+#                   65ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 00000000   & Golden Model = 00000000 
+#                   65ns:   [CHECK_PREPROC] ALUIN1: DUT = 8d148538   & Golden Model = 8d148538
+# 
+#                   65ns:   [CHECK_PREPROC] ALUIN2: DUT = 00000000   & Golden Model = 00000000
+# 
+#                   65ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                   65ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                   65ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                   65ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                   65ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 0a   & Golden Model = 0a
+# 
+#                   65ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                   75ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   75[DRIVER] Sending in new packet BEGIN
+#                   75ns:  [DRIVER] Sending Payload Begin
+#                   75ns:  [DRIVER] Sending in new packet END
+#                   75ns:  [DRIVER] Number of packets sent =           4
+#                   75ns:  [DRIVER] The number of Packets in the Generator Mailbox =          46
+#                   75ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                   75ns:   [CHECKER] Pkt Contents from Driver: src1 = 96ed1638, src2 = 98913ab1, imm = 3a0d485d, 
+#                   75ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 011, 
+#                   75ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                   75ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = 8d148538  
+#                   75ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 0a  
+#                   75ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  1(operation) 
+#                   75ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHLEFTART
+#                   75ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 5214e000   & Golden Model = 5214e000 
+#                   75ns:  <CHECKER SHIFT ALU> CARRY:DUT = 0 & Golden Model = 1 
+# 
+# ** Error:                   75ns:
+# ***********   <CHECKER SHIFT ALU> ERROR in CARRY **************
+# 
+#    Time: 75 ns  Scope: data_defs_v_unit.Scoreboard.check_shift File: Scoreboard.sv Line: 259
+#                   75ns:   [CHECK_PREPROC] ALUIN1: DUT = 96ed1638   & Golden Model = 96ed1638
+# 
+#                   75ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                   75ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                   75ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   75ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                   75ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                   75ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   75ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                   85ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   85[DRIVER] Sending in new packet BEGIN
+#                   85ns:  [DRIVER] Sending Payload Begin
+#                   85ns:  [DRIVER] Sending in new packet END
+#                   85ns:  [DRIVER] Number of packets sent =           5
+#                   85ns:  [DRIVER] The number of Packets in the Generator Mailbox =          45
+#                   85ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                   85ns:   [CHECKER] Pkt Contents from Driver: src1 = e3110cb1, src2 = 30c3ab1b, imm = 534b4fa5, 
+#                   85ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 1, operation = 110, 
+#                   85ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                   85ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 96ed1638  0000804a 
+#                   85ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 5(opselect)  3(operation) 
+#                   85ns:   <CHECKER MEM READ> Golden Incoming ALUIN = 96ed1638  0000804a 
+#                   85ns:   <CHECKER MEM READ> Golden Incoming CONTROL = 5(opselect)  3(operation) 
+#                   85ns:   Starting |||||--<CHECKER MEM READ><--|||||
+#                   85ns: <CHECKER MEM READ>  ALUOUT: DUT = 0000804a   & Golden Model = 0000804a 
+#                   85ns:   [CHECK_PREPROC] ALUIN1: DUT = 96ed1638   & Golden Model = 96ed1638
+# 
+#                   85ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                   85ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                   85ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   85ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                   85ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                   85ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   85ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                   95ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   95[DRIVER] Sending in new packet BEGIN
+#                   95ns:  [DRIVER] Sending Payload Begin
+#                   95ns:  [DRIVER] Sending in new packet END
+#                   95ns:  [DRIVER] Number of packets sent =           6
+#                   95ns:  [DRIVER] The number of Packets in the Generator Mailbox =          44
+#                   95ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                   95ns:   [CHECKER] Pkt Contents from Driver: src1 = 846650e9, src2 = b57ca7af, imm = 96945ba9, 
+#                   95ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 101, 
+#                   95ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                   95ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = b57ca7af   & Golden Model = b57ca7af
+#                   95ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                   95ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 95 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                   95ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 5214e000   & Golden Model = 0000804a 
+# ** Error:                   95ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 95 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                   95ns:   [CHECK_PREPROC] ALUIN1: DUT = 846650e9   & Golden Model = 846650e9
+# 
+#                   95ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                   95ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                   95ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   95ns:   [CHECK_PREPROC] OPERATION: DUT = 5   & Golden Model = 5
+# 
+#                   95ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                   95ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   95ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  105ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  105[DRIVER] Sending in new packet BEGIN
+#                  105ns:  [DRIVER] Sending Payload Begin
+#                  105ns:  [DRIVER] Sending in new packet END
+#                  105ns:  [DRIVER] Number of packets sent =           7
+#                  105ns:  [DRIVER] The number of Packets in the Generator Mailbox =          43
+#                  105ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  105ns:   [CHECKER] Pkt Contents from Driver: src1 = 7883fc00, src2 = a76dbd68, imm = 728239a9, 
+#                  105ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 110, 
+#                  105ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  105ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = a76dbd68   & Golden Model = a76dbd68
+#                  105ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  105ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 105 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  105ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 5214e000   & Golden Model = 0000804a 
+# ** Error:                  105ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 105 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  105ns:   [CHECK_PREPROC] ALUIN1: DUT = 7883fc00   & Golden Model = 7883fc00
+# 
+#                  105ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                  105ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  105ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  105ns:   [CHECK_PREPROC] OPERATION: DUT = 6   & Golden Model = 6
+# 
+#                  105ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  105ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  105ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  115ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  115[DRIVER] Sending in new packet BEGIN
+#                  115ns:  [DRIVER] Sending Payload Begin
+#                  115ns:  [DRIVER] Sending in new packet END
+#                  115ns:  [DRIVER] Number of packets sent =           8
+#                  115ns:  [DRIVER] The number of Packets in the Generator Mailbox =          42
+#                  115ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  115ns:   [CHECKER] Pkt Contents from Driver: src1 = 42605084, src2 = eb8a1a06, imm = f6d57078, 
+#                  115ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 111, 
+#                  115ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  115ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = eb8a1a06   & Golden Model = eb8a1a06
+#                  115ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  115ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 115 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  115ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 5214e000   & Golden Model = 0000804a 
+# ** Error:                  115ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 115 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  115ns:   [CHECK_PREPROC] ALUIN1: DUT = 42605084   & Golden Model = 42605084
+# 
+#                  115ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                  115ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  115ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  115ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  115ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  115ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  115ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  125ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  125[DRIVER] Sending in new packet BEGIN
+#                  125ns:  [DRIVER] Sending Payload Begin
+#                  125ns:  [DRIVER] Sending in new packet END
+#                  125ns:  [DRIVER] Number of packets sent =           9
+#                  125ns:  [DRIVER] The number of Packets in the Generator Mailbox =          41
+#                  125ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  125ns:   [CHECKER] Pkt Contents from Driver: src1 = ccddb342, src2 = ab5a13ca, imm = 9e3e7a1c, 
+#                  125ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 011, 
+#                  125ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  125ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = ab5a13ca   & Golden Model = ab5a13ca
+#                  125ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  125ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 125 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  125ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 5214e000   & Golden Model = 0000804a 
+# ** Error:                  125ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 125 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  125ns:   [CHECK_PREPROC] ALUIN1: DUT = ccddb342   & Golden Model = ccddb342
+# 
+#                  125ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                  125ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  125ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  125ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  125ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  125ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  125ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  135ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  135[DRIVER] Sending in new packet BEGIN
+#                  135ns:  [DRIVER] Sending Payload Begin
+#                  135ns:  [DRIVER] Sending in new packet END
+#                  135ns:  [DRIVER] Number of packets sent =          10
+#                  135ns:  [DRIVER] The number of Packets in the Generator Mailbox =          40
+#                  135ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  135ns:   [CHECKER] Pkt Contents from Driver: src1 = 728ef200, src2 = 7ed26140, imm = cb332533, 
+#                  135ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 011, 
+#                  135ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 5214e000   & Golden Model = 0000804a 
+# ** Error:                  135ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 135 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  135ns:   [CHECK_PREPROC] ALUIN1: DUT = 728ef200   & Golden Model = 728ef200
+# 
+#                  135ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000804a   & Golden Model = 0000804a
+# 
+#                  135ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  135ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  135ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  135ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  135ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 14   & Golden Model = 14
+# 
+#                  135ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  145ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  145[DRIVER] Sending in new packet BEGIN
+#                  145ns:  [DRIVER] Sending Payload Begin
+#                  145ns:  [DRIVER] Sending in new packet END
+#                  145ns:  [DRIVER] Number of packets sent =          11
+#                  145ns:  [DRIVER] The number of Packets in the Generator Mailbox =          39
+#                  145ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  145ns:   [CHECKER] Pkt Contents from Driver: src1 = 54c8a876, src2 = 94ff0ace, imm = 0b54a4bd, 
+#                  145ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 001, 
+#                  145ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  145ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = 728ef200  
+#                  145ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 14  
+#                  145ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  3(operation) 
+#                  145ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHRGHTART
+#                  145ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 00000728   & Golden Model = 00000728 
+#                  145ns:  <CHECKER SHIFT ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+#                  145ns:   [CHECK_PREPROC] ALUIN1: DUT = 54c8a876   & Golden Model = 54c8a876
+# 
+#                  145ns:   [CHECK_PREPROC] ALUIN2: DUT = 00006f25   & Golden Model = 00006f25
+# 
+#                  145ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  145ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  145ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  145ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  145ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  145ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  155ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  155[DRIVER] Sending in new packet BEGIN
+#                  155ns:  [DRIVER] Sending Payload Begin
+#                  155ns:  [DRIVER] Sending in new packet END
+#                  155ns:  [DRIVER] Number of packets sent =          12
+#                  155ns:  [DRIVER] The number of Packets in the Generator Mailbox =          38
+#                  155ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  155ns:   [CHECKER] Pkt Contents from Driver: src1 = 370b13c8, src2 = c628c64e, imm = a5a1a523, 
+#                  155ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 100, 
+#                  155ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  155ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 54c8a876  00006f25 
+#                  155ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 5(opselect)  1(operation) 
+#                  155ns:   <CHECKER MEM READ> Golden Incoming ALUIN = 54c8a876  00006f25 
+#                  155ns:   <CHECKER MEM READ> Golden Incoming CONTROL = 5(opselect)  1(operation) 
+#                  155ns:   Starting |||||--<CHECKER MEM READ><--|||||
+#                  155ns: <CHECKER MEM READ>  ALUOUT: DUT = 00006f25   & Golden Model = 00006f25 
+#                  155ns:   [CHECK_PREPROC] ALUIN1: DUT = 54c8a876   & Golden Model = 54c8a876
+# 
+#                  155ns:   [CHECK_PREPROC] ALUIN2: DUT = 00006f25   & Golden Model = 00006f25
+# 
+#                  155ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  155ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  155ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  155ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  155ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  155ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  165ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  165[DRIVER] Sending in new packet BEGIN
+#                  165ns:  [DRIVER] Sending Payload Begin
+#                  165ns:  [DRIVER] Sending in new packet END
+#                  165ns:  [DRIVER] Number of packets sent =          13
+#                  165ns:  [DRIVER] The number of Packets in the Generator Mailbox =          37
+#                  165ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  165ns:   [CHECKER] Pkt Contents from Driver: src1 = 69c44bfe, src2 = 1de81ef3, imm = 083113fa, 
+#                  165ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 011, 
+#                  165ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 00000728   & Golden Model = 00006f25 
+# ** Error:                  165ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 165 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  165ns:   [CHECK_PREPROC] ALUIN1: DUT = 69c44bfe   & Golden Model = 69c44bfe
+# 
+#                  165ns:   [CHECK_PREPROC] ALUIN2: DUT = 00006f25   & Golden Model = 00006f25
+# 
+#                  165ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  165ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  165ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  165ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  165ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 0f   & Golden Model = 0f
+# 
+#                  165ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  175ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  175[DRIVER] Sending in new packet BEGIN
+#                  175ns:  [DRIVER] Sending Payload Begin
+#                  175ns:  [DRIVER] Sending in new packet END
+#                  175ns:  [DRIVER] Number of packets sent =          14
+#                  175ns:  [DRIVER] The number of Packets in the Generator Mailbox =          36
+#                  175ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  175ns:   [CHECKER] Pkt Contents from Driver: src1 = 2c2aac4c, src2 = 072674eb, imm = 670a424a, 
+#                  175ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 1, operation = 111, 
+#                  175ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  175ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = 69c44bfe  
+#                  175ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 0f  
+#                  175ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  3(operation) 
+#                  175ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHRGHTART
+#                  175ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 0000d388   & Golden Model = 0000d388 
+#                  175ns:  <CHECKER SHIFT ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+#                  175ns:   [CHECK_PREPROC] ALUIN1: DUT = 2c2aac4c   & Golden Model = 2c2aac4c
+# 
+#                  175ns:   [CHECK_PREPROC] ALUIN2: DUT = 670a424a   & Golden Model = 670a424a
+# 
+#                  175ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  175ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  175ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  175ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  175ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  175ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  185ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  185[DRIVER] Sending in new packet BEGIN
+#                  185ns:  [DRIVER] Sending Payload Begin
+#                  185ns:  [DRIVER] Sending in new packet END
+#                  185ns:  [DRIVER] Number of packets sent =          15
+#                  185ns:  [DRIVER] The number of Packets in the Generator Mailbox =          35
+#                  185ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  185ns:   [CHECKER] Pkt Contents from Driver: src1 = b35ef93f, src2 = 2f510ce5, imm = 500160e6, 
+#                  185ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 010, 
+#                  185ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  185ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 2c2aac4c  670a424a 
+#                  185ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 1(opselect)  7(operation) 
+#                  185ns:   Starting |||||--><CHECKER ARITH ALU><--|||||
+#                  185ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 024a0000   & Golden Model = 424a0000 
+#                  185ns:  <CHECKER ARITH ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+# ** Error:                  185ns:
+# *********** <CHECKER ARITH ALU> ERROR in ALU out**************
+# 
+#    Time: 185 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 176
+#                  185ns:   [CHECK_PREPROC] ALUIN1: DUT = 2c2aac4c   & Golden Model = 2c2aac4c
+# 
+#                  185ns:   [CHECK_PREPROC] ALUIN2: DUT = 670a424a   & Golden Model = 670a424a
+# 
+#                  185ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  185ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  185ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  185ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  185ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  185ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  195ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  195[DRIVER] Sending in new packet BEGIN
+#                  195ns:  [DRIVER] Sending Payload Begin
+#                  195ns:  [DRIVER] Sending in new packet END
+#                  195ns:  [DRIVER] Number of packets sent =          16
+#                  195ns:  [DRIVER] The number of Packets in the Generator Mailbox =          34
+#                  195ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  195ns:   [CHECKER] Pkt Contents from Driver: src1 = 4f1a7fba, src2 = c905c391, imm = acfc0e15, 
+#                  195ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 011, 
+#                  195ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 0000d388   & Golden Model = 424a0000 
+# ** Error:                  195ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 195 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  195ns:   [CHECK_PREPROC] ALUIN1: DUT = 2c2aac4c   & Golden Model = 2c2aac4c
+# 
+#                  195ns:   [CHECK_PREPROC] ALUIN2: DUT = 670a424a   & Golden Model = 670a424a
+# 
+#                  195ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  195ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  195ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  195ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  195ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  195ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  205ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  205[DRIVER] Sending in new packet BEGIN
+#                  205ns:  [DRIVER] Sending Payload Begin
+#                  205ns:  [DRIVER] Sending in new packet END
+#                  205ns:  [DRIVER] Number of packets sent =          17
+#                  205ns:  [DRIVER] The number of Packets in the Generator Mailbox =          33
+#                  205ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  205ns:   [CHECKER] Pkt Contents from Driver: src1 = 28c20780, src2 = 24e7fe56, imm = 6f5dfa22, 
+#                  205ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 101, 
+#                  205ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 0000d388   & Golden Model = 424a0000 
+# ** Error:                  205ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 205 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  205ns:   [CHECK_PREPROC] ALUIN1: DUT = 28c20780   & Golden Model = 28c20780
+# 
+#                  205ns:   [CHECK_PREPROC] ALUIN2: DUT = 000033c9   & Golden Model = 000033c9
+# 
+#                  205ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  205ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  205ns:   [CHECK_PREPROC] OPERATION: DUT = 5   & Golden Model = 5
+# 
+#                  205ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  205ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  205ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  215ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  215[DRIVER] Sending in new packet BEGIN
+#                  215ns:  [DRIVER] Sending Payload Begin
+#                  215ns:  [DRIVER] Sending in new packet END
+#                  215ns:  [DRIVER] Number of packets sent =          18
+#                  215ns:  [DRIVER] The number of Packets in the Generator Mailbox =          32
+#                  215ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  215ns:   [CHECKER] Pkt Contents from Driver: src1 = 497a6537, src2 = 63950057, imm = 10a2700c, 
+#                  215ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 000, 
+#                  215ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  215ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 28c20780  000033c9 
+#                  215ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 5(opselect)  5(operation) 
+#                  215ns:   <CHECKER MEM READ> Golden Incoming ALUIN = 28c20780  000033c9 
+#                  215ns:   <CHECKER MEM READ> Golden Incoming CONTROL = 5(opselect)  5(operation) 
+#                  215ns:   Starting |||||--<CHECKER MEM READ><--|||||
+#                  215ns: <CHECKER MEM READ>  ALUOUT: DUT = 000033c9   & Golden Model = 000033c9 
+#                  215ns:   [CHECK_PREPROC] ALUIN1: DUT = 28c20780   & Golden Model = 28c20780
+# 
+#                  215ns:   [CHECK_PREPROC] ALUIN2: DUT = 000033c9   & Golden Model = 000033c9
+# 
+#                  215ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  215ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  215ns:   [CHECK_PREPROC] OPERATION: DUT = 5   & Golden Model = 5
+# 
+#                  215ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  215ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  215ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  225ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  225[DRIVER] Sending in new packet BEGIN
+#                  225ns:  [DRIVER] Sending Payload Begin
+#                  225ns:  [DRIVER] Sending in new packet END
+#                  225ns:  [DRIVER] Number of packets sent =          19
+#                  225ns:  [DRIVER] The number of Packets in the Generator Mailbox =          31
+#                  225ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  225ns:   [CHECKER] Pkt Contents from Driver: src1 = c54ce478, src2 = 0175e65a, imm = b4d8311c, 
+#                  225ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 011, 
+#                  225ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 0000d388   & Golden Model = 000033c9 
+# ** Error:                  225ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 225 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  225ns:   [CHECK_PREPROC] ALUIN1: DUT = c54ce478   & Golden Model = c54ce478
+# 
+#                  225ns:   [CHECK_PREPROC] ALUIN2: DUT = 000033c9   & Golden Model = 000033c9
+# 
+#                  225ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  225ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  225ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  225ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  225ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 1a   & Golden Model = 1a
+# 
+#                  225ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  235ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  235[DRIVER] Sending in new packet BEGIN
+#                  235ns:  [DRIVER] Sending Payload Begin
+#                  235ns:  [DRIVER] Sending in new packet END
+#                  235ns:  [DRIVER] Number of packets sent =          20
+#                  235ns:  [DRIVER] The number of Packets in the Generator Mailbox =          30
+#                  235ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  235ns:   [CHECKER] Pkt Contents from Driver: src1 = cbab8926, src2 = 37a50cb5, imm = 18cd4ef1, 
+#                  235ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 100, 
+#                  235ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  235ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = c54ce478  
+#                  235ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 1a  
+#                  235ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  3(operation) 
+#                  235ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHRGHTART
+#                  235ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 00000031   & Golden Model = ffffffd1 
+#                  235ns:  <CHECKER SHIFT ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+# ** Error:                  235ns:
+# *********** <CHECKER SHIFT ALU> ERROR in ALU out**************
+# 
+#    Time: 235 ns  Scope: data_defs_v_unit.Scoreboard.check_shift File: Scoreboard.sv Line: 254
+#                  235ns:   [CHECK_PREPROC] ALUIN1: DUT = cbab8926   & Golden Model = cbab8926
+# 
+#                  235ns:   [CHECK_PREPROC] ALUIN2: DUT = 37a50cb5   & Golden Model = 37a50cb5
+# 
+#                  235ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  235ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  235ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  235ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  235ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  235ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  245ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  245[DRIVER] Sending in new packet BEGIN
+#                  245ns:  [DRIVER] Sending Payload Begin
+#                  245ns:  [DRIVER] Sending in new packet END
+#                  245ns:  [DRIVER] Number of packets sent =          21
+#                  245ns:  [DRIVER] The number of Packets in the Generator Mailbox =          29
+#                  245ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  245ns:   [CHECKER] Pkt Contents from Driver: src1 = 9e1b6f2d, src2 = b32b42bd, imm = a7d51c80, 
+#                  245ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 010, 
+#                  245ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  245ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = b32b42bd   & Golden Model = b32b42bd
+#                  245ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  245ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 245 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  245ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  245ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = cbab8926  37a50cb5 
+#                  245ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 1(opselect)  4(operation) 
+#                  245ns:   Starting |||||--><CHECKER ARITH ALU><--|||||
+#                  245ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 03a10824   & Golden Model = 03a10824 
+#                  245ns:  <CHECKER ARITH ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+#                  245ns:   [CHECK_PREPROC] ALUIN1: DUT = 9e1b6f2d   & Golden Model = 9e1b6f2d
+# 
+#                  245ns:   [CHECK_PREPROC] ALUIN2: DUT = 37a50cb5   & Golden Model = 37a50cb5
+# 
+#                  245ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  245ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  245ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  245ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  245ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  245ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  255ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  255[DRIVER] Sending in new packet BEGIN
+#                  255ns:  [DRIVER] Sending Payload Begin
+#                  255ns:  [DRIVER] Sending in new packet END
+#                  255ns:  [DRIVER] Number of packets sent =          22
+#                  255ns:  [DRIVER] The number of Packets in the Generator Mailbox =          28
+#                  255ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  255ns:   [CHECKER] Pkt Contents from Driver: src1 = 0a65f7fd, src2 = 5b06978b, imm = 096eccea, 
+#                  255ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 010, 
+#                  255ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 00000031   & Golden Model = 03a10824 
+# ** Error:                  255ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 255 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  255ns:   [CHECK_PREPROC] ALUIN1: DUT = 0a65f7fd   & Golden Model = 0a65f7fd
+# 
+#                  255ns:   [CHECK_PREPROC] ALUIN2: DUT = 5b06978b   & Golden Model = 5b06978b
+# 
+#                  255ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  255ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  255ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  255ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  255ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  255ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  265ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  265[DRIVER] Sending in new packet BEGIN
+#                  265ns:  [DRIVER] Sending Payload Begin
+#                  265ns:  [DRIVER] Sending in new packet END
+#                  265ns:  [DRIVER] Number of packets sent =          23
+#                  265ns:  [DRIVER] The number of Packets in the Generator Mailbox =          27
+#                  265ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  265ns:   [CHECKER] Pkt Contents from Driver: src1 = 30a066e8, src2 = 6f7c0045, imm = fcf4a020, 
+#                  265ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 000, 
+#                  265ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  265ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 0a65f7fd  5b06978b 
+#                  265ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 1(opselect)  2(operation) 
+#                  265ns:   Starting |||||--><CHECKER ARITH ALU><--|||||
+#                  265ns:  <CHECKER ARITH ALU> ALUOUT: DUT = af5f6072   & Golden Model = af5f6072 
+#                  265ns:  <CHECKER ARITH ALU> CARRY:DUT = 1 & Golden Model = 1 
+# 
+#                  265ns:   [CHECK_PREPROC] ALUIN1: DUT = 0a65f7fd   & Golden Model = 0a65f7fd
+# 
+#                  265ns:   [CHECK_PREPROC] ALUIN2: DUT = 5b06978b   & Golden Model = 5b06978b
+# 
+#                  265ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  265ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  265ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  265ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  265ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  265ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  275ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  275[DRIVER] Sending in new packet BEGIN
+#                  275ns:  [DRIVER] Sending Payload Begin
+#                  275ns:  [DRIVER] Sending in new packet END
+#                  275ns:  [DRIVER] Number of packets sent =          24
+#                  275ns:  [DRIVER] The number of Packets in the Generator Mailbox =          26
+#                  275ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  275ns:   [CHECKER] Pkt Contents from Driver: src1 = 14e91a56, src2 = dd35037f, imm = 62da0712, 
+#                  275ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 010, 
+#                  275ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 00000031   & Golden Model = af5f6072 
+# ** Error:                  275ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 275 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  275ns:   [CHECK_PREPROC] ALUIN1: DUT = 0a65f7fd   & Golden Model = 0a65f7fd
+# 
+#                  275ns:   [CHECK_PREPROC] ALUIN2: DUT = 5b06978b   & Golden Model = 5b06978b
+# 
+#                  275ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  275ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  275ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  275ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  275ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  275ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  285ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  285[DRIVER] Sending in new packet BEGIN
+#                  285ns:  [DRIVER] Sending Payload Begin
+#                  285ns:  [DRIVER] Sending in new packet END
+#                  285ns:  [DRIVER] Number of packets sent =          25
+#                  285ns:  [DRIVER] The number of Packets in the Generator Mailbox =          25
+#                  285ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  285ns:   [CHECKER] Pkt Contents from Driver: src1 = 432bf314, src2 = 4e103f3e, imm = 26af4034, 
+#                  285ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 001, 
+#                  285ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 00000031   & Golden Model = af5f6072 
+# ** Error:                  285ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 285 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  285ns:   [CHECK_PREPROC] ALUIN1: DUT = 432bf314   & Golden Model = 432bf314
+# 
+#                  285ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000a159   & Golden Model = 0000a159
+# 
+#                  285ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  285ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  285ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  285ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  285ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  285ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  295ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  295[DRIVER] Sending in new packet BEGIN
+#                  295ns:  [DRIVER] Sending Payload Begin
+#                  295ns:  [DRIVER] Sending in new packet END
+#                  295ns:  [DRIVER] Number of packets sent =          26
+#                  295ns:  [DRIVER] The number of Packets in the Generator Mailbox =          24
+#                  295ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  295ns:   [CHECKER] Pkt Contents from Driver: src1 = 500d731a, src2 = 85c6931f, imm = de46da49, 
+#                  295ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 010, 
+#                  295ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  295ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 432bf314  0000a159 
+#                  295ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 5(opselect)  1(operation) 
+#                  295ns:   <CHECKER MEM READ> Golden Incoming ALUIN = 432bf314  0000a159 
+#                  295ns:   <CHECKER MEM READ> Golden Incoming CONTROL = 5(opselect)  1(operation) 
+#                  295ns:   Starting |||||--<CHECKER MEM READ><--|||||
+#                  295ns: <CHECKER MEM READ>  ALUOUT: DUT = ffffa159   & Golden Model = ffffa159 
+#                  295ns:   [CHECK_PREPROC] ALUIN1: DUT = 500d731a   & Golden Model = 500d731a
+# 
+#                  295ns:   [CHECK_PREPROC] ALUIN2: DUT = 85c6931f   & Golden Model = 85c6931f
+# 
+#                  295ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  295ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  295ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  295ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  295ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  295ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  305ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  305[DRIVER] Sending in new packet BEGIN
+#                  305ns:  [DRIVER] Sending Payload Begin
+#                  305ns:  [DRIVER] Sending in new packet END
+#                  305ns:  [DRIVER] Number of packets sent =          27
+#                  305ns:  [DRIVER] The number of Packets in the Generator Mailbox =          23
+#                  305ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  305ns:   [CHECKER] Pkt Contents from Driver: src1 = 5ef1f486, src2 = 1221e65e, imm = d9ee34c6, 
+#                  305ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 000, 
+#                  305ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  305ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 500d731a  85c6931f 
+#                  305ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 1(opselect)  2(operation) 
+#                  305ns:   Starting |||||--><CHECKER ARITH ALU><--|||||
+#                  305ns:  <CHECKER ARITH ALU> ALUOUT: DUT = ca46dffb   & Golden Model = ca46dffb 
+#                  305ns:  <CHECKER ARITH ALU> CARRY:DUT = 1 & Golden Model = 1 
+# 
+#                  305ns:   [CHECK_PREPROC] ALUIN1: DUT = 5ef1f486   & Golden Model = 5ef1f486
+# 
+#                  305ns:   [CHECK_PREPROC] ALUIN2: DUT = 85c6931f   & Golden Model = 85c6931f
+# 
+#                  305ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  305ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  305ns:   [CHECK_PREPROC] OPERATION: DUT = 0   & Golden Model = 0
+# 
+#                  305ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  305ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 1e   & Golden Model = 1e
+# 
+#                  305ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  315ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  315[DRIVER] Sending in new packet BEGIN
+#                  315ns:  [DRIVER] Sending Payload Begin
+#                  315ns:  [DRIVER] Sending in new packet END
+#                  315ns:  [DRIVER] Number of packets sent =          28
+#                  315ns:  [DRIVER] The number of Packets in the Generator Mailbox =          22
+#                  315ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  315ns:   [CHECKER] Pkt Contents from Driver: src1 = aaa671b0, src2 = d36bbc7d, imm = 571036ef, 
+#                  315ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 100, 
+#                  315ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  315ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = 5ef1f486  
+#                  315ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 1e  
+#                  315ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  0(operation) 
+#                  315ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHLEFTLOG
+#                  315ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 80000000   & Golden Model = 80000000 
+#                  315ns:  <CHECKER SHIFT ALU> CARRY:DUT = 1 & Golden Model = 0 
+# 
+# ** Error:                  315ns:
+# ***********   <CHECKER SHIFT ALU> ERROR in CARRY **************
+# 
+#    Time: 315 ns  Scope: data_defs_v_unit.Scoreboard.check_shift File: Scoreboard.sv Line: 259
+#                  315ns:   [CHECK_PREPROC] ALUIN1: DUT = aaa671b0   & Golden Model = aaa671b0
+# 
+#                  315ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000e5f3   & Golden Model = 0000e5f3
+# 
+#                  315ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  315ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  315ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  315ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  315ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  315ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  325ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  325[DRIVER] Sending in new packet BEGIN
+#                  325ns:  [DRIVER] Sending Payload Begin
+#                  325ns:  [DRIVER] Sending in new packet END
+#                  325ns:  [DRIVER] Number of packets sent =          29
+#                  325ns:  [DRIVER] The number of Packets in the Generator Mailbox =          21
+#                  325ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  325ns:   [CHECKER] Pkt Contents from Driver: src1 = 61d4203a, src2 = a4980392, imm = 742caf04, 
+#                  325ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 101, 
+#                  325ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  325ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = a4980392   & Golden Model = a4980392
+#                  325ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  325ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 325 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  325ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  325ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = aaa671b0  0000e5f3 
+#                  325ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 5(opselect)  4(operation) 
+#                  325ns:   <CHECKER MEM READ> Golden Incoming ALUIN = aaa671b0  0000e5f3 
+#                  325ns:   <CHECKER MEM READ> Golden Incoming CONTROL = 5(opselect)  4(operation) 
+#                  325ns:   Starting |||||--<CHECKER MEM READ><--|||||
+#                  325ns: <CHECKER MEM READ>  ALUOUT: DUT = 000000f3   & Golden Model = 000000f3 
+#                  325ns:   [CHECK_PREPROC] ALUIN1: DUT = 61d4203a   & Golden Model = 61d4203a
+# 
+#                  325ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000e5f3   & Golden Model = 0000e5f3
+# 
+#                  325ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  325ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  325ns:   [CHECK_PREPROC] OPERATION: DUT = 5   & Golden Model = 5
+# 
+#                  325ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  325ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  325ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  335ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  335[DRIVER] Sending in new packet BEGIN
+#                  335ns:  [DRIVER] Sending Payload Begin
+#                  335ns:  [DRIVER] Sending in new packet END
+#                  335ns:  [DRIVER] Number of packets sent =          30
+#                  335ns:  [DRIVER] The number of Packets in the Generator Mailbox =          20
+#                  335ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  335ns:   [CHECKER] Pkt Contents from Driver: src1 = a60434c2, src2 = e706d9ed, imm = 10af6c38, 
+#                  335ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 000, 
+#                  335ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 000000f3 
+# ** Error:                  335ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 335 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  335ns:   [CHECK_PREPROC] ALUIN1: DUT = 61d4203a   & Golden Model = 61d4203a
+# 
+#                  335ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000e5f3   & Golden Model = 0000e5f3
+# 
+#                  335ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  335ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  335ns:   [CHECK_PREPROC] OPERATION: DUT = 5   & Golden Model = 5
+# 
+#                  335ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  335ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  335ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  345ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  345[DRIVER] Sending in new packet BEGIN
+#                  345ns:  [DRIVER] Sending Payload Begin
+#                  345ns:  [DRIVER] Sending in new packet END
+#                  345ns:  [DRIVER] Number of packets sent =          31
+#                  345ns:  [DRIVER] The number of Packets in the Generator Mailbox =          19
+#                  345ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  345ns:   [CHECKER] Pkt Contents from Driver: src1 = 3eebbca1, src2 = 4d12c7f0, imm = e291ec35, 
+#                  345ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 101, 
+#                  345ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 000000f3 
+# ** Error:                  345ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 345 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  345ns:   [CHECK_PREPROC] ALUIN1: DUT = 3eebbca1   & Golden Model = 3eebbca1
+# 
+#                  345ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  345ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  345ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  345ns:   [CHECK_PREPROC] OPERATION: DUT = 5   & Golden Model = 5
+# 
+#                  345ns:   [CHECK_PREPROC] OPSELECT: DUT = 5   & Golden Model = 5
+# 
+#                  345ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  345ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  355ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  355[DRIVER] Sending in new packet BEGIN
+#                  355ns:  [DRIVER] Sending Payload Begin
+#                  355ns:  [DRIVER] Sending in new packet END
+#                  355ns:  [DRIVER] Number of packets sent =          32
+#                  355ns:  [DRIVER] The number of Packets in the Generator Mailbox =          18
+#                  355ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  355ns:   [CHECKER] Pkt Contents from Driver: src1 = 2bfd8226, src2 = 44a2e5bd, imm = b9eb68a0, 
+#                  355ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 100, 
+#                  355ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  355ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = 44a2e5bd   & Golden Model = 44a2e5bd
+#                  355ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  355ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 355 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  355ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  355ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 3eebbca1  0000f1d2 
+#                  355ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 5(opselect)  5(operation) 
+#                  355ns:   <CHECKER MEM READ> Golden Incoming ALUIN = 3eebbca1  0000f1d2 
+#                  355ns:   <CHECKER MEM READ> Golden Incoming CONTROL = 5(opselect)  5(operation) 
+#                  355ns:   Starting |||||--<CHECKER MEM READ><--|||||
+#                  355ns: <CHECKER MEM READ>  ALUOUT: DUT = 0000f1d2   & Golden Model = 0000f1d2 
+#                  355ns:   [CHECK_PREPROC] ALUIN1: DUT = 2bfd8226   & Golden Model = 2bfd8226
+# 
+#                  355ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  355ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  355ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  355ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  355ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  355ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  355ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  365ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  365[DRIVER] Sending in new packet BEGIN
+#                  365ns:  [DRIVER] Sending Payload Begin
+#                  365ns:  [DRIVER] Sending in new packet END
+#                  365ns:  [DRIVER] Number of packets sent =          33
+#                  365ns:  [DRIVER] The number of Packets in the Generator Mailbox =          17
+#                  365ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  365ns:   [CHECKER] Pkt Contents from Driver: src1 = 4228e8c7, src2 = af91c4f3, imm = fb1b69c4, 
+#                  365ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 100, 
+#                  365ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  365ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = af91c4f3   & Golden Model = af91c4f3
+#                  365ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  365ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 365 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  365ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  365ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 365 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  365ns:   [CHECK_PREPROC] ALUIN1: DUT = 4228e8c7   & Golden Model = 4228e8c7
+# 
+#                  365ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  365ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  365ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  365ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  365ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  365ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  365ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  375ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  375[DRIVER] Sending in new packet BEGIN
+#                  375ns:  [DRIVER] Sending Payload Begin
+#                  375ns:  [DRIVER] Sending in new packet END
+#                  375ns:  [DRIVER] Number of packets sent =          34
+#                  375ns:  [DRIVER] The number of Packets in the Generator Mailbox =          16
+#                  375ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  375ns:   [CHECKER] Pkt Contents from Driver: src1 = 4e4f1dc9, src2 = 2f3530f4, imm = 4c07d299, 
+#                  375ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 100, 
+#                  375ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  375ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = 2f3530f4   & Golden Model = 2f3530f4
+#                  375ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  375ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 375 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  375ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  375ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 375 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  375ns:   [CHECK_PREPROC] ALUIN1: DUT = 4e4f1dc9   & Golden Model = 4e4f1dc9
+# 
+#                  375ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  375ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  375ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  375ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  375ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  375ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  375ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  385ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  385[DRIVER] Sending in new packet BEGIN
+#                  385ns:  [DRIVER] Sending Payload Begin
+#                  385ns:  [DRIVER] Sending in new packet END
+#                  385ns:  [DRIVER] Number of packets sent =          35
+#                  385ns:  [DRIVER] The number of Packets in the Generator Mailbox =          15
+#                  385ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  385ns:   [CHECKER] Pkt Contents from Driver: src1 = da93fee6, src2 = 7819a5c9, imm = db8c5efa, 
+#                  385ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 111, 
+#                  385ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  385ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 385 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  385ns:   [CHECK_PREPROC] ALUIN1: DUT = 4e4f1dc9   & Golden Model = 4e4f1dc9
+# 
+#                  385ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  385ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  385ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  385ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  385ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  385ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  385ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  395ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  395[DRIVER] Sending in new packet BEGIN
+#                  395ns:  [DRIVER] Sending Payload Begin
+#                  395ns:  [DRIVER] Sending in new packet END
+#                  395ns:  [DRIVER] Number of packets sent =          36
+#                  395ns:  [DRIVER] The number of Packets in the Generator Mailbox =          14
+#                  395ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  395ns:   [CHECKER] Pkt Contents from Driver: src1 = c08ec015, src2 = 03994744, imm = 25046fee, 
+#                  395ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 011, 
+#                  395ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  395ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = 03994744   & Golden Model = 03994744
+#                  395ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  395ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 395 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  395ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  395ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 395 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  395ns:   [CHECK_PREPROC] ALUIN1: DUT = c08ec015   & Golden Model = c08ec015
+# 
+#                  395ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  395ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  395ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  395ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  395ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  395ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  395ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  405ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  405[DRIVER] Sending in new packet BEGIN
+#                  405ns:  [DRIVER] Sending Payload Begin
+#                  405ns:  [DRIVER] Sending in new packet END
+#                  405ns:  [DRIVER] Number of packets sent =          37
+#                  405ns:  [DRIVER] The number of Packets in the Generator Mailbox =          13
+#                  405ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  405ns:   [CHECKER] Pkt Contents from Driver: src1 = 01ca28ae, src2 = ca789f39, imm = 3c271aa8, 
+#                  405ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 1, operation = 001, 
+#                  405ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  405ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 405 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  405ns:   [CHECK_PREPROC] ALUIN1: DUT = c08ec015   & Golden Model = c08ec015
+# 
+#                  405ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  405ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  405ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  405ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  405ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  405ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  405ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  415ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  415[DRIVER] Sending in new packet BEGIN
+#                  415ns:  [DRIVER] Sending Payload Begin
+#                  415ns:  [DRIVER] Sending in new packet END
+#                  415ns:  [DRIVER] Number of packets sent =          38
+#                  415ns:  [DRIVER] The number of Packets in the Generator Mailbox =          12
+#                  415ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  415ns:   [CHECKER] Pkt Contents from Driver: src1 = 18682a02, src2 = 27c7f8ea, imm = dddbe598, 
+#                  415ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 111, 
+#                  415ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  415ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = 27c7f8ea   & Golden Model = 27c7f8ea
+#                  415ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  415ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 415 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  415ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  415ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 415 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  415ns:   [CHECK_PREPROC] ALUIN1: DUT = 18682a02   & Golden Model = 18682a02
+# 
+#                  415ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  415ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  415ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  415ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  415ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  415ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  415ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  425ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  425[DRIVER] Sending in new packet BEGIN
+#                  425ns:  [DRIVER] Sending Payload Begin
+#                  425ns:  [DRIVER] Sending in new packet END
+#                  425ns:  [DRIVER] Number of packets sent =          39
+#                  425ns:  [DRIVER] The number of Packets in the Generator Mailbox =          11
+#                  425ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  425ns:   [CHECKER] Pkt Contents from Driver: src1 = 9a654af6, src2 = e16c7275, imm = 63d54c28, 
+#                  425ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 001, 
+#                  425ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  425ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = e16c7275   & Golden Model = e16c7275
+#                  425ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  425ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 425 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  425ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  425ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 425 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  425ns:   [CHECK_PREPROC] ALUIN1: DUT = 9a654af6   & Golden Model = 9a654af6
+# 
+#                  425ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  425ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  425ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  425ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  425ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  425ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  425ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  435ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  435[DRIVER] Sending in new packet BEGIN
+#                  435ns:  [DRIVER] Sending Payload Begin
+#                  435ns:  [DRIVER] Sending in new packet END
+#                  435ns:  [DRIVER] Number of packets sent =          40
+#                  435ns:  [DRIVER] The number of Packets in the Generator Mailbox =          10
+#                  435ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  435ns:   [CHECKER] Pkt Contents from Driver: src1 = 9db5caee, src2 = 09fb1259, imm = 85f5975d, 
+#                  435ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 011, 
+#                  435ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  435ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 435 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  435ns:   [CHECK_PREPROC] ALUIN1: DUT = 9a654af6   & Golden Model = 9a654af6
+# 
+#                  435ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f1d2   & Golden Model = 0000f1d2
+# 
+#                  435ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  435ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  435ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  435ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  435ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  435ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  445ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  445[DRIVER] Sending in new packet BEGIN
+#                  445ns:  [DRIVER] Sending Payload Begin
+#                  445ns:  [DRIVER] Sending in new packet END
+#                  445ns:  [DRIVER] Number of packets sent =          41
+#                  445ns:  [DRIVER] The number of Packets in the Generator Mailbox =           9
+#                  445ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  445ns:   [CHECKER] Pkt Contents from Driver: src1 = d79925a1, src2 = 197d2a02, imm = bf24e21b, 
+#                  445ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 1, operation = 000, 
+#                  445ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 0000f1d2 
+# ** Error:                  445ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 445 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  445ns:   [CHECK_PREPROC] ALUIN1: DUT = d79925a1   & Golden Model = d79925a1
+# 
+#                  445ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  445ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  445ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  445ns:   [CHECK_PREPROC] OPERATION: DUT = 0   & Golden Model = 0
+# 
+#                  445ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  445ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  445ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  455ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  455[DRIVER] Sending in new packet BEGIN
+#                  455ns:  [DRIVER] Sending Payload Begin
+#                  455ns:  [DRIVER] Sending in new packet END
+#                  455ns:  [DRIVER] Number of packets sent =          42
+#                  455ns:  [DRIVER] The number of Packets in the Generator Mailbox =           8
+#                  455ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  455ns:   [CHECKER] Pkt Contents from Driver: src1 = 51b1495a, src2 = 89bc7b9f, imm = 40db6f0d, 
+#                  455ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 011, 
+#                  455ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  455ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = 89bc7b9f   & Golden Model = 89bc7b9f
+#                  455ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  455ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 455 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  455ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  455ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = d79925a1  bf24e21b 
+#                  455ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 1(opselect)  0(operation) 
+#                  455ns:   Starting |||||--><CHECKER ARITH ALU><--|||||
+#                  455ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 96be07bc   & Golden Model = 96be07bc 
+#                  455ns:  <CHECKER ARITH ALU> CARRY:DUT = 1 & Golden Model = 1 
+# 
+#                  455ns:   [CHECK_PREPROC] ALUIN1: DUT = 51b1495a   & Golden Model = 51b1495a
+# 
+#                  455ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  455ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  455ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  455ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  455ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  455ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  455ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  465ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  465[DRIVER] Sending in new packet BEGIN
+#                  465ns:  [DRIVER] Sending Payload Begin
+#                  465ns:  [DRIVER] Sending in new packet END
+#                  465ns:  [DRIVER] Number of packets sent =          43
+#                  465ns:  [DRIVER] The number of Packets in the Generator Mailbox =           7
+#                  465ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  465ns:   [CHECKER] Pkt Contents from Driver: src1 = 82bf437f, src2 = e1b16908, imm = 23a05162, 
+#                  465ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 001, 
+#                  465ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 80000000   & Golden Model = 96be07bc 
+# ** Error:                  465ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 465 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  465ns:   [CHECK_PREPROC] ALUIN1: DUT = 82bf437f   & Golden Model = 82bf437f
+# 
+#                  465ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  465ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  465ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  465ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  465ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  465ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 05   & Golden Model = 05
+# 
+#                  465ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  475ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  475[DRIVER] Sending in new packet BEGIN
+#                  475ns:  [DRIVER] Sending Payload Begin
+#                  475ns:  [DRIVER] Sending in new packet END
+#                  475ns:  [DRIVER] Number of packets sent =          44
+#                  475ns:  [DRIVER] The number of Packets in the Generator Mailbox =           6
+#                  475ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  475ns:   [CHECKER] Pkt Contents from Driver: src1 = 521a0dfb, src2 = aff211e7, imm = cb9c40fd, 
+#                  475ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 011, 
+#                  475ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  475ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = 82bf437f  
+#                  475ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 05  
+#                  475ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  1(operation) 
+#                  475ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHLEFTART
+#                  475ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 57e86fe0   & Golden Model = 57e86fe0 
+#                  475ns:  <CHECKER SHIFT ALU> CARRY:DUT = 1 & Golden Model = 1 
+# 
+#                  475ns:   [CHECK_PREPROC] ALUIN1: DUT = 82bf437f   & Golden Model = 82bf437f
+# 
+#                  475ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  475ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  475ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  475ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  475ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  475ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  475ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  485ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  485[DRIVER] Sending in new packet BEGIN
+#                  485ns:  [DRIVER] Sending Payload Begin
+#                  485ns:  [DRIVER] Sending in new packet END
+#                  485ns:  [DRIVER] Number of packets sent =          45
+#                  485ns:  [DRIVER] The number of Packets in the Generator Mailbox =           5
+#                  485ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  485ns:   [CHECKER] Pkt Contents from Driver: src1 = cc150811, src2 = b951b985, imm = e9046119, 
+#                  485ns:   [CHECKER] Pkt Contents from Driver: opselect = 101, immp_regn = 1, operation = 100, 
+#                  485ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 57e86fe0   & Golden Model = 57e86fe0 
+#                  485ns:   [CHECK_PREPROC] ALUIN1: DUT = 82bf437f   & Golden Model = 82bf437f
+# 
+#                  485ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  485ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  485ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  485ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  485ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  485ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  485ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  495ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  495[DRIVER] Sending in new packet BEGIN
+#                  495ns:  [DRIVER] Sending Payload Begin
+#                  495ns:  [DRIVER] Sending in new packet END
+#                  495ns:  [DRIVER] Number of packets sent =          46
+#                  495ns:  [DRIVER] The number of Packets in the Generator Mailbox =           4
+#                  495ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  495ns:   [CHECKER] Pkt Contents from Driver: src1 = 3bc97315, src2 = a5af10a8, imm = e6d148b8, 
+#                  495ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 1, operation = 111, 
+#                  495ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 57e86fe0   & Golden Model = 57e86fe0 
+#                  495ns:   [CHECK_PREPROC] ALUIN1: DUT = 82bf437f   & Golden Model = 82bf437f
+# 
+#                  495ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  495ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  495ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  495ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  495ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  495ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  495ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  505ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  505[DRIVER] Sending in new packet BEGIN
+#                  505ns:  [DRIVER] Sending Payload Begin
+#                  505ns:  [DRIVER] Sending in new packet END
+#                  505ns:  [DRIVER] Number of packets sent =          47
+#                  505ns:  [DRIVER] The number of Packets in the Generator Mailbox =           3
+#                  505ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  505ns:   [CHECKER] Pkt Contents from Driver: src1 = d2a4cc49, src2 = b30e37d9, imm = 5b10f206, 
+#                  505ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 0, operation = 010, 
+#                  505ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 57e86fe0   & Golden Model = 57e86fe0 
+#                  505ns:   [CHECK_PREPROC] ALUIN1: DUT = 82bf437f   & Golden Model = 82bf437f
+# 
+#                  505ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  505ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  505ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  505ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  505ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  505ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  505ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  515ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  515[DRIVER] Sending in new packet BEGIN
+#                  515ns:  [DRIVER] Sending Payload Begin
+#                  515ns:  [DRIVER] Sending in new packet END
+#                  515ns:  [DRIVER] Number of packets sent =          48
+#                  515ns:  [DRIVER] The number of Packets in the Generator Mailbox =           2
+#                  515ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  515ns:   [CHECKER] Pkt Contents from Driver: src1 = 46d58477, src2 = 8f9d9e10, imm = 95a95f91, 
+#                  515ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 001, 
+#                  515ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 57e86fe0   & Golden Model = 57e86fe0 
+#                  515ns:   [CHECK_PREPROC] ALUIN1: DUT = 46d58477   & Golden Model = 46d58477
+# 
+#                  515ns:   [CHECK_PREPROC] ALUIN2: DUT = bf24e21b   & Golden Model = bf24e21b
+# 
+#                  515ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  515ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  515ns:   [CHECK_PREPROC] OPERATION: DUT = 1   & Golden Model = 1
+# 
+#                  515ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  515ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 1e   & Golden Model = 1e
+# 
+#                  515ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  525ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  525[DRIVER] Sending in new packet BEGIN
+#                  525ns:  [DRIVER] Sending Payload Begin
+#                  525ns:  [DRIVER] Sending in new packet END
+#                  525ns:  [DRIVER] Number of packets sent =          49
+#                  525ns:  [DRIVER] The number of Packets in the Generator Mailbox =           1
+#                  525ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  525ns:   [CHECKER] Pkt Contents from Driver: src1 = 5cc652f2, src2 = 443de3d0, imm = 5c71ebc3, 
+#                  525ns:   [CHECKER] Pkt Contents from Driver: opselect = 001, immp_regn = 1, operation = 111, 
+#                  525ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  525ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = 46d58477  
+#                  525ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 1e  
+#                  525ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  1(operation) 
+#                  525ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHLEFTART
+#                  525ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = c0000000   & Golden Model = c0000000 
+#                  525ns:  <CHECKER SHIFT ALU> CARRY:DUT = 1 & Golden Model = 0 
+# 
+# ** Error:                  525ns:
+# ***********   <CHECKER SHIFT ALU> ERROR in CARRY **************
+# 
+#    Time: 525 ns  Scope: data_defs_v_unit.Scoreboard.check_shift File: Scoreboard.sv Line: 259
+#                  525ns:   [CHECK_PREPROC] ALUIN1: DUT = 5cc652f2   & Golden Model = 5cc652f2
+# 
+#                  525ns:   [CHECK_PREPROC] ALUIN2: DUT = 5c71ebc3   & Golden Model = 5c71ebc3
+# 
+#                  525ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  525ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  525ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  525ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  525ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  525ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  535ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  535[DRIVER] Sending in new packet BEGIN
+#                  535ns:  [DRIVER] Sending Payload Begin
+#                  535ns:  [DRIVER] Sending in new packet END
+#                  535ns:  [DRIVER] Number of packets sent =          50
+#                  535ns:  [DRIVER] The number of Packets in the Generator Mailbox =           0
+#                  535ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  535ns:   [CHECKER] Pkt Contents from Driver: src1 = 2d9b2e27, src2 = ca20073d, imm = e81915f6, 
+#                  535ns:   [CHECKER] Pkt Contents from Driver: opselect = 100, immp_regn = 1, operation = 000, 
+#                  535ns:   Starting |||||--<CHECKER MEM WRITE><--|||||
+#                  535ns:  <CHECKER MEM Write>  MEMDATA WRITE OUT: DUT = ca20073d   & Golden Model = ca20073d
+#                  535ns:  <CHECKER MEM Write>  MEMDATA WRITE ENABLE:DUT = 0   & Golden Model = 1
+# ** Error:                  535ns:
+# *********** <CHECKER MEM Write>  ERROR in Mem Write Enable**************
+# 
+#    Time: 535 ns  Scope: data_defs_v_unit.Scoreboard.check_memwrite File: Scoreboard.sv Line: 121
+#                  535ns:  	 <CHECKER ARITH ALU> Golden Incoming Arithmetic enable = 1
+#                  535ns:  	 <CHECKER ARITH ALU> Golden Incoming ALUIN = 5cc652f2  5c71ebc3 
+#                  535ns:  	 <CHECKER ARITH ALU> Golden Incoming CONTROL = 1(opselect)  7(operation) 
+#                  535ns:   Starting |||||--><CHECKER ARITH ALU><--|||||
+#                  535ns:  <CHECKER ARITH ALU> ALUOUT: DUT = 2bc30000   & Golden Model = ebc30000 
+#                  535ns:  <CHECKER ARITH ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+# ** Error:                  535ns:
+# *********** <CHECKER ARITH ALU> ERROR in ALU out**************
+# 
+#    Time: 535 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 176
+#                  535ns:   [CHECK_PREPROC] ALUIN1: DUT = 2d9b2e27   & Golden Model = 2d9b2e27
+# 
+#                  535ns:   [CHECK_PREPROC] ALUIN2: DUT = 5c71ebc3   & Golden Model = 5c71ebc3
+# 
+#                  535ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  535ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  535ns:   [CHECK_PREPROC] OPERATION: DUT = 0   & Golden Model = 0
+# 
+#                  535ns:   [CHECK_PREPROC] OPSELECT: DUT = 4   & Golden Model = 4
+# 
+#                  535ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  535ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  545ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  545ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  545ns:   [CHECKER] Pkt Contents from Driver: src1 = bc6dfa0b, src2 = b2fc95af, imm = 4e8142ef, 
+#                  545ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 010, 
+#                  545ns:  <CHECKER ARITH ALU> ALUOUT: DUT = c0000000   & Golden Model = ebc30000 
+# ** Error:                  545ns:
+# *********** <CHECKER> ALU Out Changed Dispite Enable=0 **************
+# 
+#    Time: 545 ns  Scope: data_defs_v_unit.Scoreboard.check_arith File: Scoreboard.sv Line: 141
+#                  545ns:   [CHECK_PREPROC] ALUIN1: DUT = bc6dfa0b   & Golden Model = bc6dfa0b
+# 
+#                  545ns:   [CHECK_PREPROC] ALUIN2: DUT = 5c71ebc3   & Golden Model = 5c71ebc3
+# 
+#                  545ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  545ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 1   & Golden Model = 1
+# 
+#                  545ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  545ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  545ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 0f   & Golden Model = 0f
+# 
+#                  545ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  555ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  555ns:  [SCOREBOARD] Grabbing Data From both Driver and Receiver
+#                  555ns:   [CHECKER] Pkt Contents from Driver: src1 = caf5046a, src2 = 6510c7e2, imm = 5cb51be8, 
+#                  555ns:   [CHECKER] Pkt Contents from Driver: opselect = 000, immp_regn = 0, operation = 001, 
+#                  555ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift enable = 1
+#                  555ns:   <CHECKER SHIFT ALU>  Golden Incoming IN = bc6dfa0b  
+#                  555ns:   <CHECKER SHIFT ALU>  Golden Incoming Shift Num = 0f  
+#                  555ns:   <CHECKER SHIFT ALU>  Golden Incoming CONTROL = 0(opselect)  2(operation) 
+#                  555ns:   Starting |||||--<CHECKER SHIFT ALU><--|||||
+# Inside SHRGHTLOG
+#                  555ns:  <CHECKER SHIFT ALU> ALUOUT: DUT = 000178db   & Golden Model = 000178db 
+#                  555ns:  <CHECKER SHIFT ALU> CARRY:DUT = 0 & Golden Model = 0 
+# 
+#                  555ns:   [CHECK_PREPROC] ALUIN1: DUT = bc6dfa0b   & Golden Model = bc6dfa0b
+# 
+#                  555ns:   [CHECK_PREPROC] ALUIN2: DUT = 5c71ebc3   & Golden Model = 5c71ebc3
+# 
+#                  555ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  555ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  555ns:   [CHECK_PREPROC] OPERATION: DUT = 2   & Golden Model = 2
+# 
+#                  555ns:   [CHECK_PREPROC] OPSELECT: DUT = 0   & Golden Model = 0
+# 
+#                  555ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  555ns:  [SCOREBOARD] Waiting for Data in Receiver Outbox to be populated
+#                  565WE ARE DONE .. GO HOME AND SLEEP!!! .. ACTUALLY NOT YET .. 

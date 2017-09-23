@@ -1,0 +1,33 @@
+# Current time Thu Oct  9 00:26:50 2008
+# QuestaSim Stack Trace
+# Program = vish
+# Id = "6.3c"
+# Version = "2007.09"
+# Date = "Sep 11 2007"
+# Platform = linux
+# 0    0x00ae246f: 'int_free + 0xcf' in '/lib/libc.so.6'
+# 1    0x00ae602b: 'free + 0x8b' in '/lib/libc.so.6'
+# 2    0x083ac0d6: 'del_ErrMsg + 0x1e' in '/ncsu/questasim63/bin/../linux/vish'
+# 3    0x08399f1e: 'del_GetLine + 0x2a' in '/ncsu/questasim63/bin/../linux/vish'
+# 4    0x081011cb: 'tclprim_wlf_CancelSearch + 0x6b' in '/ncsu/questasim63/bin/../linux/vish'
+# 5    0x081012db: 'tclprim_readline + 0xdf' in '/ncsu/questasim63/bin/../linux/vish'
+# 6    0x08285b5b: 'TclInvokeStringCommand + 0x6f' in '/ncsu/questasim63/bin/../linux/vish'
+# 7    0x08286b33: 'TclEvalObjvInternal + 0x26f' in '/ncsu/questasim63/bin/../linux/vish'
+# 8    0x082a9154: 'TclCompEvalObj + 0xdb0' in '/ncsu/questasim63/bin/../linux/vish'
+# 9    0x082a84ce: 'TclCompEvalObj + 0x12a' in '/ncsu/questasim63/bin/../linux/vish'
+# 10   0x082d3590: 'TclObjInterpProc + 0x3b0' in '/ncsu/questasim63/bin/../linux/vish'
+# 11   0x08286b33: 'TclEvalObjvInternal + 0x26f' in '/ncsu/questasim63/bin/../linux/vish'
+# 12   0x082a9154: 'TclCompEvalObj + 0xdb0' in '/ncsu/questasim63/bin/../linux/vish'
+# 13   0x082a84ce: 'TclCompEvalObj + 0x12a' in '/ncsu/questasim63/bin/../linux/vish'
+# 14   0x08287adb: 'Tcl_EvalObjEx + 0x1a3' in '/ncsu/questasim63/bin/../linux/vish'
+# 15   0x08298305: 'Tcl_WhileObjCmd + 0x4d' in '/ncsu/questasim63/bin/../linux/vish'
+# 16   0x08286b33: 'TclEvalObjvInternal + 0x26f' in '/ncsu/questasim63/bin/../linux/vish'
+# 17   0x08287495: 'Tcl_EvalEx + 0x1ed' in '/ncsu/questasim63/bin/../linux/vish'
+# 18   0x0828789c: 'Tcl_Eval + 0x20' in '/ncsu/questasim63/bin/../linux/vish'
+# 19   0x08288dfe: 'Tcl_GlobalEval + 0x2a' in '/ncsu/questasim63/bin/../linux/vish'
+# 20   0x08104d66: 'vish_inner_loop + 0x8e' in '/ncsu/questasim63/bin/../linux/vish'
+# 21   0x0810614d: 'main + 0xf99' in '/ncsu/questasim63/bin/../linux/vish'
+# 22   0x00a8fde7: '_libc_start_main + 0xd7' in '/lib/libc.so.6'
+# 23   0x0809b19c: 'start + 0x1c' in '/ncsu/questasim63/bin/../linux/vish'
+# End of Stack Trace
+

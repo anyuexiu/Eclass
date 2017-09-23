@@ -1,0 +1,114 @@
+m255
+K3
+13
+cModel Technology
+d/afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/TA_stuff/Prj1
+vALU
+Ib9oe2^U=FSAK>YR0?OmTP1
+VHY>O8PC6WHdd@5Hl5[_cf2
+Z0 d/afs/unity.ncsu.edu/users/h/hkhaita/ece745_2008/002/grp33/TA_stuff/Prj1
+Z1 w1223642347
+Z2 8Execute.vp
+Z3 FExecute.vp
+L0 100
+Z4 OE;L;6.3d;37
+r1
+!s85 0
+31
+n@a@l@u
+vData_Memory
+IZe5F@05IeQ4^gl:No>emW1
+VFIK=6P7cJ87XDmNLD2>0F2
+Z5 d/afs/unity.ncsu.edu/users/h/hkhaita/ece745_2008/002/grp33/TA_stuff/Prj1
+Z6 w1223733398
+Z7 8Test_LC3.v
+Z8 FTest_LC3.v
+L0 24
+R4
+r1
+!s85 0
+31
+n@data_@memory
+vextension
+IB[oNJ0K^8eg5XmjTOfUiT1
+VkCgmm:8Tn@mS5YP:T9B2C1
+R5
+R1
+8Controller_Pipeline_Ver2.vp
+FController_Pipeline_Ver2.vp
+8Decode_Pipelined.vp
+FDecode_Pipelined.vp
+R2
+R3
+L2 86
+R4
+r1
+!s85 0
+31
+vInstr_Memory
+IX0MTIC8`UE4QA]N25ZN[F0
+VdM=1kO[W>9]1EMD0PIL5Q2
+R5
+R6
+R7
+R8
+L0 1
+R4
+r1
+!s85 0
+31
+n@instr_@memory
+vLC3
+IkGF2PH_fild:?bChBUTL@3
+VJ_f?bIbY12_0KjBXVhDGB1
+R5
+w1222473794
+8TopLevelLC3.v
+FTopLevelLC3.v
+L0 1
+R4
+r1
+!s85 0
+31
+n@l@c3
+vMemAccess
+IJXEW`[]dj@4[h?3oWIHV]1
+VI8I8nGM5JJi7U?bnfk?YV1
+R5
+R1
+8Fetch.vp
+FFetch.vp
+8Mem_Access.vp
+FMem_Access.vp
+L1 1
+R4
+r1
+!s85 0
+31
+n@mem@access
+vRegFile
+InFUbb8<YiYk0h@VFl<D^[1
+V1o7z=GBceTN;2]3b8A9?H0
+R5
+w1223730903
+8WriteBack.vp
+FWriteBack.vp
+L0 39
+R4
+r1
+!s85 0
+31
+n@reg@file
+vTest_LC3
+ISPfz]dQ4Q`P1bd[HOj>AK0
+Vh:E4N8lhQSK;6:9QO7m6k0
+R5
+R6
+R7
+R8
+L0 47
+R4
+r1
+!s85 0
+31
+n@test_@l@c3

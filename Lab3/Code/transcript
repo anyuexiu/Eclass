@@ -1,0 +1,464 @@
+# vsim -c -novopt Execute_test_top 
+# //  QuestaSim 6.3c Sep 11 2007 Linux 2.6.18-92.1.10.el5PAE
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/Mentor_stuff/Lab3/Code/mti_lib.data_defs_v_unit
+# Loading work.data_defs_v_unit
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/Mentor_stuff/Lab3/Code/mti_lib.Execute_test_top
+# Loading work.Execute_test_top
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/Mentor_stuff/Lab3/Code/mti_lib.Execute_io
+# Loading work.Execute_io
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/Mentor_stuff/Lab3/Code/mti_lib.DUT_probe_if
+# Loading work.DUT_probe_if
+# Refreshing /afs/eos.ncsu.edu/lockers/workspace/ece/ece745/002/grp33/Mentor_stuff/Lab3/Code/mti_lib.Execute_test
+# Loading work.Execute_test
+# Loading work.Top
+# Loading work.Ex_Preproc
+# Loading work.ALU
+# Loading work.Arith_ALU
+# Loading work.Shift_ALU
+#                    0ns:  [RESET]  Design Reset Start
+#                   45ns:  [RESET]  Design Reset End
+#                   45ns:  [GENERATOR] Generator Started
+#                   45ns:  [DRIVER] Driver Started
+#                   45ns: [RECEIVER] Receiving Payload Begin
+#                   45[DRIVER] Sending in new packet BEGIN
+#                   45ns:  [DRIVER] Sending Payload Begin
+#                   45ns:  [DRIVER] Sending in new packet END
+#                   45ns:  [DRIVER] Number of packets sent =           1
+#                   45ns:  [DRIVER] The number of Packets in the Generator Mailbox =          20
+#                   45ns:  [GENERATOR] Generation Finished Creating          21 Packets  
+#                   55[DRIVER] Sending in new packet BEGIN
+#                   55ns:  [DRIVER] Sending Payload Begin
+#                   55ns:  [DRIVER] Sending in new packet END
+#                   55ns:  [DRIVER] Number of packets sent =           2
+#                   55ns:  [DRIVER] The number of Packets in the Generator Mailbox =          19
+#                   65ns: [CHECKER] Checker Start
+# 
+# 
+#                   65ns:   [CHECKER] Pkt Contents: src1 = 000040b5, src2 = 00008a58, imm = 0000a1c6, 
+#                   65ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 000, 
+#                   65ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 0
+#                   65ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 00000000  00000000 
+#                   65ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 0(opselect)  0(operation) 
+#                   65ns:   [CHECKER] ALUOUT: DUT = 00000000   & Golden Model = 00000000
+# 
+#                   65ns:   [CHECK_PREPROC] ALUIN1: DUT = 000040b5   & Golden Model = 000040b5
+# 
+#                   65ns:   [CHECK_PREPROC] ALUIN2: DUT = 00008a58   & Golden Model = 00008a58
+# 
+#                   65ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                   65ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   65ns:   [CHECK_PREPROC] OPERATION: DUT = 0   & Golden Model = 0
+# 
+#                   65ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                   65ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   65ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   65[DRIVER] Sending in new packet BEGIN
+#                   65ns:  [DRIVER] Sending Payload Begin
+#                   65ns:  [DRIVER] Sending in new packet END
+#                   65ns:  [DRIVER] Number of packets sent =           3
+#                   65ns:  [DRIVER] The number of Packets in the Generator Mailbox =          18
+#                   75ns: [CHECKER] Checker Start
+# 
+# 
+#                   75ns:   [CHECKER] Pkt Contents: src1 = 000033c9, src2 = 00000cbd, imm = 000068d9, 
+#                   75ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 111, 
+#                   75ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                   75ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 000040b5  00008a58 
+#                   75ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  0(operation) 
+#                   75ns:   [CHECKER] ALUOUT: DUT = 0000cb0d   & Golden Model = 0000cb0d
+# 
+#                   75ns:   [CHECK_PREPROC] ALUIN1: DUT = 000033c9   & Golden Model = 000033c9
+# 
+#                   75ns:   [CHECK_PREPROC] ALUIN2: DUT = 000068d9   & Golden Model = 000068d9
+# 
+#                   75ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                   75ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   75ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                   75ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                   75ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   75ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   75[DRIVER] Sending in new packet BEGIN
+#                   75ns:  [DRIVER] Sending Payload Begin
+#                   75ns:  [DRIVER] Sending in new packet END
+#                   75ns:  [DRIVER] Number of packets sent =           4
+#                   75ns:  [DRIVER] The number of Packets in the Generator Mailbox =          17
+#                   85ns: [CHECKER] Checker Start
+# 
+# 
+#                   85ns:   [CHECKER] Pkt Contents: src1 = 0000659b, src2 = 0000f7fe, imm = 0000451b, 
+#                   85ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 000, 
+#                   85ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                   85ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 000033c9  000068d9 
+#                   85ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  7(operation) 
+#                   85ns:   [CHECKER] ALUOUT: DUT = 68d90000   & Golden Model = 68d90000
+# 
+#                   85ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000659b   & Golden Model = 0000659b
+# 
+#                   85ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000f7fe   & Golden Model = 0000f7fe
+# 
+#                   85ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                   85ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   85ns:   [CHECK_PREPROC] OPERATION: DUT = 0   & Golden Model = 0
+# 
+#                   85ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                   85ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   85ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   85[DRIVER] Sending in new packet BEGIN
+#                   85ns:  [DRIVER] Sending Payload Begin
+#                   85ns:  [DRIVER] Sending in new packet END
+#                   85ns:  [DRIVER] Number of packets sent =           5
+#                   85ns:  [DRIVER] The number of Packets in the Generator Mailbox =          16
+#                   95ns: [CHECKER] Checker Start
+# 
+# 
+#                   95ns:   [CHECKER] Pkt Contents: src1 = 00001e92, src2 = 0000ad45, imm = 00005191, 
+#                   95ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 011, 
+#                   95ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                   95ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 0000659b  0000f7fe 
+#                   95ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  0(operation) 
+#                   95ns:   [CHECKER] ALUOUT: DUT = 00015d99   & Golden Model = 00015d99
+# 
+#                   95ns:   [CHECK_PREPROC] ALUIN1: DUT = 00001e92   & Golden Model = 00001e92
+# 
+#                   95ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000ad45   & Golden Model = 0000ad45
+# 
+#                   95ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                   95ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                   95ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                   95ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                   95ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                   95ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                   95[DRIVER] Sending in new packet BEGIN
+#                   95ns:  [DRIVER] Sending Payload Begin
+#                   95ns:  [DRIVER] Sending in new packet END
+#                   95ns:  [DRIVER] Number of packets sent =           6
+#                   95ns:  [DRIVER] The number of Packets in the Generator Mailbox =          15
+#                  105ns: [CHECKER] Checker Start
+# 
+# 
+#                  105ns:   [CHECKER] Pkt Contents: src1 = 00007ed4, src2 = 0000b4f9, imm = 000012ce, 
+#                  105ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 011, 
+#                  105ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                  105ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 00001e92  0000ad45 
+#                  105ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  105ns:   [CHECKER] ALUOUT: DUT = ffff52ba   & Golden Model = ffff52ba
+# 
+#                  105ns:   [CHECK_PREPROC] ALUIN1: DUT = 00001e92   & Golden Model = 00001e92
+# 
+#                  105ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000ad45   & Golden Model = 0000ad45
+# 
+#                  105ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  105ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  105ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  105ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  105ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  105ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  105[DRIVER] Sending in new packet BEGIN
+#                  105ns:  [DRIVER] Sending Payload Begin
+#                  105ns:  [DRIVER] Sending in new packet END
+#                  105ns:  [DRIVER] Number of packets sent =           7
+#                  105ns:  [DRIVER] The number of Packets in the Generator Mailbox =          14
+#                  115ns: [CHECKER] Checker Start
+# 
+# 
+#                  115ns:   [CHECKER] Pkt Contents: src1 = 0000d100, src2 = 0000ad03, imm = 000044e0, 
+#                  115ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 101, 
+#                  115ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 0
+#                  115ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 00001e92  0000ad45 
+#                  115ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  115ns:   [CHECKER] ALUOUT: DUT = 00000000   & Golden Model = ffff52ba
+# 
+#                  115ns:   [CHECK_PREPROC] ALUIN1: DUT = 00001e92   & Golden Model = 00001e92
+# 
+#                  115ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000ad45   & Golden Model = 0000ad45
+# 
+#                  115ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  115ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  115ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  115ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  115ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  115ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  115[DRIVER] Sending in new packet BEGIN
+#                  115ns:  [DRIVER] Sending Payload Begin
+#                  115ns:  [DRIVER] Sending in new packet END
+#                  115ns:  [DRIVER] Number of packets sent =           8
+#                  115ns:  [DRIVER] The number of Packets in the Generator Mailbox =          13
+#                  125ns: [CHECKER] Checker Start
+# 
+# 
+#                  125ns:   [CHECKER] Pkt Contents: src1 = 0000d417, src2 = 00001892, imm = 0000d18a, 
+#                  125ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 010, 
+#                  125ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 0
+#                  125ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 00001e92  0000ad45 
+#                  125ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  125ns:   [CHECKER] ALUOUT: DUT = 00000000   & Golden Model = ffff52ba
+# 
+#                  125ns:   [CHECK_PREPROC] ALUIN1: DUT = 00001e92   & Golden Model = 00001e92
+# 
+#                  125ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000ad45   & Golden Model = 0000ad45
+# 
+#                  125ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  125ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  125ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  125ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  125ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  125ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  125[DRIVER] Sending in new packet BEGIN
+#                  125ns:  [DRIVER] Sending Payload Begin
+#                  125ns:  [DRIVER] Sending in new packet END
+#                  125ns:  [DRIVER] Number of packets sent =           9
+#                  125ns:  [DRIVER] The number of Packets in the Generator Mailbox =          12
+#                  135ns: [CHECKER] Checker Start
+# 
+# 
+#                  135ns:   [CHECKER] Pkt Contents: src1 = 0000c101, src2 = 0000cd94, imm = 000094ef, 
+#                  135ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 011, 
+#                  135ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 0
+#                  135ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 00001e92  0000ad45 
+#                  135ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  135ns:   [CHECKER] ALUOUT: DUT = 00000000   & Golden Model = ffff52ba
+# 
+#                  135ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000c101   & Golden Model = 0000c101
+# 
+#                  135ns:   [CHECK_PREPROC] ALUIN2: DUT = 000094ef   & Golden Model = 000094ef
+# 
+#                  135ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  135ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  135ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  135ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  135ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  135ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  135[DRIVER] Sending in new packet BEGIN
+#                  135ns:  [DRIVER] Sending Payload Begin
+#                  135ns:  [DRIVER] Sending in new packet END
+#                  135ns:  [DRIVER] Number of packets sent =          10
+#                  135ns:  [DRIVER] The number of Packets in the Generator Mailbox =          11
+#                  145ns: [CHECKER] Checker Start
+# 
+# 
+#                  145ns:   [CHECKER] Pkt Contents: src1 = 00001e4b, src2 = 0000ea40, imm = 0000168e, 
+#                  145ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 100, 
+#                  145ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                  145ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 0000c101  000094ef 
+#                  145ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  145ns:   [CHECKER] ALUOUT: DUT = ffff6b10   & Golden Model = ffff6b10
+# 
+#                  145ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000c101   & Golden Model = 0000c101
+# 
+#                  145ns:   [CHECK_PREPROC] ALUIN2: DUT = 000094ef   & Golden Model = 000094ef
+# 
+#                  145ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  145ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  145ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  145ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  145ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  145ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  145[DRIVER] Sending in new packet BEGIN
+#                  145ns:  [DRIVER] Sending Payload Begin
+#                  145ns:  [DRIVER] Sending in new packet END
+#                  145ns:  [DRIVER] Number of packets sent =          11
+#                  145ns:  [DRIVER] The number of Packets in the Generator Mailbox =          10
+#                  155ns: [CHECKER] Checker Start
+# 
+# 
+#                  155ns:   [CHECKER] Pkt Contents: src1 = 0000a6d7, src2 = 0000fc3e, imm = 00002260, 
+#                  155ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 000, 
+#                  155ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 0
+#                  155ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 0000c101  000094ef 
+#                  155ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  155ns:   [CHECKER] ALUOUT: DUT = 00000000   & Golden Model = ffff6b10
+# 
+#                  155ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000c101   & Golden Model = 0000c101
+# 
+#                  155ns:   [CHECK_PREPROC] ALUIN2: DUT = 000094ef   & Golden Model = 000094ef
+# 
+#                  155ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 0   & Golden Model = 0
+# 
+#                  155ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  155ns:   [CHECK_PREPROC] OPERATION: DUT = 3   & Golden Model = 3
+# 
+#                  155ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  155ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  155ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  155[DRIVER] Sending in new packet BEGIN
+#                  155ns:  [DRIVER] Sending Payload Begin
+#                  155ns:  [DRIVER] Sending in new packet END
+#                  155ns:  [DRIVER] Number of packets sent =          12
+#                  155ns:  [DRIVER] The number of Packets in the Generator Mailbox =           9
+#                  165ns: [CHECKER] Checker Start
+# 
+# 
+#                  165ns:   [CHECKER] Pkt Contents: src1 = 0000d9cf, src2 = 000078d6, imm = 000011e9, 
+#                  165ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 111, 
+#                  165ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 0
+#                  165ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 0000c101  000094ef 
+#                  165ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  3(operation) 
+#                  165ns:   [CHECKER] ALUOUT: DUT = 00000000   & Golden Model = ffff6b10
+# 
+#                  165ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000d9cf   & Golden Model = 0000d9cf
+# 
+#                  165ns:   [CHECK_PREPROC] ALUIN2: DUT = 000011e9   & Golden Model = 000011e9
+# 
+#                  165ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  165ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  165ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  165ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  165ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  165ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  165[DRIVER] Sending in new packet BEGIN
+#                  165ns:  [DRIVER] Sending Payload Begin
+#                  165ns:  [DRIVER] Sending in new packet END
+#                  165ns:  [DRIVER] Number of packets sent =          13
+#                  165ns:  [DRIVER] The number of Packets in the Generator Mailbox =           8
+#                  175ns: [CHECKER] Checker Start
+# 
+# 
+#                  175ns:   [CHECKER] Pkt Contents: src1 = 0000230c, src2 = 0000e876, imm = 0000d6b2, 
+#                  175ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 100, 
+#                  175ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                  175ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 0000d9cf  000011e9 
+#                  175ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  7(operation) 
+#                  175ns:   [CHECKER] ALUOUT: DUT = 11e90000   & Golden Model = 11e90000
+# 
+#                  175ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000230c   & Golden Model = 0000230c
+# 
+#                  175ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000d6b2   & Golden Model = 0000d6b2
+# 
+#                  175ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  175ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  175ns:   [CHECK_PREPROC] OPERATION: DUT = 4   & Golden Model = 4
+# 
+#                  175ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  175ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  175ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  175[DRIVER] Sending in new packet BEGIN
+#                  175ns:  [DRIVER] Sending Payload Begin
+#                  175ns:  [DRIVER] Sending in new packet END
+#                  175ns:  [DRIVER] Number of packets sent =          14
+#                  175ns:  [DRIVER] The number of Packets in the Generator Mailbox =           7
+#                  185ns: [CHECKER] Checker Start
+# 
+# 
+#                  185ns:   [CHECKER] Pkt Contents: src1 = 00001fc0, src2 = 0000b6ab, imm = 0000bc06, 
+#                  185ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 1, operation = 110, 
+#                  185ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                  185ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 0000230c  0000d6b2 
+#                  185ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  4(operation) 
+#                  185ns:   [CHECKER] ALUOUT: DUT = 00000200   & Golden Model = 00000200
+# 
+#                  185ns:   [CHECK_PREPROC] ALUIN1: DUT = 00001fc0   & Golden Model = 00001fc0
+# 
+#                  185ns:   [CHECK_PREPROC] ALUIN2: DUT = 0000bc06   & Golden Model = 0000bc06
+# 
+#                  185ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  185ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  185ns:   [CHECK_PREPROC] OPERATION: DUT = 6   & Golden Model = 6
+# 
+#                  185ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  185ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  185ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  185[DRIVER] Sending in new packet BEGIN
+#                  185ns:  [DRIVER] Sending Payload Begin
+#                  185ns:  [DRIVER] Sending in new packet END
+#                  185ns:  [DRIVER] Number of packets sent =          15
+#                  185ns:  [DRIVER] The number of Packets in the Generator Mailbox =           6
+#                  195ns: [CHECKER] Checker Start
+# 
+# 
+#                  195ns:   [CHECKER] Pkt Contents: src1 = 0000eb1c, src2 = 00001bae, imm = 00008098, 
+#                  195ns:   [CHECKER] Pkt Contents: opselect = 001, immp_regn = 0, operation = 111, 
+#                  195ns:  	[CHECK_ARITH] Golden Incoming Arithmetic enable = 1
+#                  195ns:  	[CHECK_ARITH] Golden Incoming ALUIN = 00001fc0  0000bc06 
+#                  195ns:  	[CHECK_ARITH] Golden Incoming CONTROL = 1(opselect)  6(operation) 
+#                  195ns:   [CHECKER] ALUOUT: DUT = 0000a3c6   & Golden Model = 0000a3c6
+# 
+#                  195ns:   [CHECK_PREPROC] ALUIN1: DUT = 0000eb1c   & Golden Model = 0000eb1c
+# 
+#                  195ns:   [CHECK_PREPROC] ALUIN2: DUT = 00001bae   & Golden Model = 00001bae
+# 
+#                  195ns:   [CHECK_PREPROC] ENABLE_ARITH: DUT = 1   & Golden Model = 1
+# 
+#                  195ns:   [CHECK_PREPROC] ENABLE_SHIFT: DUT = 0   & Golden Model = 0
+# 
+#                  195ns:   [CHECK_PREPROC] OPERATION: DUT = 7   & Golden Model = 7
+# 
+#                  195ns:   [CHECK_PREPROC] OPSELECT: DUT = 1   & Golden Model = 1
+# 
+#                  195ns:   [CHECK_PREPROC] SHIFT_NUMBER: DUT = 00   & Golden Model = 00
+# 
+#                  195ns:   [RECEIVER -> GETPAYLOAD]   Payload Obtained
+#                  195[DRIVER] Sending in new packet BEGIN
+#                  195ns:  [DRIVER] Sending Payload Begin
+#                  195ns:  [DRIVER] Sending in new packet END
+#                  195ns:  [DRIVER] Number of packets sent =          16
+#                  195ns:  [DRIVER] The number of Packets in the Generator Mailbox =           5
+# invalid command name "quti"

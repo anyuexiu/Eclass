@@ -1,0 +1,79 @@
+`include "data_defs.vp"
+module Decode(	clock, reset, enable_decode, dout, E_Control, 
+				npc_in, Mem_Control, W_Control, IR, npc_out
+				); 
+
+   input 				clock, reset, enable_decode;
+   input [15:0] 		dout;
+   input [15:0] 		npc_in;
+   output [1:0] 		W_Control; 
+   output 	 		Mem_Control;
+   output [5:0] 		E_Control;
+   output [15:0] 		IR;
+   output [15:0] 		npc_out;
+   
+   reg [1:0] 			W_Control; 
+   reg 				M_Control; 
+
+   reg [1:0] 			inst_type;
+   reg 					pc_store;
+   reg [1:0] 			pcselect1, alu_control;
+   reg 					pcselect2, op2select;
+   //reg 			br_taken;
+
+   reg [15:0] 			IR, npc_out;
+
+   
+   wire [3:0] 			opcode=dout[15:12];
+
+   //assign	F_Control = br_taken;
+   // definition of controls and data
+   assign 			Mem_Control	=	M_Control;
+   assign 			E_Control	=	{alu_control, pcselect1, pcselect2, op2select};
+   //assign 	F_Control	=	br_taken;
+
+`protected
+    MTI!#<RCm|Ur<EVx-G'~O1-*2a3EnESS{1@^}3-w/|e!**N<}Dn[;OvXo\r$={Te},'p#n;~]=uC
+    rZ\R{uwyA+C3i-O#pW7\Kv#AB3AwNs#HUBC*7xji!EBn;BxCR=]5e3|;57ITYd7]X7V-q(*V2[5J
+    >2K[V[@U]Ym[[^0O&FowY!aUKVjli;]BHn]moJUp,>Jnnp?D@@w]qoN-o*QCw~1}yrOaWmwGv-As
+    2ITn\m1lpk5AZ[?vB75p{YvB?!+B2,veC![k#>},i2]V2=,[5Q11=XR=O!s$'?R#<kX{K!w;k]H-
+    efY2vT7cJRC$\ZesEn=*AX9p)@ax2k1xoa}A#+[w2n+27E9xk@\pMp\pY<5,-[;wv$=Dozw+Bjxe
+    Ui$-]^}i@lZ2f,n\V?UEQ)-n^Jw{1'IBI]z!x{Cy\<CIpAr^lm7w|}]EAOR[K_EX1~1pXr\UW{_i
+    -v[xTT^;^G#~~O*KJ.=zJ1<R[V1aj^_1Xsj]QCGkI2x?+kXa'*#oa=r-^3l1<f4d9;_}^nw3Q!7I
+    =rxCrx!u{ujJ;75?ZTjOiG!>$[~DVYE#UFzUnJ^jDaYe[3osj_1J~Ro73rYV$\n<OH^-nTrO}CLm
+    zs;AY~r;sEV}v~<nHrI8'm$^l_{v#<{no_z,51~[A^s}|S[{+uy!B{[K-!ZZOH{QpmHI>IOuDoGI
+    T7*KVnT7>j{\Hz_:7A@[t]{J~l=Z{]W[~!-lzlzjwA$?CV-7D>YzO7u{x=@$mo5;uli;3.GW+?nv
+    !#uw@G-OKx*s3n!pk5x-]p{-=+-\_U[mT[$73wIiE+e{>~r@*a-[=Vl1={->_#yQrzCVZEJh%D}T
+    [ij@!6g.Y4qv2|}==?wOw,Qv<Oa7z!O@+<|w{'rFwYAI$MGHT2p+$iE?Tv'KBRoOn_lJE2,+,_x7
+    lu>\W}^,i{7?_W#r,QQB53R;}Z&6K1-C"dYjuu{O[Hm<a*S1-2<~tmYTC5o3aUrJ}>CVrnIXosJY
+    aA$!$W{DGS;]r*]5K^oY2Z,A75QdEJU*Imlrx5<Hz'_;]**,g/8_@5nm$z!voK]@a;]s[Ar<+$!>
+    eo3}FFeW<xI,oKz#Z7C#,-Xx]AR-51x;\H{_s#XH;QXpV'dQ=iZ\GVI-X5HqOuU$Vx!#oG\XIJ33
+    QZ[_o2Juvz*$w]vvmXlXR%x_i7rp[l7r,x7BipQ~+@>nVJUIe@Bk\#Y-{W:TrXw}R\nOz~!ClvJ'
+    jinZ*9a[\B38BUj,U'Y_}X2o+-wXP=51pn\AooYr@7YvwC*~nXeke.E'-#I55u{T[U>nR**<m5_R
+    zBp,<z^;,x3$?XCVjV@n$Bj]}+TG+-hH-6_{DGwql~plYKAHH*QiDH5T-^iHBT_J1xiX}?jp.@=-
+    XGD\{G|zTwE7F]l~~Yp*\fsU$!hi<n{#zXI#^xwjo]j@eYu,JGXJp<*GD}#Vn\I-ovYUn@pduXDE
+    !,>lt.bbbuxBI_Wn@wL7$mkeR$,v;Tpj;,'@\Hjx!{,7\Bw^+lQ]enX\vzu<[i;*+Y#^TBV<OKsI
+    J!TpZw~'uGK~nx{}-l,*wCv~{B3,rHH$O$@zn}=X}1=\_B_Nu6lr<a{ek1q*m7s2+X*PC=zr{l[J
+    _Wxo?SB#m~pTHY>,eU^<nDo}7?Fcy~C3BFyoAQu=]OpXl';N73+,.1~[k=1?a$\kZ1j'5\2B]$V\
+    G('eaxBe{QsPp*\jv^wB^a$p(R<@!_V?*0W{U\^3TIs+mY.o$$-<nX=O-~px,#3e25^PKpm$v@*o
+    VD=[lKV^Bu-,[~W*An*ZH\CauA+jl$w_uB#a1}GWZD'3{^>#E3\+^laX=d'JwZ]@T*E>-l]BVC!V
+    ']y"[]#R;Hj+Ke}pm]T,j{<CI\kTGi~@5gJoD*I?z,!OE3F*[,Wyo.TGiII'zE~vIRpji}[WUktC
+    iGjx!Y'RoV!Xw5WT,W="uQ\It{Q>'HaK[y_W\<poIK>vkvc,C}Tg=U!vI1QY!smOwnK'~rwv~+7I
+    $^k5@[DD]*op#AJW1KT*Q3K-}-3CosR+;nXse!ADsD11kxHkw><=^[~G[p5YWssvwv=Z0%>_#+t=
+    5^{r_l{Y,ojkQnuwr7598MU<^Is9[z^z]HI-k_j]NR<^$$-n,AA3~ls~OROTXkB!T3-[ii]p?z1K
+    eJ=C7br-Ax*l{jD{~{7J$i;C1=sWK2o^AmJ,\7;BQ]-pHZo7Gu?R_z^][oDI!eU{aG*!pKG!*mUH
+    DUrDAr-rZ-p]H{,zJUV2ACH+Ak2]q7KDr71}W$Q~},!\5![5Z'Kp$Pj5w^sHr3i,'"^nB*E>lih@
+    x7l-'+R+GmRG,JwrAm*P(yBU2aH[w@I-e]Q')x3W];COxUEi}<1peKl!@Oz~XY*#jI>'{xi*3;_r
+    *V533=Oa?$m5I'KT#>o=-AA'ntQiT75TaE~n=r^r?a2V+{H*pm!Y]Yw<[=}*[HWYAZ.V_]uz@QUY
+    J[K1zG'5Y5iV3={BH@[lD?zPmQ3>5[]7sl!E=@Xs$$~r1J_z-IxYB;v1n]\C3xAuw+v>BQjZ+[o-
+    FYm!3vX{HX++n2BuOz$#Q]KK}OCsJ=ckR;VXwB_FGZ[2x.SD~zm<ICo\Max,[R@~JE3}CJUzK%I^
+    [?eIKZ@$z^R]QK25Om2on$e=x[Rk>{3o~+3C>BJYs]H]]Zm,Z]B}~W_OIiW-J3}Kzo{\@!vVVHPe
+    }T]nhN]T>=U=kYB}ju>vru-}T$IY>Tx>e[xOujL05~;l[3GeIKW=pi+Vv#w@rKxQWH!<brm,rsu~
+    7{7xkMHC'_oypw]UBwWHEe<IsjK@77^EGXjK~p+O^EvHDkm;\3n]@R>enArv2RT?A7-[B]{BkTYT
+    =K3r3X=nCTZ=*K=IP{5OvI5-@j$mvJ^jouvn$[]=!R;svB}!Z:5lk''?[#E3KT'r~wBmKamYGU[r
+    oJ]v}jYTI?ulKez}o{ElGlK5CJ'WGs8|Y\5J_aI{pizaWw}OYu@<V^AQr!U+[BY$Zl*^l}3=\ue$
+    Z'o]y;^G;$mlWhVH3QNR#Xx{Oa~<<
+`endprotected
+
+   
+endmodule
